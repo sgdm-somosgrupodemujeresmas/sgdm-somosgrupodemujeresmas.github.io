@@ -1,70 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página en construcción</title>
-  <style>
-    /* Paleta de colores */
-    :root {
-      --rosa-nude: #EAC6C0;
-      --rosa-tiza: #F4E2DE;
-      --marron-claro: #A98274;
-      --tostado: #C8A79E;
-      --chocolate-suave: #5F4B3B;
-      --blanco-hueso: #FAF8F6;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página en construcción</title>
+    <style>
+      /* Paleta */
+      :root {
+        --rosa-nude: #eac6c0;
+        --rosa-tiza: #f4e2de;
+        --marron-claro: #a98274;
+        --tostado: #c8a79e;
+        --chocolate-suave: #5f4b3b;
+        --blanco-hueso: #faf8f6;
+      }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--rosa-tiza);
-      color: var(--chocolate-suave);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-    }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2; /* 👈 Fondo neutro que NO está en la paleta */
+        color: var(--chocolate-suave);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
 
-    h1 {
-      font-size: 2.5rem;
-      color: var(--marron-claro);
-      margin-bottom: 20px;
-    }
+      h1 {
+        font-size: 2.5rem;
+        color: var(--marron-claro);
+        margin-bottom: 20px;
+      }
 
-    p {
-      font-size: 1.2rem;
-      color: var(--chocolate-suave);
-      max-width: 600px;
-    }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+      }
 
-    .box {
-      background-color: var(--blanco-hueso);
-      padding: 40px 60px;
-      border-radius: 12px;
-      border: 2px solid var(--tostado);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
+      .box {
+        background-color: var(--blanco-hueso);
+        padding: 40px 60px;
+        border-radius: 12px;
+        border: 2px solid var(--tostado);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+      }
 
-    .footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: var(--marron-claro);
-    }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h1>Página en construcción</h1>
-    <p>Estamos trabajando en el nuevo sitio de <strong>Somos Grupo de Mujeres Mas</strong>.  
-    Pronto vas a poder conocer más sobre nosotras.</p>
-  </div>
+      /* Cuadro de colores */
+      .palette {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: nowrap; /* evita que se vayan a otra fila */
+        overflow-x: auto; /* si la pantalla es chica, permite scroll horizontal */
+        padding: 10px;
+      }
 
-  <div class="footer">
-    © 2025 Somos Grupo de Mujeres Mas
-  </div>
-</body>
+      .color {
+        min-width: 120px; /* cada bloque mantiene tamaño fijo */
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid #ddd;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0; /* evita que se achiquen demasiado */
+      }
+
+      .swatch {
+        height: 80px;
+      }
+
+      .info {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+
+      .footer {
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: var(--marron-claro);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Página en construcción</h1>
+      <p>
+        Estamos trabajando en el nuevo sitio de
+        <strong>Somos Grupo de Mujeres</strong>. Pronto vas a poder conocer más
+        sobre nosotras.
+      </p>
+    </div>
+
+    <div class="palette">
+      <div class="color">
+        <div class="swatch" style="background-color: var(--rosa-nude)"></div>
+        <div class="info">Rosa Nude<br />#EAC6C0</div>
+      </div>
+      <div class="color">
+        <div class="swatch" style="background-color: var(--rosa-tiza)"></div>
+        <div class="info">Rosa Tiza<br />#F4E2DE</div>
+      </div>
+      <div class="color">
+        <div class="swatch" style="background-color: var(--marron-claro)"></div>
+        <div class="info">Marrón Claro<br />#A98274</div>
+      </div>
+      <div class="color">
+        <div class="swatch" style="background-color: var(--tostado)"></div>
+        <div class="info">Tostado<br />#C8A79E</div>
+      </div>
+      <div class="color">
+        <div
+          class="swatch"
+          style="background-color: var(--chocolate-suave)"
+        ></div>
+        <div class="info">Chocolate Suave<br />#5F4B3B</div>
+      </div>
+      <div class="color">
+        <div class="swatch" style="background-color: var(--blanco-hueso)"></div>
+        <div class="info">Blanco Hueso<br />#FAF8F6</div>
+      </div>
+    </div>
+
+    <div class="footer">© 2025 Somos Grupo de Mujeres</div>
+  </body>
 </html>

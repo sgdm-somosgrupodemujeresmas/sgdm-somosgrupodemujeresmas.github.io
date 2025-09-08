@@ -2,133 +2,154 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Página en construcción</title>
-        <!-- Favicons -->
+
+    <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
     <style>
-      /* Paleta */
-      :root {
-        --rosa-nude: #eac6c0;
-        --rosa-tiza: #f4e2de;
-        --marron-claro: #a98274;
-        --tostado: #c8a79e;
-        --chocolate-suave: #5f4b3b;
-        --blanco-hueso: #faf8f6;
+      /* ===== Paleta ===== */
+      :root{
+        --rosa-nude:#eac6c0;
+        --rosa-tiza:#f4e2de;
+        --marron-claro:#a98274;
+        --tostado:#c8a79e;
+        --chocolate-suave:#5f4b3b;
+        --blanco-hueso:#faf8f6;
+
+        --space-1:8px; --space-2:12px; --space-3:16px; --space-4:24px;
+        --radius:16px;
       }
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f2f2f2; /* 👈 Fondo neutro que NO está en la paleta */
-        color: var(--chocolate-suave);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
+      *{ box-sizing:border-box }
+
+      body{
+        margin:0;
+        font-family:system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+        color:var(--chocolate-suave);
+        background:#f7f6f5;
+        min-height:100svh;                /* altura segura en móviles */
+        display:flex;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        color: var(--marron-claro);
-        margin-bottom: 20px;
+      /* Contenedor fluido */
+      .container{
+        width:100%;
+        max-width:980px;
+        margin:0 auto;
+        padding:clamp(16px, 4vw, 40px);
+        display:flex;
+        flex-direction:column;
+        gap:clamp(16px, 4vw, 32px);
       }
 
-      p {
-        font-size: 1.2rem;
-        margin-bottom: 40px;
+      /* Tarjeta central */
+      .card{
+        background:var(--blanco-hueso);
+        border:1px solid var(--tostado);
+        border-radius:var(--radius);
+        padding:clamp(16px, 4.5vw, 36px);
+        box-shadow:0 6px 20px rgba(0,0,0,.06);
+        text-align:center;
       }
 
-      .box {
-        background-color: var(--blanco-hueso);
-        padding: 40px 60px;
-        border-radius: 12px;
-        border: 2px solid var(--tostado);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        margin-bottom: 40px;
+      h1{
+        margin:0 0 var(--space-3);
+        color:var(--marron-claro);
+        font-weight:800;
+        font-size:clamp(24px, 6vw, 40px);
+        letter-spacing:.2px;
       }
 
-      /* Cuadro de colores */
-      .palette {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: nowrap; /* evita que se vayan a otra fila */
-        overflow-x: auto; /* si la pantalla es chica, permite scroll horizontal */
-        padding: 10px;
+      p{
+        margin:0 0 var(--space-4);
+        font-size:clamp(14px, 3.8vw, 18px);
+        line-height:1.6;
       }
 
-      .color {
-        min-width: 120px; /* cada bloque mantiene tamaño fijo */
-        border-radius: 10px;
-        overflow: hidden;
-        border: 2px solid #ddd;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        flex-shrink: 0; /* evita que se achiquen demasiado */
+      a{
+        color:inherit;
+        text-decoration:none;
+        border-bottom:1px dotted currentColor;
+        word-break:break-word; /* por si el dominio se corta */
       }
 
-      .swatch {
-        height: 80px;
+      /* Paleta en grilla auto-ajustable */
+      .palette{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(120px,1fr));
+        gap:clamp(10px, 2.5vw, 20px);
       }
 
-      .info {
-        padding: 10px;
-        font-size: 0.9rem;
+      .color{
+        background:#fff;
+        border:1px solid #eee2dc;
+        border-radius:14px;
+        overflow:hidden;
+        box-shadow:0 3px 10px rgba(0,0,0,.05);
+        display:flex;
+        flex-direction:column;
+        min-height:120px;
       }
 
-      .footer {
-        margin-top: 40px;
-        font-size: 0.9rem;
-        color: var(--marron-claro);
+      .swatch{ flex:1; }
+      .info{ padding:10px 12px; font-size:13px }
+
+      footer{
+        text-align:center;
+        font-size:12px;
+        opacity:.85;
+      }
+
+      /* Pequeños toques para pantallas muy anchas */
+      @media (min-width:1200px){
+        .palette{ grid-template-columns:repeat(6, 1fr); }
       }
     </style>
   </head>
+
   <body>
-    <div class="box">
-      <h1>Página en construcción</h1>
-      <p>
-        Estamos trabajando en el nuevo sitio de
-        <strong>Somos Grupo de Mujeres Más</strong>. Pronto vas a poder conocer más
-        sobre nosotras.
-      </p>
-      <p>www.somosgrupodemujeresmas.ar</p>
-    </div>
+    <main class="container">
+      <section class="card">
+        <h1>Página en construcción</h1>
+        <p>
+          Estamos trabajando en el nuevo sitio de
+          <strong>Somos Grupo de Mujeres Más</strong>. Pronto vas a poder conocer
+          más sobre nosotras.
+        </p>
+        <p><a href="https://www.somosgrupodemujeresmas.ar" rel="noopener">www.somosgrupodemujeresmas.ar</a></p>
+      </section>
 
-    <div class="palette">
-      <div class="color">
-        <div class="swatch" style="background-color: var(--rosa-nude)"></div>
-        <div class="info">Rosa Nude<br />#EAC6C0</div>
-      </div>
-      <div class="color">
-        <div class="swatch" style="background-color: var(--rosa-tiza)"></div>
-        <div class="info">Rosa Tiza<br />#F4E2DE</div>
-      </div>
-      <div class="color">
-        <div class="swatch" style="background-color: var(--marron-claro)"></div>
-        <div class="info">Marrón Claro<br />#A98274</div>
-      </div>
-      <div class="color">
-        <div class="swatch" style="background-color: var(--tostado)"></div>
-        <div class="info">Tostado<br />#C8A79E</div>
-      </div>
-      <div class="color">
-        <div
-          class="swatch"
-          style="background-color: var(--chocolate-suave)"
-        ></div>
-        <div class="info">Chocolate Suave<br />#5F4B3B</div>
-      </div>
-      <div class="color">
-        <div class="swatch" style="background-color: var(--blanco-hueso)"></div>
-        <div class="info">Blanco Hueso<br />#FAF8F6</div>
-      </div>
-    </div>
+      <section class="palette" aria-label="Paleta de colores">
+        <article class="color">
+          <div class="swatch" style="background:var(--rosa-nude)"></div>
+          <div class="info">Rosa Nude<br>#EAC6C0</div>
+        </article>
+        <article class="color">
+          <div class="swatch" style="background:var(--rosa-tiza)"></div>
+          <div class="info">Rosa Tiza<br>#F4E2DE</div>
+        </article>
+        <article class="color">
+          <div class="swatch" style="background:var(--marron-claro)"></div>
+          <div class="info">Marrón Claro<br>#A98274</div>
+        </article>
+        <article class="color">
+          <div class="swatch" style="background:var(--tostado)"></div>
+          <div class="info">Tostado<br>#C8A79E</div>
+        </article>
+        <article class="color">
+          <div class="swatch" style="background:var(--chocolate-suave)"></div>
+          <div class="info">Chocolate Suave<br>#5F4B3B</div>
+        </article>
+        <article class="color">
+          <div class="swatch" style="background:var(--blanco-hueso)"></div>
+          <div class="info">Blanco Hueso<br>#FAF8F6</div>
+        </article>
+      </section>
 
-    <div class="footer">© 2025 Somos Grupo de Mujeres</div>
+      <footer>© 2025 Somos Grupo de Mujeres</footer>
+    </main>
   </body>
 </html>

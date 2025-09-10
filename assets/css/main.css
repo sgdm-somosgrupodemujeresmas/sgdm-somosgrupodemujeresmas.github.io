@@ -8,6 +8,13 @@
 }
 
 :root {
+
+  --rosa-nude:       #eac6c0;
+  --rosa-tiza:       #f4e2de;
+  --marron-claro:    #a98274;
+  --tostado:         #c8a79e;
+  --chocolate-suave: #5f4b3b;
+  --blanco-hueso:    #faf8f6;
   /* BASE */
   --background-color: #FAF8F6;          /* Blanco hueso */
   --surface-color: #FFFFFF;             /* Blanco puro */
@@ -18,7 +25,6 @@
   --accent-color: #D88EA3;              /* Rosa del logo */
   --accent-secondary: #7F4A94;          /* Violeta del logo */
   --accent-hover: #C2728C;              /* Rosa del logo más oscuro (hover) */
-
   --contrast-color: #FFFFFF;            /* Texto blanco sobre fondo oscuro */
 
   /* NAVEGACIÓN */

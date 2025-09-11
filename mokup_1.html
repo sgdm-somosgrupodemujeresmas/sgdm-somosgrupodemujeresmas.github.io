@@ -1326,25 +1326,42 @@
               <div class="related-book-card">
                 <div class="book-image">
                   <img
-                    src="assets/img/book/book4.png "
+                    src="assets/img/book/laosamaia.webp"
                     alt="Book Cover"
                     class="img-fluid"
                   />
-                  <div class="book-category">Desarrollo Personal</div>
+                  <div class="book-category">Edad: 3-5</div>
                 </div>
                 <div class="book-info">
-                  <h3>Empoderamiento y Liderazgo</h3>
+                  <h3>La osa Maia es mamá - Doble donación</h3>
                   <div class="book-meta">
                     <span><i class="bi bi-calendar3"></i> Agosto 2025</span>
                     <span><i class="bi bi-star-fill"></i> 5.0</span>
                   </div>
-                  <p>
-                    Un taller para descubrir tu voz, potenciar tu confianza y
-                    liderar desde tu autenticidad.
+                  <p class="descripcion" id="descripcion1">
+                    ¿PUEDE UNA OSA SIN PAREJA SER MAMÁ?<br />
+                    Maia es una osita muy divertida, curiosa e inquieta. Vive en
+                    un bosque lleno de colores. Tiene amigos y le gusta leer.
+                    Hace muchas cosas que le encantan y siempre soñó con ser
+                    mamá y sentir ese tipo de amor tan especial y único. Pero,
+                    ¿cómo podrá lograrlo?. Maia no tiene pareja. También
+                    necesitará donante de óvulos. ¿Quiénes podrán ayudarla a
+                    cumplir ese sueño?. Acompañala a través de este cuento en su
+                    búsqueda maravillosa. Autora: Lorena Laserre
                   </p>
+
                   <div class="book-actions">
-                    <a href="#" class="btn-details">Ver detalles</a>
-                    <a href="#" class="btn-purchase">Inscribirme</a>
+                    <a
+                      href="javascript:void(0)"
+                      class="btn-details"
+                      onclick="toggleTexto('descripcion1', this)"
+                      >Ver Más</a
+                    >
+                    <a
+                      href="https://www.abrazandocuentos.com.ar/productos/la-osa-maia-es-mama-doble-donacion/"
+                      class="btn-purchase" target="_blank"
+                      >Conseguir libro</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1582,7 +1599,15 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
+    <script>
+      function toggleTexto(id, btn) {
+        const p = document.getElementById(id);
+        p.classList.toggle("expandido");
+        btn.innerText = p.classList.contains("expandido")
+          ? "Ver menos"
+          : "Ver detalles";
+      }
+    </script>
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
   </body>

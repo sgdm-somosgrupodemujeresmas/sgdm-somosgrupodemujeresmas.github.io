@@ -2565,6 +2565,20 @@ section,
   }
 }
 
+.descripcion {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+/* cuando se expande muestra todo */
+.descripcion.expandido {
+  -webkit-line-clamp: unset;
+}
+
 /*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/

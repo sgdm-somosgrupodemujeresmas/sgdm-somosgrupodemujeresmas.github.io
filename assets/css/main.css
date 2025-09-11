@@ -2565,18 +2565,62 @@ section,
   }
 }
 
-.descripcion {
+.related-book-card .descripcion {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: all .3s ease;
+}
+.related-book-card .descripcion.expandido {
+  -webkit-line-clamp: unset;
+}
+
+/* 📌 Paginación (bullets) */
+.related-books-slider .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #c8b7a6; /* gris/marrón claro apagado */
+  opacity: 1;
+  margin: 0 4px !important;
   transition: all 0.3s ease;
 }
 
-/* cuando se expande muestra todo */
-.descripcion.expandido {
-  -webkit-line-clamp: unset;
+.related-books-slider .swiper-pagination-bullet-active {
+  background: #5c4433; /* marrón principal */
+  transform: scale(1.2);
+}
+
+/* 📌 Opcional: darle forma redondeada */
+.related-books-slider .swiper-pagination-bullet {
+  border-radius: 50%;
+}
+
+/* 📌 Flechas de navegación (si las usás) */
+.related-books-slider .swiper-button-prev,
+.related-books-slider .swiper-button-next {
+  color: #5c4433;        /* marrón principal */
+  background: #fff;      /* fondo blanco */
+  border: 2px solid #5c4433;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.related-books-slider .swiper-button-prev:hover,
+.related-books-slider .swiper-button-next:hover {
+  background: #5c4433;
+  color: #fff;
+}
+
+.related-books-slider .swiper-pagination {
+  margin-top: 20px;  /* ajustá el valor según lo que necesites */
+  position: relative; /* evita que se superpongan */
 }
 
 /*--------------------------------------------------------------

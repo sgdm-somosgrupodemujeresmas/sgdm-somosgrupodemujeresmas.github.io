@@ -15,17 +15,18 @@
   --tostado:         #c8a79e;
   --chocolate-suave: #5f4b3b;
   --blanco-hueso:    #faf8f6;
+
   /* BASE */
-  --background-color: #FAF8F6;          /* Blanco hueso */
-  --surface-color: #FFFFFF;             /* Blanco puro */
-  --default-color: #3C2B22;             /* Marrón oscuro */
-  --heading-color: #7A5B4B;             /* Marrón medio */
+  --background-color: var(--blanco-hueso);   /* Blanco hueso */
+  --surface-color: #FFFFFF;                  /* Blanco puro */
+  --default-color: var(--chocolate-suave);   /* Texto principal */
+  --heading-color: var(--marron-claro);      /* Títulos */
 
   /* COLORES DESTACADOS */
-  --accent-color: #D88EA3;              /* Rosa del logo */
-  --accent-secondary: #7F4A94;          /* Violeta del logo */
-  --accent-hover: #C2728C;              /* Rosa del logo más oscuro (hover) */
-  --contrast-color: #FFFFFF;            /* Texto blanco sobre fondo oscuro */
+  --accent-color: var(--chocolate-suave);    /* Primario */
+  --accent-secondary: var(--marron-claro);   /* Secundario */
+  --accent-hover: #4d3d30;                   /* Chocolate ~15% más oscuro */
+  --contrast-color: #FFFFFF;                 /* Texto sobre accent */
 
   /* NAVEGACIÓN */
   --nav-color: var(--default-color);
@@ -37,7 +38,7 @@
   --nav-dropdown-hover-color: var(--accent-secondary);
 
   /* USO DIRECTO */
-  --sgm-pink: #D88EA3;
+  --sgm-pink: #D88EA3;   /* colores del logo disponibles si los necesitás */
   --sgm-violet: #7F4A94;
 }
 

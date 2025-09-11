@@ -726,7 +726,7 @@ section,
   bottom: 0;
   left: 0;
   right: 0;
-  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  background: color-mix(in srgb, var(--surface-color), transparent 50%);
   backdrop-filter: blur(10px);
   padding: 20px;
   display: grid;

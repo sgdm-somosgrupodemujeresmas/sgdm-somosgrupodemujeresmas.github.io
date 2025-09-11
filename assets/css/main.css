@@ -435,7 +435,7 @@ h6 {
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
+  bottom: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -2807,5 +2807,44 @@ section,
 @media (max-width: 768px) {
   .call-to-action {
     padding: 60px 0;
+  }
+}
+
+.wasap {
+    right: 30px;
+    bottom: 30px;
+    z-index: 10000;
+    visibility: visible;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: 100;
+      position: fixed;
+  width: 60px;
+  height: 60px;
+}
+
+@keyframes tada {
+  from,
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
   }
 }

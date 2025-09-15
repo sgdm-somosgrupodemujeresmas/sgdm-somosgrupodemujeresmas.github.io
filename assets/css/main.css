@@ -8,7 +8,7 @@
 }
 
 :root {
-
+  /* Paleta base */
   --rosa-nude:       #eac6c0;
   --rosa-tiza:       #f4e2de;
   --marron-claro:    #a98274;
@@ -17,28 +17,28 @@
   --blanco-hueso:    #faf8f6;
 
   /* BASE */
-  --background-color: var(--blanco-hueso);   /* Blanco hueso */
-  --surface-color: #FFFFFF;                  /* Blanco puro */
-  --default-color: var(--chocolate-suave);   /* Texto principal */
-  --heading-color: var(--marron-claro);      /* Títulos */
-
+  --background-color: var(--marron-claro);   /* #a98274 */
+  --surface-color:    var(--blanco-hueso);   /* #faf8f6 */
+  --default-color:    var(--blanco-hueso);   /* texto sobre fondo */
+  --heading-color:    var(--rosa-tiza);      /* #f4e2de */
+  
   /* COLORES DESTACADOS */
-  --accent-color: var(--chocolate-suave);    /* Primario */
-  --accent-secondary: var(--marron-claro);   /* Secundario */
-  --accent-hover: #4d3d30;                   /* Chocolate ~15% más oscuro */
-  --contrast-color: #FFFFFF;                 /* Texto sobre accent */
+  --accent-color:     var(--chocolate-suave); /* #5f4b3b (btn/link) */
+  --accent-secondary: var(--rosa-nude);       /* #eac6c0 */
+  --accent-hover:     #4d3d30;                /* chocolate 15% más oscuro */
+  --contrast-color:   #ffffff;                /* texto sobre accent oscuro */
 
   /* NAVEGACIÓN */
-  --nav-color: var(--default-color);
-  --nav-hover-color: var(--accent-color);
-  --nav-active-color: var(--accent-secondary);
-  --nav-mobile-background-color: var(--background-color);
-  --nav-dropdown-background-color: var(--surface-color);
-  --nav-dropdown-color: var(--default-color);
-  --nav-dropdown-hover-color: var(--accent-secondary);
+  --nav-color:                    var(--blanco-hueso);
+  --nav-hover-color:              var(--rosa-nude);
+  --nav-active-color:             var(--rosa-tiza);
+  --nav-mobile-background-color:  var(--background-color);
+  --nav-dropdown-background-color:var(--surface-color);
+  --nav-dropdown-color:           var(--chocolate-suave);
+  --nav-dropdown-hover-color:     var(--rosa-nude);
 
-  /* USO DIRECTO */
-  --sgm-pink: #D88EA3;   /* colores del logo disponibles si los necesitás */
+  /* USO DIRECTO (del logo SGM) */
+  --sgm-pink:   #D88EA3;
   --sgm-violet: #7F4A94;
 }
 
@@ -60,7 +60,7 @@
 
 /* TITULOS */
 h1, h2.section-title, .hero .title {
-  color: var(--accent-secondary);
+   color: var(--heading-color);
 }
 
 /* ENLACES DESTACADOS */
@@ -752,7 +752,7 @@ section,
 
 .about .about-book-img .book-details .detail-item div span {
   font-size: 12px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--chocolate-suave), transparent 30%);
   margin-bottom: 2px;
 }
 
@@ -760,7 +760,7 @@ section,
   font-size: 14px;
   font-weight: 600;
   margin: 0;
-  color: var(--heading-color);
+  color: var(--chocolate-suave);
 }
 
 .about .about-book-img:hover {
@@ -938,11 +938,11 @@ section,
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: var(--heading-color);
+  color: var(--marron-claro);
 }
 
 .features .feature-card p {
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 0;
@@ -968,7 +968,7 @@ section,
 .features .feature-chapters h3 {
   font-size: 24px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--chocolate-suave);
   margin-bottom: 30px;
   position: relative;
   display: inline-block;
@@ -1117,7 +1117,7 @@ section,
   right: 30px;
   font-size: 14px;
   font-weight: 600;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, var(--chocolate-suave), transparent 40%);
   font-family: var(--heading-font);
 }
 
@@ -1126,7 +1126,7 @@ section,
   font-family: var(--heading-font);
   font-size: 20px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--chocolate-suave);
   margin-bottom: 30px;
   position: relative;
 }
@@ -1151,6 +1151,7 @@ section,
 .excerpt .book-page-design .excerpt-content p {
   margin-bottom: 20px;
   text-align: justify;
+  color: var(--chocolate-suave);
 }
 
 .excerpt .book-page-design .excerpt-content .first-letter:first-letter {
@@ -1192,8 +1193,8 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--surface-color);
-  color: var(--accent-color);
+  background-color: var(--chocolate-suave);
+  color: var(--blanco-hueso);
   padding: 12px 28px;
   border-radius: 50px;
   font-weight: 500;
@@ -1496,13 +1497,13 @@ section,
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   font-style: italic;
 }
 
 .testimonials .critic-reviews .critic-review .critic-info .critic-name {
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   font-size: 16px;
 }
 
@@ -1543,7 +1544,7 @@ section,
   font-size: 15px;
   font-style: italic;
   margin-bottom: 20px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   line-height: 1.6;
 }
 
@@ -1556,7 +1557,7 @@ section,
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 4px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border: 4px solid color-mix(in srgb, var(--marron-claro), transparent 80%);
   margin-right: 15px;
 }
 
@@ -1564,12 +1565,12 @@ section,
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 5px;
-  color: var(--heading-color);
+  color: var(--marron-claro);
 }
 
 .testimonials .testimonials-container .testimonial-item .testimonial-profile div h4 {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--marron-claro), transparent 30%);
   margin: 0;
   font-weight: normal;
 }
@@ -1725,7 +1726,7 @@ section,
 .purchase .book-format-card h3 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin-bottom: 10px;
 }
 
@@ -1748,7 +1749,7 @@ section,
   align-items: flex-start;
   margin-bottom: 12px;
   font-size: 14px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   line-height: 1.5;
 }
 
@@ -1840,12 +1841,12 @@ section,
 .purchase .bundle-offer h3 {
   font-size: 24px;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin-bottom: 15px;
 }
 
 .purchase .bundle-offer p {
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.6;
@@ -1861,7 +1862,7 @@ section,
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
 }
 
 .purchase .bundle-offer ul li i {
@@ -1877,7 +1878,7 @@ section,
 
 .purchase .bundle-offer .bundle-price .original {
   font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--marron-claro), transparent 30%);
   text-decoration: line-through;
   margin-right: 15px;
 }
@@ -1993,6 +1994,7 @@ section,
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: var(--marron-claro);
 }
 
 .faq .faq-container .faq-item h3 .num {
@@ -2015,6 +2017,7 @@ section,
 .faq .faq-container .faq-item .faq-content p {
   margin-bottom: 0;
   overflow: hidden;
+  color: var(--chocolate-suave);
 }
 
 .faq .faq-container .faq-item .faq-toggle {
@@ -2090,7 +2093,7 @@ section,
 .contact .contact-card h3 {
   font-size: 22px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin-bottom: 15px;
   position: relative;
   padding-bottom: 15px;
@@ -2107,7 +2110,7 @@ section,
 }
 
 .contact .contact-card p {
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 25px;
@@ -2134,13 +2137,13 @@ section,
 .contact .contact-card .contact-details .contact-item div h4 {
   font-size: 16px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin: 0 0 5px;
 }
 
 .contact .contact-card .contact-details .contact-item div p {
   font-size: 14px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   margin: 0 0 5px;
   line-height: 1.5;
 }
@@ -2166,7 +2169,7 @@ section,
   height: 36px;
   border-radius: 50%;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  color: var(--accent-color);
+  color: var(--chocolate-suave);
   font-size: 16px;
   transition: all 0.3s ease;
 }
@@ -2202,7 +2205,7 @@ section,
 
 .contact .contact-form-wrapper .php-email-form .form-group label {
   font-weight: 500;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin-bottom: 8px;
   font-size: 14px;
   display: block;
@@ -2212,8 +2215,8 @@ section,
   height: auto;
   border-radius: 8px;
   padding: 12px 20px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  color: var(--default-color);
+  border: 1px solid color-mix(in srgb, var(--chocolate-suave), transparent 80%);
+  color: var(--chocolate-suave);
   background-color: var(--surface-color);
   font-size: 14px;
 }
@@ -2225,7 +2228,7 @@ section,
 }
 
 .contact .contact-form-wrapper .php-email-form .form-group .form-control::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, var(--chocolate-suave), transparent 70%);
 }
 
 .contact .contact-form-wrapper .php-email-form .form-group textarea.form-control {
@@ -2346,7 +2349,7 @@ section,
 .related-books .related-book-card .book-info h3 {
   font-size: 20px;
   font-weight: 600;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin-bottom: 10px;
   line-height: 1.3;
 }
@@ -2375,7 +2378,7 @@ section,
 
 .related-books .related-book-card .book-info p {
   font-size: 15px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -2483,7 +2486,7 @@ section,
 .related-books .coming-soon .upcoming-book-info h3 {
   font-size: 24px;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--marron-claro);
   margin-bottom: 10px;
 }
 
@@ -2496,7 +2499,7 @@ section,
 
 .related-books .coming-soon .upcoming-book-info .description {
   font-size: 15px;
-  color: var(--default-color);
+  color: var(--chocolate-suave);
   line-height: 1.6;
   margin-bottom: 25px;
 }

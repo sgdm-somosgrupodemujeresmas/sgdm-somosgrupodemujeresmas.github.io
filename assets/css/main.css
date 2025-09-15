@@ -811,6 +811,18 @@ section,
   margin-bottom: 30px;
 }
 
+/* Versión mobile */
+@media (max-width: 768px) {
+  .about .about-book-content ul {
+    text-align: center;           /* centra el texto */
+    padding-left: 0;              /* elimina indentación */
+  }
+
+  .about .about-book-content ul li {
+    justify-content: center;      /* centra el ícono con el texto */
+    text-align: center;
+  }
+}
 .about .about-book-content .highlights h3 {
   font-size: 20px;
   color: var(--heading-color);
@@ -2362,7 +2374,7 @@ section,
 
 .related-books .related-book-card .book-info .book-meta span {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--chocolate-suave), transparent 30%);
   display: flex;
   align-items: center;
 }

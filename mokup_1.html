@@ -21,7 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     /> -->
-     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Vendor CSS Files -->
     <link
@@ -37,6 +40,21 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "Course",
+            "name": "Taller Bienestar laboral",
+            "provider": { "@type": "Organization", "name": "SGM+" },
+            "audience": { "@type": "Audience", "audienceType": "Empresa" },
+            "timeRequired": "PT120M"
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body class="index-page">
@@ -109,51 +127,66 @@
 
     <main class="main">
       <!-- Hero Section -->
-      <section id="hero" class="hero section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-lg-5">
-              <div
-                class="book-hero-content"
-                data-aos="fade-up"
-                data-aos-delay="200"
+      <section id="hero" class="hero hero--full section">
+        <div class="container">
+          <div class="hero-content">
+            <span class="book-genre">Creciendo en comunidad</span>
+
+            <h1>
+              Acompañamiento emocional y talleres de fertilidad, bienestar y
+              crecimiento personal.
+            </h1>
+
+            <p class="book-subtitle">
+              Espacios de escucha y acción para <em>personas</em> (mujeres,
+              varones y no binarias) que buscan
+              <em>cuidar su salud emocional</em>,
+              <em>transitar la fertilidad</em> y crecer en comunidad.
+            </p>
+
+            <p class="hero-trust">
+              Desde 2017 · <strong>+1000</strong> personas acompañadas
+            </p>
+
+            <div class="hero-ctas">
+              <a
+                href="https://wa.me/5491165079540?text=Hola%20quiero%20más%20información"
+                class="btn-whatsapp"
+                ><i class="bi bi-whatsapp"></i> Consultar por WhatsApp</a
               >
-                <span class="book-genre">Creciendo en comunidad</span>
-                <h1>Somos Grupo de Mujeres +</h1>
-                <p class="book-subtitle">
-                  Un espacio para acompañarnos, inspirarnos y empoderarnos
-                  juntas.
-                </p>
-                <div class="author">
-                  <span>Por</span>
-                  <h3>Lorena Laserre y equipo SGM+</h3>
-                </div>
-                <p class="book-description">
-                  Creamos espacios de escucha, reflexión y acción para mujeres
-                  que quieren avanzar, sanar, compartir y transformar su
-                  realidad. Si estás lista para dar el primer paso, estás en el
-                  lugar correcto.
-                </p>
-                <div class="hero-cta">
-                  <a href="test.html" class="btn-primary">Quiero empezar</a>
-                  <a href="#excerpt" class="btn-outline">Conocé más</a>
-                </div>
-              </div>
+              <a href="#servicios" class="btn-outline"
+                >Conocé cómo trabajamos</a
+              >
             </div>
-            <div
-              class="col-lg-5 d-flex justify-content-center justify-content-lg-end"
-              data-aos="zoom-out"
-              data-aos-delay="300"
-            >
-              <div class="book-cover">
-                <img
-                  src="assets/img/book/book.png"
-                  alt="Book Cover"
-                  class="img-fluid"
-                />
-                <div class="book-shadow"></div>
-              </div>
-            </div>
+
+            <div class="hero-audiencia" role="tablist" aria-label="Selector de audiencia">
+  <a href="#servicios" 
+     class="audiencia-btn is-active" 
+     data-audiencia="paciente" 
+     role="tab" 
+     aria-selected="true">
+    <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+    <span>Quiero acompañamiento (Paciente)</span>
+  </a>
+
+  <a href="#servicios" 
+     class="audiencia-btn" 
+     data-audiencia="empresa" 
+     role="tab" 
+     aria-selected="false">
+    <i class="bi bi-building" aria-hidden="true"></i>
+    <span>Busco talleres para mi equipo (Empresa)</span>
+  </a>
+
+  <a href="#servicios" 
+     class="audiencia-btn" 
+     data-audiencia="profesional" 
+     role="tab" 
+     aria-selected="false">
+    <i class="bi bi-mortarboard" aria-hidden="true"></i>
+    <span>Soy profesional y quiero capacitarme</span>
+  </a>
+</div>
           </div>
         </div>
       </section>
@@ -396,6 +429,62 @@
         </div>
       </section>
       <!-- /Features Section -->
+
+      <section id="servicios" class="section servicios">
+        <div class="container">
+          <div class="section-title">
+            <h2>Servicios & Talleres</h2>
+            <p>Elegí tu perfil para ver contenidos diseñados para vos</p>
+          </div>
+
+          <!-- Selector de audiencia -->
+          <div
+            class="audiencia-switch"
+            role="tablist"
+            aria-label="Selector de audiencia"
+          >
+            <button
+              class="audiencia-btn is-active"
+              data-audiencia="paciente"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+              <span>Paciente</span>
+            </button>
+
+            <button
+              class="audiencia-btn"
+              data-audiencia="empresa"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="bi bi-building" aria-hidden="true"></i>
+              <span>Empresa</span>
+            </button>
+
+            <button
+              class="audiencia-btn"
+              data-audiencia="profesional"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="bi bi-mortarboard" aria-hidden="true"></i>
+              <span>Profesional</span>
+            </button>
+          </div>
+
+          <!-- Contenedor dinámico -->
+          <div id="servicios-grid" class="servicios-grid"></div>
+
+          <!-- CTA general -->
+          <div class="servicios-cta">
+            <a id="servicios-cta-btn" href="#contact" class="btn-primary"
+              >Consultar</a
+            >
+          </div>
+        </div>
+      </section>
 
       <!-- Excerpt Section -->
       <section id="excerpt" class="excerpt section">
@@ -1153,6 +1242,25 @@
                 </div>
                 <!-- End Faq item-->
 
+                <div class="faq-item">
+                  <h3>¿Tenés otra pregunta? Escribinos por WhatsApp</h3>
+                  <div class="faq-content">
+                    <p>
+                      Estamos para acompañarte. Podés mandarnos un mensaje
+                      directo por WhatsApp y te vamos a responder a la brevedad.
+                      <br /><br />
+                      📱
+                      <a
+                        href="https://wa.me/5491165079540?text=Hola%20quiero%20más%20información"
+                        target="_blank"
+                        rel="noopener"
+                        >Hablá con nuestro equipo</a
+                      >
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
                 <!-- <div class="faq-item">
                   <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
                   <div class="faq-content">
@@ -1354,7 +1462,10 @@
                     <div class="book-category">Edad: 3-5</div>
                   </div>
                   <div class="book-info">
-                    <h3>La osa Maia es mamá <br/> Simple donación</h3>
+                    <h3>
+                      La osa Maia es mamá <br />
+                      Simple donación
+                    </h3>
                     <div class="book-meta">
                       <span><i class="bi bi-calendar3"></i> Agosto 2025</span>
                       <span><i class="bi bi-star-fill"></i> 5.0</span>
@@ -1398,7 +1509,10 @@
                     <div class="book-category">Edad: 3-5</div>
                   </div>
                   <div class="book-info">
-                    <h3>La osa Maia es mamá <br/> Doble donación</h3>
+                    <h3>
+                      La osa Maia es mamá <br />
+                      Doble donación
+                    </h3>
                     <div class="book-meta">
                       <span><i class="bi bi-calendar3"></i> Agosto 2025</span>
                       <span><i class="bi bi-star-fill"></i> 5.0</span>
@@ -1443,7 +1557,10 @@
                     <div class="book-category">Edad: 3-5</div>
                   </div>
                   <div class="book-info">
-                    <h3>La pingüina Tina <br/> Edicion para colorear</h3>
+                    <h3>
+                      La pingüina Tina <br />
+                      Edicion para colorear
+                    </h3>
                     <div class="book-meta">
                       <span><i class="bi bi-calendar3"></i> Julio 2025</span>
                       <span><i class="bi bi-star-fill"></i> 4.9</span>
@@ -1484,7 +1601,10 @@
                     <div class="book-category">Edad: 3-5</div>
                   </div>
                   <div class="book-info">
-                    <h3>Como nació Inti <br/> Un cuento de gestión solidaria </h3>
+                    <h3>
+                      Como nació Inti <br />
+                      Un cuento de gestión solidaria
+                    </h3>
                     <div class="book-meta">
                       <span><i class="bi bi-calendar3"></i> Junio 2025</span>
                       <span><i class="bi bi-star-fill"></i> 4.8</span>
@@ -1529,7 +1649,10 @@
                     <div class="book-category">Familias y genero</div>
                   </div>
                   <div class="book-info">
-                    <h3>Mis mamas, <br/> un cuento de amor</h3>
+                    <h3>
+                      Mis mamas, <br />
+                      un cuento de amor
+                    </h3>
                     <div class="book-meta">
                       <span><i class="bi bi-calendar3"></i> Junio 2025</span>
                       <span><i class="bi bi-star-fill"></i> 4.8</span>
@@ -1568,7 +1691,10 @@
                     <div class="book-category">Familias y genero</div>
                   </div>
                   <div class="book-info">
-                    <h3>¿Cómo nacen <br/> los dinos?</h3>
+                    <h3>
+                      ¿Cómo nacen <br />
+                      los dinos?
+                    </h3>
                     <div class="book-meta">
                       <span><i class="bi bi-calendar3"></i> Junio 2025</span>
                       <span><i class="bi bi-star-fill"></i> 4.8</span>
@@ -1601,7 +1727,9 @@
             </div>
 
             <!-- bullets -->
-            <div class="swiper-pagination related-books-pagination mb-5 mt-5"></div>
+            <div
+              class="swiper-pagination related-books-pagination mb-5 mt-5"
+            ></div>
           </div>
 
           <!-- Próximamente (lo dejo fuera del carrusel, como bloque aparte) -->
@@ -1786,5 +1914,6 @@
     </script>
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/servicios.js"></script>
   </body>
 </html>

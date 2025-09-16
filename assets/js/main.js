@@ -152,20 +152,42 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
-  });
+window.addEventListener('load', function () {
+  if (!window.location.hash) return;
+
+  const raw = window.location.hash.slice(1); // "audiencia=paciente" o "servicios"
+  const byId = document.getElementById(raw);
+
+  if (byId) {
+    // Caso "#id" tradicional
+    smoothScroll(byId);
+    return;
+  }
+
+  // Caso "#clave=valor"
+  const params = new URLSearchParams(raw);
+  const aud = params.get('audiencia');
+  if (aud) {
+    // Activar UI según data-audiencia
+    document.querySelectorAll('[data-audiencia]').forEach(el => {
+      el.classList.toggle('is-active', el.dataset.audiencia === aud);
+    });
+
+    // Scrollear a una sección real (ajustá el id si corresponde)
+    const target = document.getElementById('servicios');
+    if (target) smoothScroll(target);
+  }
+});
+
+function smoothScroll(section) {
+  setTimeout(() => {
+    const scrollMarginTop = parseInt(getComputedStyle(section).scrollMarginTop) || 0;
+    window.scrollTo({
+      top: section.offsetTop - scrollMarginTop,
+      behavior: 'smooth'
+    });
+  }, 100);
+}
 
   /**
    * Navmenu Scrollspy

@@ -557,7 +557,7 @@ section,
   position: relative;
   overflow: hidden;
   padding: 120px 0 80px;
-  height: 100vh;
+  height: 90vh;
 }
 /* Etiqueta/chip arriba del título */
 .book-genre {

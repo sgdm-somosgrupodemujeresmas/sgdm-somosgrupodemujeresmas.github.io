@@ -106,4 +106,4 @@ buttons.forEach(b => b.addEventListener("click", () => render(b.dataset.audienci
 //   return (hashAud || searchAud || "paciente").toLowerCase();
 // }
 
-render(getAudFromURL());
+// render(getAudFromURL());

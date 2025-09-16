@@ -59,6 +59,30 @@ const grid = document.getElementById("servicios-grid");
 const buttons = document.querySelectorAll(".audiencia-btn");
 const ctaBtn = document.getElementById("servicios-cta-btn");
 
+/** Utilidades URL (sin provocar scroll) */
+function getAudFromURL() {
+  const url = new URL(location.href);
+
+  // Soporte legacy: migrar #audiencia=... a ?audiencia=...
+  if (url.hash.startsWith("#audiencia=")) {
+    const aud = url.hash.split("=")[1];
+    url.hash = ""; // quitar hash para evitar salto
+    url.searchParams.set("audiencia", aud);
+    history.replaceState(null, "", url);
+    return (aud || "paciente").toLowerCase();
+  }
+
+  const q = url.searchParams.get("audiencia");
+  return (q || "paciente").toLowerCase();
+}
+
+function setAudInURL(aud) {
+  const url = new URL(location.href);
+  url.searchParams.set("audiencia", aud);
+  url.hash = ""; // garantizamos sin hash
+  history.replaceState(null, "", url);
+}
+
 /** Render básico */
 function render(aud) {
   // estado visual
@@ -91,19 +115,15 @@ function render(aud) {
     grid.appendChild(card);
   });
 
-  // actualizar CTA para tracking / deep-link
-  ctaBtn.href = `#contact`;
-  history.replaceState(null, "", `${location.pathname}${location.search ? "" : ""}#audiencia=${aud}`);
+  // CTA + URL sin hash (evita scroll)
+  ctaBtn.href = "#contact";
+  setAudInURL(aud);
 }
 
 /** Eventos */
-buttons.forEach(b => b.addEventListener("click", () => render(b.dataset.audiencia)));
+buttons.forEach(b =>
+  b.addEventListener("click", () => render(b.dataset.audiencia))
+);
 
-/** URL awareness (?audiencia=… o #audiencia=…) */
-// function getAudFromURL(){
-//   const hashAud = (location.hash.match(/audiencia=([a-z]+)/i)||[])[1];
-//   const searchAud = new URLSearchParams(location.search).get("audiencia");
-//   return (hashAud || searchAud || "paciente").toLowerCase();
-// }
-
-// render(getAudFromURL());
+/** Init (URL awareness) */
+render(getAudFromURL());

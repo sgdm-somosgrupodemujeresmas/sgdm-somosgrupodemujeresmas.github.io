@@ -1317,12 +1317,7 @@ section,
   color: var(--default-color);
   opacity: 0.9;
 }
-.audiencia-switch {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 10px 0 26px;
-}
+
 .audiencia-btn {
   font-family: var(--nav-font);
   background: color-mix(in srgb, var(--sgm-verde), transparent 80%);
@@ -1425,6 +1420,13 @@ section,
   transform: translateY(-2px);
 }
 
+.audiencia-switch {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0 26px;
+}
+
 .audiencia-switch .audiencia-btn {
   display: inline-flex; /* icono + texto en línea */
   align-items: center;
@@ -1435,6 +1437,21 @@ section,
 .audiencia-switch .audiencia-btn i {
   font-size: 1.1em; /* un toque más grande */
   line-height: 0;
+}
+
+@media (max-width: 576px) {
+  .audiencia-switch {
+    flex-direction: column; /* se apilan en columna */
+    align-items: center;
+    gap: 12px;
+  }
+
+  .audiencia-switch .audiencia-btn {
+    width: 100%;
+    max-width: 280px; /* opcional, para que no ocupen todo el ancho */
+    justify-content: center;
+    text-align: center;
+  }
 }
 /*--------------------------------------------------------------
 # Excerpt Section

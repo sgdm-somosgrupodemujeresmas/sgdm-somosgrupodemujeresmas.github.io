@@ -100,10 +100,10 @@ function render(aud) {
 buttons.forEach(b => b.addEventListener("click", () => render(b.dataset.audiencia)));
 
 /** URL awareness (?audiencia=… o #audiencia=…) */
-function getAudFromURL(){
-  const hashAud = (location.hash.match(/audiencia=([a-z]+)/i)||[])[1];
-  const searchAud = new URLSearchParams(location.search).get("audiencia");
-  return (hashAud || searchAud || "paciente").toLowerCase();
-}
+// function getAudFromURL(){
+//   const hashAud = (location.hash.match(/audiencia=([a-z]+)/i)||[])[1];
+//   const searchAud = new URLSearchParams(location.search).get("audiencia");
+//   return (hashAud || searchAud || "paciente").toLowerCase();
+// }
 
 render(getAudFromURL());

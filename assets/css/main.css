@@ -884,7 +884,8 @@ section,
 
 .about .about-book-img .book-details .detail-item div span {
   font-size: 12px;
-  color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  /* color: color-mix(in srgb, var(--accent-color), transparent 30%); */
+  color: var(--accent-color);
   margin-bottom: 2px;
 }
 

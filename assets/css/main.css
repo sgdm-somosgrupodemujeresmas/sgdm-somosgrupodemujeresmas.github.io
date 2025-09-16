@@ -554,7 +554,7 @@ section,
   background-color: color-mix(in srgb, var(--sgm-verde), transparent 90%);
   border: 1px solid var(--sgm-verde);
   color: #3b2e23;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 /* Título, subtítulo, autor y descripción */
 .hero .book-hero-content h1 {
@@ -576,9 +576,9 @@ section,
   gap: 8px;
   margin-bottom: 24px;
 }
-.hero .book-hero-content .author span { 
-  font-size: 16px; 
-  color: var(--default-color); 
+.hero .book-hero-content .author span {
+  font-size: 16px;
+  color: var(--default-color);
 }
 .hero .book-hero-content .author h3 {
   margin: 0;
@@ -607,7 +607,7 @@ section,
   font-weight: 500;
   background-color: var(--accent-color);
   color: var(--contrast-color);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .hero .book-hero-content .hero-cta .btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
@@ -623,7 +623,7 @@ section,
   border: 2px solid var(--sgm-piel);
   background-color: color-mix(in srgb, var(--sgm-piel), transparent 88%);
   color: #3b2e23;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .hero .book-hero-content .hero-cta .btn-outline:hover {
   background-color: var(--sgm-piel);
@@ -635,7 +635,7 @@ section,
   position: relative;
   max-width: 400px;
   transform: rotate(-3deg);
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 .hero .book-cover .book-shadow {
   position: absolute;
@@ -643,28 +643,53 @@ section,
   bottom: -20px;
   width: 80%;
   height: 20px;
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 0, 0, 0.3);
   filter: blur(15px);
   border-radius: 50%;
   z-index: -1;
 }
-.hero .book-cover:hover { transform: rotate(0) translateY(-10px); }
-.hero .book-cover:hover img { filter: brightness(1.05); transition: .3s; }
+.hero .book-cover:hover {
+  transform: rotate(0) translateY(-10px);
+}
+.hero .book-cover:hover img {
+  filter: brightness(1.05);
+  transition: 0.3s;
+}
 
 /* ===== RESPONSIVE (hero base) ===== */
 @media (max-width: 992px) {
-  .hero { padding: 100px 0 60px; }
-  .hero .book-hero-content h1 { font-size: 36px; }
-  .hero .book-cover { margin-top: 40px; transform: rotate(0); }
-  .hero .book-cover:hover { transform: translateY(-10px); }
+  .hero {
+    padding: 100px 0 60px;
+  }
+  .hero .book-hero-content h1 {
+    font-size: 36px;
+  }
+  .hero .book-cover {
+    margin-top: 40px;
+    transform: rotate(0);
+  }
+  .hero .book-cover:hover {
+    transform: translateY(-10px);
+  }
 }
 @media (max-width: 768px) {
-  .hero { text-align: center; padding: 80px 0 40px; }
-  .hero .book-hero-content h1 { font-size: 32px; }
-  .hero .book-hero-content .book-subtitle { font-size: 18px; }
+  .hero {
+    text-align: center;
+    padding: 80px 0 40px;
+  }
+  .hero .book-hero-content h1 {
+    font-size: 32px;
+  }
+  .hero .book-hero-content .book-subtitle {
+    font-size: 18px;
+  }
   .hero .book-hero-content .author,
-  .hero .book-hero-content .hero-cta { justify-content: center; }
-  .hero .book-cover { margin: 40px auto 0; }
+  .hero .book-hero-content .hero-cta {
+    justify-content: center;
+  }
+  .hero .book-cover {
+    margin: 40px auto 0;
+  }
 }
 
 /* ===== HERO FULL-WIDTH (sin imagen, más aire y halos) ===== */
@@ -677,17 +702,25 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(900px 450px at 18% 28%,
-      color-mix(in srgb, var(--surface-color), transparent 78%), transparent 72%)
-    ,
-    radial-gradient(700px 380px at 82% 75%,
-      color-mix(in srgb, var(--accent-color), transparent 90%), transparent 72%);
+  background: radial-gradient(
+      900px 450px at 18% 28%,
+      color-mix(in srgb, var(--surface-color), transparent 78%),
+      transparent 72%
+    ),
+    radial-gradient(
+      700px 380px at 82% 75%,
+      color-mix(in srgb, var(--accent-color), transparent 90%),
+      transparent 72%
+    );
   pointer-events: none;
 }
-.hero--full .container { max-width: 1080px; }
+.hero--full .container {
+  max-width: 1080px;
+}
 
-.hero-content { text-align: left; }
+.hero-content {
+  text-align: left;
+}
 
 .hero--full h1 {
   margin: 16px 0 12px;
@@ -716,8 +749,12 @@ section,
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
-.btn-whatsapp i { margin-right: 6px; }
-.btn-whatsapp { color: var(--sgm-verde); }
+.btn-whatsapp i {
+  margin-right: 6px;
+}
+.btn-whatsapp {
+  color: var(--sgm-verde);
+}
 
 /* Tarjetas de audiencia (fila/auto-grid) */
 .hero-audiencia {
@@ -737,19 +774,23 @@ section,
   color: var(--default-color);
   background: transparent;
   border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  box-shadow: 0 6px 18px rgba(0,0,0,.04);
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-.aud-card i { font-size: 18px; }
+.aud-card i {
+  font-size: 18px;
+}
 .aud-card:hover {
   transform: translateY(-2px);
   border-color: var(--sgm-verde);
   background-color: var(--sgm-verde);
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Si hubiera bloque de libro en el DOM, se oculta en este layout */
-.hero--full .book-cover { display: none !important; }
+.hero--full .book-cover {
+  display: none !important;
+}
 
 .audiencia-btn {
   display: inline-flex;
@@ -794,7 +835,6 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about {
-  padding: 80px 0;
   overflow: hidden;
 }
 
@@ -823,7 +863,9 @@ section,
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
-
+.about-book-content > p:first-of-type {
+  color: color-mix(in srgb, var(--default-color), #000 10%);
+}
 .about .about-book-img .book-details .detail-item {
   display: flex;
   align-items: center;
@@ -879,8 +921,9 @@ section,
 }
 
 .about .about-book-content .book-category span {
-  font-size: 14px;
-  color: var(--accent-color);
+  font-size: 16px;
+  color: var(--sgm-verde);
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -934,7 +977,7 @@ section,
 }
 
 .about .about-book-content .highlights ul li i {
-  color: var(--accent-color);
+  color: var(--sgm-verde);
   font-size: 20px;
   flex-shrink: 0;
 }
@@ -961,12 +1004,22 @@ section,
 }
 
 .about .about-book-content .about-book-cta:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, var(--accent-color), var(--sgm-verde) 20%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   transform: translateY(-3px);
 }
 
 .about .about-book-content .about-book-cta:hover i {
   transform: translateX(5px);
+}
+
+.link-muted {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  padding-left: 20px;
+}
+.link-muted:hover {
+  color: var(--sgm-verde);
+  text-decoration: underline;
 }
 
 @media (max-width: 992px) {
@@ -976,6 +1029,9 @@ section,
 }
 
 @media (max-width: 768px) {
+  .link-muted {
+    padding-left: 0;
+  }
   .about .about-book-content {
     text-align: center;
     margin-top: 20px;
@@ -987,6 +1043,86 @@ section,
 
   .about .about-book-content .highlights ul li {
     text-align: left;
+  }
+}
+
+/* --- Ajuste de espaciado adaptable en el bloque de highlights --- */
+.about .about-book-content .highlights {
+  /* Suaviza el salto entre párrafos y el checklist en distintos tamaños */
+  margin-top: clamp(16px, 2vw, 30px);
+  margin-bottom: clamp(16px, 2vw, 30px);
+}
+
+/* --- Checklist: alineación perfecta icono + texto (override a flex) --- */
+.about .about-book-content .highlights ul li {
+  display: grid;                      /* sobrescribe el flex anterior */
+  grid-template-columns: 22px 1fr;    /* columna fija para el ícono */
+  align-items: start;
+  gap: 10px;
+}
+.about .about-book-content .highlights ul li i {
+  font-size: 18px;                    /* coherente con el tamaño del texto */
+  margin-top: 2px;                    /* alinea verticalmente con el texto */
+}
+
+/* --- CTA principal: foco visible y micro feedback accesible --- */
+.about .about-book-content .about-book-cta {
+  display: inline-grid;               /* mejor alineación ícono + texto */
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 8px;
+}
+.about .about-book-content .about-book-cta:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), white 30%);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+/* --- Link secundario: foco/hover más claros --- */
+.link-muted {
+  text-decoration: none;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+.link-muted:hover,
+.link-muted:focus-visible {
+  color: var(--sgm-verde);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* --- Tarjeta de métricas sobre la imagen: mejor en mobile --- */
+@media (max-width: 576px) {
+  .about .about-book-img .book-details {
+    position: static !important;  /* baja debajo de la imagen */
+    margin-top: 12px;
+    backdrop-filter: none;        /* evita difuminado pesado en móviles */
+    background: color-mix(in srgb, var(--surface-color), transparent 10%);
+    border-radius: 10px;
+  }
+  .about .about-book-img {
+    transform: none !important;   /* evita “salto” por hover en táctiles */
+  }
+}
+
+/* --- Menos movimiento para quien lo prefiera --- */
+@media (prefers-reduced-motion: reduce) {
+  .about .about-book-img,
+  .about .about-book-content .about-book-cta,
+  .about .about-book-content .about-book-cta i {
+    transition: none !important;
+  }
+  .about .about-book-content .about-book-cta:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* --- En dispositivos táctiles, no “levantar” tanto la imagen al hover --- */
+@media (pointer: coarse) {
+  .about .about-book-img:hover {
+    transform: translateY(-4px);
   }
 }
 

@@ -24,7 +24,7 @@
   --blanco-hueso: #faf8f6;
 
   /* BASE */
-  --background-color: var(--marron-claro); /* #a98274 */
+  --background-color: var(--chocolate-suave); /* #a98274 */
   --surface-color: var(--blanco-hueso); /* #faf8f6 */
   --default-color: var(--blanco-hueso); /* texto sobre fondo */
   --heading-color: var(--blanco-hueso); /* #f4e2de */
@@ -1816,60 +1816,6 @@ section,
   overflow: hidden;
 }
 
-.testimonials .critic-reviews {
-  margin-bottom: 60px;
-}
-
-.testimonials .critic-reviews .critic-review {
-  background-color: var(--surface-color);
-  padding: 30px;
-  border-radius: 15px;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-.testimonials .critic-reviews .critic-review .review-quote {
-  position: absolute;
-  top: -20px;
-  left: 20px;
-  font-size: 80px;
-  font-family: Georgia, serif;
-  color: var(--accent-color);
-  opacity: 0.2;
-  line-height: 1;
-}
-
-.testimonials .critic-reviews .critic-review .stars {
-  margin-bottom: 15px;
-  display: flex;
-}
-
-.testimonials .critic-reviews .critic-review .stars i {
-  color: #ffd700;
-  margin-right: 3px;
-  font-size: 18px;
-}
-
-.testimonials .critic-reviews .critic-review p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: var(--accent-color);
-  font-style: italic;
-}
-
-.testimonials .critic-reviews .critic-review .critic-info .critic-name {
-  font-weight: 600;
-  color: var(--marron-claro);
-  font-size: 16px;
-}
-
-.testimonials .critic-reviews .critic-review:hover {
-  transform: translateY(-10px);
-}
-
 .testimonials .testimonials-container {
   margin-bottom: 60px;
 }
@@ -1881,7 +1827,7 @@ section,
 
 .testimonials .testimonials-container .testimonial-item {
   background-color: var(--surface-color);
-  padding: 30px;
+  /* padding: 30px; */
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   height: 100%;
@@ -2055,6 +2001,10 @@ section,
   }
 }
 
+.testimonial-image img {
+  border-radius: 12px; /* bordes redondeados estilo chat */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra leve */
+}
 /*--------------------------------------------------------------
 # Purchase Section
 --------------------------------------------------------------*/
@@ -3031,8 +2981,8 @@ section,
 .call-to-action .cta-wrapper {
   background: linear-gradient(
     to right,
-    var(--accent-color),
-    color-mix(in srgb, var(--accent-color), transparent 30%)
+    var(--sgm-verde),
+    color-mix(in srgb, var(--bg-brown), transparent 30%)
   );
   border-radius: 15px;
   padding: 50px;

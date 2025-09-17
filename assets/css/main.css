@@ -1158,7 +1158,7 @@ section,
 .features.section{
   padding-top: clamp(48px, 6vw, 88px);
   padding-bottom: clamp(48px, 6vw, 88px);
-  background: var(--bg-brown);
+  background: var(--ink-strong);
   color: var(--ink);
 }
 

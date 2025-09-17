@@ -24,7 +24,7 @@
   --blanco-hueso: #faf8f6;
 
   /* BASE */
-  --background-color: var(--chocolate-suave); /* #a98274 */
+  --background-color: var(--ink-strong); /* #a98274 */
   --surface-color: var(--blanco-hueso); /* #faf8f6 */
   --default-color: var(--blanco-hueso); /* texto sobre fondo */
   --heading-color: var(--blanco-hueso); /* #f4e2de */

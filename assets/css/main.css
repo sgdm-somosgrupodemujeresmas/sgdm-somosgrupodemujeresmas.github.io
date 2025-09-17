@@ -50,20 +50,19 @@
 }
 
 /* Paleta accesible (ajusta si ya tenés variables) */
-:root{
-  --bg-brown: #9f7468;         /* fondo */
-  --card-bg: #fbf6f4;          /* tarjetas (alto contraste sobre fondo) */
-  --ink-strong: #5a3f37;       /* textos principales */
-  --ink: #6b4e45;              /* textos secundarios */
-  --accent: #a06d5c;           /* acento cálido */
+:root {
+  --bg-brown: #9f7468; /* fondo */
+  --card-bg: #fbf6f4; /* tarjetas (alto contraste sobre fondo) */
+  --ink-strong: #5a3f37; /* textos principales */
+  --ink: #6b4e45; /* textos secundarios */
+  --accent: #a06d5c; /* acento cálido */
   --accent-strong: #7f5447;
-  --token-bg: #efe7e3;         /* círculo icono */
-  --shadow: 0 10px 25px rgba(0,0,0,.08);
-  --shadow-hover: 0 16px 40px rgba(0,0,0,.14);
+  --token-bg: #efe7e3; /* círculo icono */
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.14);
   --radius-xl: 16px;
   --radius-token: 999px;
 }
-
 
 /* Smooth scroll */
 :root {
@@ -553,299 +552,229 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/* ====== HERO: Layout seguro y legible ====== */
 .hero {
   position: relative;
-  overflow: hidden;
-  padding: 120px 0 80px;
-  height: 90vh;
-}
-/* Etiqueta/chip arriba del título */
-.book-genre {
-  display: inline-block;
-  padding: 6px 14px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 30px;
-  background-color: color-mix(in srgb, var(--sgm-verde), transparent 90%);
-  border: 1px solid var(--sgm-verde);
-  color: #3b2e23;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-/* Título, subtítulo, autor y descripción */
-.hero .book-hero-content h1 {
-  margin-bottom: 16px;
-  line-height: 1.2;
-  font-weight: 700;
-  font-size: 48px;
-  color: var(--blanco-hueso);
-}
-.hero .book-hero-content .book-subtitle {
-  margin-bottom: 24px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #fffdfc;
-}
-.hero .book-hero-content .author {
-  display: flex;
+  min-height: calc(
+    100vh - var(--header-h, 72px)
+  ); /* ajusta si tu header mide distinto */
+  padding-top: clamp(24px, 4vw, 48px);
+  display: grid;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.hero .book-hero-content .author span {
-  font-size: 16px;
-  color: var(--default-color);
-}
-.hero .book-hero-content .author h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--sgm-piel);
-}
-.hero .book-hero-content .book-description {
-  margin-bottom: 32px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--default-color);
-}
-/* CTAs */
-.hero .book-hero-content .hero-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  color: #fff;
+  background: transparent;
 }
 
-.hero .book-hero-content .hero-cta .btn-primary {
-  display: grid;
-  place-items: center;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-weight: 500;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transition: all 0.3s ease;
-}
-.hero .book-hero-content .hero-cta .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  transform: translateY(-3px);
+/* Evita solaparse con header fijo: define su altura una vez y reaprovechala */
+.header {
+  --header-h: 72px;
 }
 
-.hero .book-hero-content .hero-cta .btn-outline {
-  display: grid;
-  place-items: center;
-  padding: 12px 30px;
-  border-radius: 50px;
-  font-weight: 500;
-  border: 2px solid var(--sgm-piel);
-  background-color: color-mix(in srgb, var(--sgm-piel), transparent 88%);
-  color: #3b2e23;
-  transition: all 0.3s ease;
+/* Contenedor de contenido: ancho óptimo y respiración */
+.hero .container {
+  max-width: 1100px;
 }
-.hero .book-hero-content .hero-cta .btn-outline:hover {
-  background-color: var(--sgm-piel);
-  transform: translateY(-3px);
-}
-
-/* Imagen del libro (si la usás en otra vista) */
-.hero .book-cover {
-  position: relative;
-  max-width: 400px;
-  transform: rotate(-3deg);
-  transition: all 0.5s ease;
-}
-.hero .book-cover .book-shadow {
-  position: absolute;
-  left: 10%;
-  bottom: -20px;
-  width: 80%;
-  height: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  filter: blur(15px);
-  border-radius: 50%;
-  z-index: -1;
-}
-.hero .book-cover:hover {
-  transform: rotate(0) translateY(-10px);
-}
-.hero .book-cover:hover img {
-  filter: brightness(1.05);
-  transition: 0.3s;
-}
-
-/* ===== RESPONSIVE (hero base) ===== */
-@media (max-width: 992px) {
-  .hero {
-    padding: 100px 0 60px;
-  }
-  .hero .book-hero-content h1 {
-    font-size: 36px;
-  }
-  .hero .book-cover {
-    margin-top: 40px;
-    transform: rotate(0);
-  }
-  .hero .book-cover:hover {
-    transform: translateY(-10px);
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    text-align: center;
-    padding: 80px 0 40px;
-  }
-  .hero .book-hero-content h1 {
-    font-size: 32px;
-  }
-  .hero .book-hero-content .book-subtitle {
-    font-size: 18px;
-  }
-  .hero .book-hero-content .author,
-  .hero .book-hero-content .hero-cta {
-    justify-content: center;
-  }
-  .hero .book-cover {
-    margin: 40px auto 0;
-  }
-}
-
-/* ===== HERO FULL-WIDTH (sin imagen, más aire y halos) ===== */
-.hero--full {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(72px, 8vw, 120px) 0 clamp(48px, 6vw, 96px);
-}
-.hero--full::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-      900px 450px at 18% 28%,
-      color-mix(in srgb, var(--surface-color), transparent 78%),
-      transparent 72%
-    ),
-    radial-gradient(
-      700px 380px at 82% 75%,
-      color-mix(in srgb, var(--accent-color), transparent 90%),
-      transparent 72%
-    );
-  pointer-events: none;
-}
-.hero--full .container {
-  max-width: 1080px;
-}
-
 .hero-content {
-  text-align: left;
+  position: relative;
+  z-index: 2;
+  max-width: 720px; /* línea de lectura */
+  padding: clamp(12px, 2vw, 18px) clamp(14px, 3vw, 22px);
+  border-radius: 16px;
+  /* Glass suave para microcontraste sin tapar el fondo */
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
 }
 
-.hero--full h1 {
-  margin: 16px 0 12px;
-  font-family: var(--heading-font);
-  font-weight: 700;
-  line-height: 1.15;
-  font-size: clamp(28px, 5.2vw, 56px);
-  color: var(--heading-color);
+/* Títulos y textos: jerarquía + ajuste fino de color */
+.hero h1 {
+  margin: 10px 0 12px;
+  line-height: 1.12;
+  font-size: clamp(28px, 5vw, 56px);
+  letter-spacing: 0.2px;
 }
-.hero--full .book-subtitle {
-  margin-bottom: 10px;
-  max-width: 62ch;
-  font-size: clamp(16px, 2.1vw, 19px);
-  color: color-mix(in srgb, var(--default-color), transparent 8%);
+.book-subtitle {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.92);
 }
 .hero-trust {
-  margin: 8px 0 22px;
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin: 6px 0 18px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-/* Botones principales en el hero full */
+/* Overlay adaptativo (más oscuro en móviles para contraste) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.55) 80%
+  );
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.65) 85%
+    );
+  }
+}
+
+/* ====== Swiper (fondo) ====== */
+.hero-swiper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+  transition: transform 10s linear, filter 0.8s ease;
+}
+/* Parallax sutil por slide para dar vida sin marear */
+.hero-swiper .swiper-slide-active .slide-bg {
+  transform: scale(1.06);
+}
+
+/* ====== Dots ====== */
+.hero-pagination.swiper-pagination-bullets {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+.hero-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.65);
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s;
+}
+.hero-pagination .swiper-pagination-bullet-active {
+  background: #fff;
+  transform: scale(1.25);
+}
+
+/* En mobile, movemos los dots abajo para no tapar texto */
+@media (max-width: 576px) {
+  .hero-pagination.swiper-pagination-bullets {
+    right: 50%;
+    transform: translate(50%, 0);
+    bottom: 10px;
+    top: auto;
+    flex-direction: row;
+    gap: 8px;
+  }
+}
+
+/* ====== CTAs ====== */
 .hero-ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin: 10px 0 8px;
 }
-.btn-whatsapp i {
-  margin-right: 6px;
-}
-.btn-whatsapp {
-  color: var(--sgm-verde);
-}
-
-/* Tarjetas de audiencia (fila/auto-grid) */
-.hero-audiencia {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
-  margin-top: 8px;
-}
-.aud-card {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  font-weight: 600;
-  color: var(--default-color);
-  background: transparent;
-  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.aud-card i {
-  font-size: 18px;
-}
-.aud-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--sgm-verde);
-  background-color: var(--sgm-verde);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-}
-
-/* Si hubiera bloque de libro en el DOM, se oculta en este layout */
-.hero--full .book-cover {
-  display: none !important;
-}
-
-.audiencia-btn {
+.hero-ctas .btn-whatsapp,
+.hero-ctas .btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 10px 18px;
   border-radius: 999px;
-  border: 1.5px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  background: transparent;
-  color: var(--default-color);
   font-weight: 600;
-  text-decoration: none; /* elimina subrayado en <a> */
-  transition: all 0.25s ease;
-  cursor: pointer;
-  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+}
+.hero-ctas .btn-whatsapp {
+  background: rgba(255, 255, 255, 0.12);
+  color: #d9fdd3;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.hero-ctas .btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.hero-ctas .btn-whatsapp:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.hero-ctas .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.audiencia-btn i {
-  font-size: 18px;
-}
-
-.audiencia-btn:hover {
-  border-color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 90%);
-  transform: translateY(-2px);
-}
-
-.audiencia-btn.is-active {
-  background: var(--sgm-verde);
-  color: #2a2a2a;
-  border-color: var(--sgm-verde);
-}
-
-/* Hero layout (grilla adaptable) */
+/* ====== Audiencias ====== */
 .hero-audiencia {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.audiencia-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+.audiencia-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: var(--blanco-hueso);
+}
+.audiencia-btn.is-active {
+  background: #bcc0b0;
+  color: #2a2a2a;
+  border-color: #bcc0b0;
+}
+
+/* ====== Mobile ====== */
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    padding: 72px 0 40px;
+  }
+  .hero-content {
+    margin-inline: auto;
+  }
+  .hero-ctas,
+  .hero-audiencia {
+    justify-content: center;
+  }
+}
+
+/* ====== Menos movimiento ====== */
+@media (prefers-reduced-motion: reduce) {
+  .slide-bg {
+    transition: none !important;
+    transform: none !important;
+  }
 }
 /*--------------------------------------------------------------
 # About Section
@@ -1063,10 +992,10 @@ section,
   }
   .about .about-book-content .highlights ul {
     display: flex;
-    flex-direction: column;   
-    align-items: center;      
-    text-align: center;       
-    padding-left: 0;          
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
   }
 }
 
@@ -1079,19 +1008,19 @@ section,
 
 /* --- Checklist: alineación perfecta icono + texto (override a flex) --- */
 .about .about-book-content .highlights ul li {
-  display: grid;                      /* sobrescribe el flex anterior */
-  grid-template-columns: 22px 1fr;    /* columna fija para el ícono */
+  display: grid; /* sobrescribe el flex anterior */
+  grid-template-columns: 22px 1fr; /* columna fija para el ícono */
   align-items: start;
   gap: 10px;
 }
 .about .about-book-content .highlights ul li i {
-  font-size: 18px;                    /* coherente con el tamaño del texto */
-  margin-top: 2px;                    /* alinea verticalmente con el texto */
+  font-size: 18px; /* coherente con el tamaño del texto */
+  margin-top: 2px; /* alinea verticalmente con el texto */
 }
 
 /* --- CTA principal: foco visible y micro feedback accesible --- */
 .about .about-book-content .about-book-cta {
-  display: inline-grid;               /* mejor alineación ícono + texto */
+  display: inline-grid; /* mejor alineación ícono + texto */
   grid-auto-flow: column;
   align-items: center;
   gap: 8px;
@@ -1107,7 +1036,7 @@ section,
   text-decoration: none;
   text-decoration-color: currentColor;
   text-underline-offset: 2px;
-  transition: color .2s ease, text-decoration-color .2s ease;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 .link-muted:hover,
 .link-muted:focus-visible {
@@ -1119,14 +1048,14 @@ section,
 /* --- Tarjeta de métricas sobre la imagen: mejor en mobile --- */
 @media (max-width: 576px) {
   .about .about-book-img .book-details {
-    position: static !important;  /* baja debajo de la imagen */
+    position: static !important; /* baja debajo de la imagen */
     margin-top: 12px;
-    backdrop-filter: none;        /* evita difuminado pesado en móviles */
+    backdrop-filter: none; /* evita difuminado pesado en móviles */
     background: color-mix(in srgb, var(--surface-color), transparent 10%);
     border-radius: 10px;
   }
   .about .about-book-img {
-    transform: none !important;   /* evita “salto” por hover en táctiles */
+    transform: none !important; /* evita “salto” por hover en táctiles */
   }
 }
 
@@ -1155,132 +1084,142 @@ section,
 --------------------------------------------------------------*/
 
 /* Separación vertical de la sección */
-.features.section{
+.features.section {
   padding-top: clamp(48px, 6vw, 88px);
   padding-bottom: clamp(48px, 6vw, 88px);
   background: var(--ink-strong);
   color: var(--ink);
 }
 
-.features .section-title h2{
+.features .section-title h2 {
   color: #fff;
-  letter-spacing: .2px;
-  margin-bottom: .5rem;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.5rem;
 }
-.features .section-title p{
+.features .section-title p {
   color: #f3e9e6;
   max-width: 52ch;
   margin-inline: auto;
 }
 
 /* Card */
-.feature-card{
+.feature-card {
   background: var(--card-bg);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
   padding: 24px 22px;
   height: 100%;
-  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
   outline: none;
 }
 .feature-card:hover,
-.feature-card:focus-visible{
+.feature-card:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
   background-color: #fff;
 }
-.feature-card:focus-visible{
+.feature-card:focus-visible {
   /* foco accesible */
-  box-shadow: 0 0 0 3px rgba(255,255,255,.9), 0 0 0 6px var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 0 6px var(--accent);
 }
 
 /* Icono circular */
-.feature-icon{
-  width: 56px; height: 56px;
+.feature-icon {
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-token);
-  display: grid; place-items: center;
+  display: grid;
+  place-items: center;
   background: var(--token-bg);
   margin-bottom: 14px;
-  transition: background-color .25s ease, transform .25s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 .feature-card:hover .feature-icon,
-.feature-card:focus-visible .feature-icon{
+.feature-card:focus-visible .feature-icon {
   background: #fff2ee;
   transform: scale(1.04);
 }
-.feature-icon i{
+.feature-icon i {
   font-size: 22px;
   color: var(--accent-strong);
 }
 
 /* Tipografía */
-.feature-card h3{
+.feature-card h3 {
   color: var(--ink-strong);
   font-weight: 600;
   margin: 6px 0 8px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
-.feature-card p{
+.feature-card p {
   margin: 0;
   line-height: 1.6;
   color: var(--ink);
 }
 
 /* Steps / Chapters */
-.feature-chapters{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
+.feature-chapters {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-xl);
   padding: clamp(16px, 3vw, 28px);
   color: #fff;
 }
-.feature-chapters h3{
+.feature-chapters h3 {
   margin-bottom: 16px;
   color: #fff;
 }
-.chapters-grid{
+.chapters-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: clamp(12px, 2vw, 20px);
 }
-.chapter-item{
-  background: rgba(255,255,255,.12);
+.chapter-item {
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 16px 14px;
   text-align: left;
-  transition: transform .2s ease, background-color .2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
-.chapter-item:hover{ transform: translateY(-3px); background: rgba(255,255,255,.16); }
-.chapter-number{
+.chapter-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.16);
+}
+.chapter-number {
   display: inline-block;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
-  opacity: .9;
+  opacity: 0.9;
   margin-bottom: 6px;
 }
-.chapter-item h4{
+.chapter-item h4 {
   color: #fff;
   font-size: 1.05rem;
   margin: 4px 0 6px;
 }
-.chapter-item p{
+.chapter-item p {
   color: #f4e9e6;
   margin: 0;
 }
 
 /* Responsive */
-@media (max-width: 991.98px){
-  .chapters-grid{ grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 991.98px) {
+  .chapters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-@media (max-width: 575.98px){
-  .chapters-grid{ grid-template-columns: 1fr; }
+@media (max-width: 575.98px) {
+  .chapters-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Respeto accesibilidad de movimiento */
-@media (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce) {
   .feature-card,
   .feature-icon,
-  .chapter-item{
+  .chapter-item {
     transition: none !important;
   }
 }
@@ -1296,7 +1235,7 @@ section,
   font-family: var(--nav-font);
   background: color-mix(in srgb, var(--sgm-verde), transparent 80%);
   border: 1px solid var(--sgm-verde);
-  color: #3b2e23;
+  color: var(--blanco-hueso);
   padding: 10px 16px;
   border-radius: 999px;
   cursor: pointer;
@@ -2003,7 +1942,7 @@ section,
 
 .testimonial-image img {
   border-radius: 12px; /* bordes redondeados estilo chat */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra leve */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra leve */
 }
 /*--------------------------------------------------------------
 # Purchase Section

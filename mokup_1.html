@@ -224,9 +224,7 @@
               >
                 <i class="bi bi-whatsapp"></i> Consultar por WhatsApp
               </a>
-              <a href="#servicios" class="btn-outline"
-                >Conocé cómo trabajamos</a
-              >
+              <a href="#features" class="btn-outline">Conocé cómo trabajamos</a>
             </div>
 
             <div
@@ -1432,60 +1430,99 @@
                 >
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <label for="name">Tu Nombre</label>
+                      <label for="name">Nombre completo *</label>
                       <input
                         type="text"
                         name="name"
                         class="form-control"
                         id="name"
-                        placeholder="John Doe"
-                        required=""
+                        placeholder="Ej: Ana Rodríguez"
+                        required
                       />
                     </div>
                     <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <label for="email">Tu Email</label>
+                      <label for="email">Correo electrónico *</label>
                       <input
                         type="email"
                         class="form-control"
                         name="email"
                         id="email"
-                        placeholder="john@example.com"
-                        required=""
+                        placeholder="ejemplo@mail.com"
+                        required
                       />
                     </div>
                   </div>
-                  <div class="form-group mt-3">
-                    <label for="subject">Asunto</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="subject"
-                      id="subject"
-                      placeholder="I loved your book!"
-                      required=""
-                    />
-                  </div>
-                  <div class="form-group mt-3">
-                    <label for="message">Mensaje</label>
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="7"
-                      placeholder="Your message here..."
-                      required=""
-                    ></textarea>
-                  </div>
 
-                  <div class="my-3">
-                    <div class="loading">Enviando</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      ¡Tu mensaje ha sido enviado! Gracias por escribirnos.
+                  <div class="row mt-3">
+                    <div class="col-md-6 form-group">
+                      <label for="phone">Teléfono (opcional)</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        name="phone"
+                        id="phone"
+                        placeholder="+54 11 1234 5678"
+                      />
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="subject">Motivo de tu consulta *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="subject"
+                        id="subject"
+                        placeholder="Ej: Quiero más información sobre los talleres"
+                        required
+                      />
                     </div>
                   </div>
 
-                  <div class="text-center">
-                    <button type="submit">Enviar Mensaje</button>
+                  <div class="form-group mt-3">
+                    <label for="message">Tu mensaje *</label>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      id="message"
+                      rows="6"
+                      placeholder="Contanos en qué podemos ayudarte..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <!-- Feedback -->
+                  <div class="my-3">
+                    <div class="loading">Enviando tu mensaje...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      ¡Gracias por escribirnos! Te responderemos a la brevedad.
+                    </div>
+                  </div>
+
+                  <!-- Consentimiento -->
+                  <div class="form-group mt-3">
+                    <!-- <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="privacy"
+                        required
+                      />
+                      <label
+                        class="form-check-label"
+                        for="privacy"
+                        style="color: #5f4b3b"
+                      >
+                        Acepto que mis datos sean utilizados para responder a mi
+                        consulta, según la
+                        <a href="privacidad.html" target="_blank"
+                          >política de privacidad</a
+                        >.
+                      </label>
+                    </div> -->
+                  </div>
+
+                  <div class="text-center mt-3">
+                    <button type="submit">Enviar mensaje</button>
                   </div>
                 </form>
               </div>

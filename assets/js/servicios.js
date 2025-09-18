@@ -1,58 +1,99 @@
 const DATA_SERVICIOS = [
+  // ——— Pacientes ———
   {
     titulo: "Sesión individual",
     audiencia: ["paciente"],
     duracion: "60 min",
-    formato: "Online/Presencial",
-    descripcion: "Espacio de escucha y acompañamiento para trabajar objetivos personales.",
-    url: "#contact",
-    brochure: null
+    formato: "Online / Presencial",
+    descripcion:
+      "Acompañamiento clínico para procesar emociones, tomar decisiones y trabajar objetivos personales.",
+    url: "#contacto",
+    brochure: null,
   },
   {
-    titulo: "Círculo de mujeres",
+    titulo: "Círculo de mujeres (grupos de apoyo)",
     audiencia: ["paciente"],
-    duracion: "4 encuentros",
-    formato: "Grupo",
-    descripcion: "Proceso grupal de reflexión y acción para transformar tu realidad.",
-    url: "#contact",
-    brochure: null
+    duracion: "4 encuentros · 90 min c/u",
+    formato: "Grupo reducido",
+    descripcion:
+      "Espacio íntimo coordinado por psicólogas: validación, pertenencia y recursos para transitar tratamientos.",
+    url: "#contacto",
+    brochure: null,
   },
+
+  // ——— Empresas ———
   {
-    titulo: "Taller Bienestar laboral",
+    titulo: "Taller Bienestar laboral & fertilidad",
     audiencia: ["empresa"],
-    duracion: "2 hs",
-    formato: "In-company",
-    descripcion: "Herramientas de cuidado emocional y prevención del burnout para equipos.",
-    url: "#contact",
-    brochure: null
+    duracion: "120 min",
+    formato: "In-company / Online",
+    descripcion:
+      "Concientización sin estigma y herramientas prácticas para líderes y equipos. Prevención de burnout y presentismo.",
+    url: "#contacto",
+    brochure: null,
   },
   {
-    titulo: "Programa Cultura SGM+",
+    titulo: "Programa Cultura SGM+ (empresa)",
     audiencia: ["empresa"],
     duracion: "8 semanas",
-    formato: "In-company",
-    descripcion: "Diagnóstico + workshops + seguimiento para construir ambientes más sanos e inclusivos.",
-    url: "#contact",
-    brochure: null
+    formato: "Diagnóstico + workshops + seguimiento",
+    descripcion:
+      "Implementación de políticas ad-hoc, comunicación interna y tercerización del apoyo emocional (grupal e individual).",
+    url: "#contacto",
+    brochure: null,
   },
   {
-    titulo: "Formación en facilitación de grupos",
+    titulo: "Pack comunicación sin estigma",
+    audiencia: ["empresa"],
+    duracion: "2–4 semanas",
+    formato: "In-company / Remoto",
+    descripcion:
+      "Campañas y comunicación interna/externa para visibilizar fertilidad sin prejuicios. Piezas, guías y activaciones.",
+    url: "#contacto",
+    brochure: null,
+  },
+  {
+    titulo: "Políticas y permisos de fertilidad",
+    audiencia: ["empresa"],
+    duracion: "Sprint de 4–6 semanas",
+    formato: "Diagnóstico + redacción + training",
+    descripcion:
+      "Diseño/adaptación de políticas laborales ad-hoc, lineamientos para RR.HH. y líderes, y protocolo de confidencialidad.",
+    url: "#contacto",
+    brochure: null,
+  },
+
+  // ——— Profesionales ———
+  {
+    titulo: "Formación en salud mental reproductiva",
     audiencia: ["profesional"],
     duracion: "8 módulos",
-    formato: "Online",
-    descripcion: "Metodologías, diseño de dinámicas y ética del cuidado para coordinar grupos.",
-    url: "#contact",
-    brochure: null
+    formato: "Online sincrónico",
+    descripcion:
+      "Psicología perinatal, coordinación de grupos, ética del cuidado y diseño de intervenciones basadas en evidencia.",
+    url: "#contacto",
+    brochure: null,
   },
   {
     titulo: "Clínica de casos (supervisión)",
     audiencia: ["profesional"],
     duracion: "Mensual",
-    formato: "Grupal",
-    descripcion: "Espacio de supervisión y aprendizaje entre pares con enfoque SGM+.",
-    url: "#contact",
-    brochure: null
-  }
+    formato: "Grupal / Individual",
+    descripcion:
+      "Supervisión clínica con enfoque SGM+ para casos de infertilidad, duelos reproductivos y trabajo con grupos.",
+    url: "#contacto",
+    brochure: null,
+  },
+  {
+    titulo: "Kits y guías de intervención",
+    audiencia: ["profesional"],
+    duracion: "Descargables",
+    formato: "On-demand",
+    descripcion:
+      "Guías para coordinación de grupos, hojas de trabajo, escalas y protocolos de derivación con enfoque SGM+.",
+    url: "#contacto",
+    brochure: null,
+  },
 ];
 
 const grid = document.getElementById("servicios-grid");
@@ -86,7 +127,7 @@ function setAudInURL(aud) {
 /** Render básico */
 function render(aud) {
   // estado visual
-  buttons.forEach(b => {
+  buttons.forEach((b) => {
     const active = b.dataset.audiencia === aud;
     b.classList.toggle("is-active", active);
     b.setAttribute("aria-selected", active ? "true" : "false");
@@ -94,8 +135,8 @@ function render(aud) {
 
   // tarjetas
   grid.innerHTML = "";
-  const items = DATA_SERVICIOS.filter(s => s.audiencia.includes(aud));
-  items.forEach(s => {
+  const items = DATA_SERVICIOS.filter((s) => s.audiencia.includes(aud));
+  items.forEach((s) => {
     const card = document.createElement("article");
     card.className = "servicio-card";
     card.setAttribute("data-audiencia", s.audiencia.join(","));
@@ -109,7 +150,11 @@ function render(aud) {
       <p class="servicio-desc">${s.descripcion}</p>
       <div class="servicio-actions">
         <a class="btn-primary" href="${s.url}">Quiero más info</a>
-        ${s.brochure ? `<a class="btn-outline" href="${s.brochure}" target="_blank" rel="noopener">Ver programa</a>` : ""}
+        ${
+          s.brochure
+            ? `<a class="btn-outline" href="${s.brochure}" target="_blank" rel="noopener">Ver programa</a>`
+            : ""
+        }
       </div>
     `;
     grid.appendChild(card);
@@ -121,7 +166,7 @@ function render(aud) {
 }
 
 /** Eventos */
-buttons.forEach(b =>
+buttons.forEach((b) =>
   b.addEventListener("click", () => render(b.dataset.audiencia))
 );
 

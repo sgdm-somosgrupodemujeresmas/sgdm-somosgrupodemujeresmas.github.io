@@ -8,17 +8,17 @@ const DATA_SERVICIOS = [
     descripcion:
       "Acompañamiento clínico para procesar emociones, tomar decisiones y trabajar objetivos personales.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
   {
     titulo: "Círculo de mujeres (grupos de apoyo)",
     audiencia: ["paciente"],
-    duracion: "4 encuentros · 90 min c/u",
-    formato: "Grupo reducido",
+    duracion: "4×90 min",
+    formato: "Grupo",
     descripcion:
       "Espacio íntimo coordinado por psicólogas: validación, pertenencia y recursos para transitar tratamientos.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
 
   // ——— Empresas ———
@@ -30,37 +30,37 @@ const DATA_SERVICIOS = [
     descripcion:
       "Concientización sin estigma y herramientas prácticas para líderes y equipos. Prevención de burnout y presentismo.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
   {
     titulo: "Programa Cultura SGM+ (empresa)",
     audiencia: ["empresa"],
-    duracion: "8 semanas",
-    formato: "Diagnóstico + workshops + seguimiento",
+    duracion: "8 sem",
+    formato: "Programa",
     descripcion:
       "Implementación de políticas ad-hoc, comunicación interna y tercerización del apoyo emocional (grupal e individual).",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
   {
     titulo: "Pack comunicación sin estigma",
     audiencia: ["empresa"],
-    duracion: "2–4 semanas",
+    duracion: "2–4 sem",
     formato: "In-company / Remoto",
     descripcion:
       "Campañas y comunicación interna/externa para visibilizar fertilidad sin prejuicios. Piezas, guías y activaciones.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
   {
     titulo: "Políticas y permisos de fertilidad",
     audiencia: ["empresa"],
-    duracion: "Sprint de 4–6 semanas",
-    formato: "Diagnóstico + redacción + training",
+    duracion: "4–6 sem",
+    formato: "Consultoría",
     descripcion:
-      "Diseño/adaptación de políticas laborales ad-hoc, lineamientos para RR.HH. y líderes, y protocolo de confidencialidad.",
+      "Diseño/adaptación de políticas laborales, lineamientos para RR.HH. y líderes, y protocolo de confidencialidad.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
 
   // ——— Profesionales ———
@@ -68,11 +68,11 @@ const DATA_SERVICIOS = [
     titulo: "Formación en salud mental reproductiva",
     audiencia: ["profesional"],
     duracion: "8 módulos",
-    formato: "Online sincrónico",
+    formato: "Online",
     descripcion:
       "Psicología perinatal, coordinación de grupos, ética del cuidado y diseño de intervenciones basadas en evidencia.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
   {
     titulo: "Clínica de casos (supervisión)",
@@ -82,20 +82,19 @@ const DATA_SERVICIOS = [
     descripcion:
       "Supervisión clínica con enfoque SGM+ para casos de infertilidad, duelos reproductivos y trabajo con grupos.",
     url: "#contacto",
-    brochure: null,
+    brochure: null
   },
   {
     titulo: "Kits y guías de intervención",
     audiencia: ["profesional"],
-    duracion: "Descargables",
-    formato: "On-demand",
+    duracion: "On-demand",
+    formato: "Descargables",
     descripcion:
       "Guías para coordinación de grupos, hojas de trabajo, escalas y protocolos de derivación con enfoque SGM+.",
     url: "#contacto",
-    brochure: null,
-  },
+    brochure: null
+  }
 ];
-
 const grid = document.getElementById("servicios-grid");
 const buttons = document.querySelectorAll(".audiencia-btn");
 const ctaBtn = document.getElementById("servicios-cta-btn");

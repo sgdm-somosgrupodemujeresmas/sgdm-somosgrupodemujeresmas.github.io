@@ -1309,11 +1309,11 @@ section,
   font-weight: 600;
 }
 .servicio-actions .btn-primary {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: var(--sgm-piel);
+  color: var(--ink-strong);
   padding: 8px 14px;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .servicios-cta {
   text-align: center;
@@ -1331,7 +1331,7 @@ section,
   transition: all 0.3s ease;
 }
 
-.servicios-cta a.btn-primary:hover {
+ a.btn-primary:hover {
   background-color: var(--sgm-verde);
   transform: translateY(-2px);
 }

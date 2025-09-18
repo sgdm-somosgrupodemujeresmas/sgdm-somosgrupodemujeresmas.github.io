@@ -441,7 +441,7 @@ h6 {
   left: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: var(--sgm-piel);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -450,12 +450,12 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: var(--ink-strong);
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, var(--sgm-verde), transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -937,8 +937,8 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: var(--sgm-piel);
+  color: var(--ink-strong);
   padding: 12px 28px;
   border-radius: 50px;
   font-weight: 500;
@@ -950,9 +950,10 @@ section,
 }
 
 .about .about-book-content .about-book-cta:hover {
-  background: color-mix(in srgb, var(--accent-color), var(--sgm-verde) 20%);
+  background: var(--sgm-verde);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   transform: translateY(-3px);
+  color: var(--ink-strong);
 }
 
 .about .about-book-content .about-book-cta:hover i {
@@ -1017,7 +1018,9 @@ section,
   font-size: 18px; /* coherente con el tamaño del texto */
   margin-top: 2px; /* alinea verticalmente con el texto */
 }
-
+.about .about-book-content .highlights ul li i:hover {
+  color: var(--sgm-piel);
+}
 /* --- CTA principal: foco visible y micro feedback accesible --- */
 .about .about-book-content .about-book-cta {
   display: inline-grid; /* mejor alineación ícono + texto */
@@ -1137,7 +1140,7 @@ section,
 }
 .feature-card:hover .feature-icon,
 .feature-card:focus-visible .feature-icon {
-  background: #fff2ee;
+  background: var(--sgm-verde);
   transform: scale(1.04);
 }
 .feature-icon i {
@@ -1319,17 +1322,17 @@ section,
 
 .servicios-cta a.btn-primary {
   display: inline-block; /* se comporta como botón */
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: var(--sgm-piel);
+  color: var(--ink-strong);
   padding: 10px 22px;
   border-radius: 30px;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .servicios-cta a.btn-primary:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--sgm-verde);
   transform: translateY(-2px);
 }
 
@@ -3197,20 +3200,71 @@ section,
   }
 }
 /* Emociones – estilo scoped */
-.emociones .emociones-grid2{display:grid;gap:18px;grid-template-columns:repeat(1,minmax(0,1fr))}
-@media(min-width:576px){.emociones .emociones-grid2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(min-width:992px){.emociones .emociones-grid2{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.emociones .emociones-grid2 {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 576px) {
+  .emociones .emociones-grid2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .emociones .emociones-grid2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
+.emotion-item {
+  background: hsla(0, 0%, 100%, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: saturate(120%) blur(0.5px);
+  padding: 16px 16px 14px;
+  border-radius: 16px;
+}
+.emotion-item:hover{
+   background: rgba(188, 192, 176, 0.20);
+}
+.emotion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.emotion-index {
+  font-weight: 700;
+  opacity: 0.9;
+}
+.emotion-head h4 {
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.2;
+}
+.emotion-range {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
 
-.emotion-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:saturate(120%) blur(0.5px);padding:16px 16px 14px;border-radius:16px}
-.emotion-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-.emotion-index{font-weight:700;opacity:.9}
-.emotion-head h4{font-size:1.05rem;margin:0;line-height:1.2}
-.emotion-range{font-size:.95rem;opacity:.85}
-
-
-.emotion-bar{position:relative;height:8px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
+.emotion-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
 /* Visualiza el rango min–max con CSS vars: --start y --end */
-.emotion-fill{position:absolute;left:calc(var(--start) * 1%);width:calc((var(--end) - var(--start)) * 1%);height:100%;border-radius:999px;background:currentColor;opacity:.75}
+.emotion-fill {
+  position: absolute;
+  left: calc(var(--start) * 1%);
+  width: calc((var(--end) - var(--start)) * 1%);
+  height: 100%;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.75;
+}
 /* tono del texto/barras – hereda del tema; si necesitás más contraste: */
-.emociones .emotion-item{color:#f4e2de}
+.emociones .emotion-item {
+  color: #f4e2de;
+}

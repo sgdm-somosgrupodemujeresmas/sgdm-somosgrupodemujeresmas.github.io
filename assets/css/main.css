@@ -236,7 +236,7 @@ h6 {
   transition: 0.3s;
   width: 300px;
   overflow: hidden;
-  background-color: var(--nav-mobile-background-color);
+  background-color: var(--sgm-verde);
 }
 
 .navmenu ul {
@@ -251,7 +251,7 @@ h6 {
 
 .navmenu a,
 .navmenu a:focus {
-  color: var(--blanco-hueso);
+  color: var(--ink-strong);
   padding: 10px 20px;
   font-family: var(--nav-font);
   font-size: 17px;
@@ -281,13 +281,13 @@ h6 {
 .navmenu a i:hover,
 .navmenu a:focus i:hover {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--sgm-piel);
 }
 
 .navmenu a:hover,
 .navmenu .active,
 .navmenu .active:focus {
-  color: var(--nav-dropdown-hover-color);
+  color: var(--blanco-hueso);
 }
 
 .navmenu .active i,
@@ -329,7 +329,7 @@ h6 {
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: var(--chocolate-suave);
+  background-color: var(--sgm-verde);
   transition: 0.3s;
 }
 
@@ -404,7 +404,7 @@ h6 {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
+  background: var(--sgm-verde);
   transition: all 0.6s ease-out;
 }
 
@@ -789,7 +789,7 @@ section,
   overflow: hidden;
   transition: transform 0.3s ease;
 }
-.about-book-img { 
+.about-book-img {
   position: relative;
   border-radius: 16px;
 }
@@ -1054,17 +1054,16 @@ section,
 
 /* --- Tarjeta de métricas sobre la imagen: mejor en mobile --- */
 
-  .about .about-book-img .book-details {
-    position: static !important; /* baja debajo de la imagen */
-    margin-top: 12px;
-    backdrop-filter: none; /* evita difuminado pesado en móviles */
-    background: var(--heading-color);
-    border-radius: 10px;
-  }
-  .about .about-book-img {
-    transform: none !important; /* evita “salto” por hover en táctiles */
-  }
-
+.about .about-book-img .book-details {
+  position: static !important; /* baja debajo de la imagen */
+  margin-top: 12px;
+  backdrop-filter: none; /* evita difuminado pesado en móviles */
+  background: var(--heading-color);
+  border-radius: 10px;
+}
+.about .about-book-img {
+  transform: none !important; /* evita “salto” por hover en táctiles */
+}
 
 /* --- Menos movimiento para quien lo prefiera --- */
 @media (prefers-reduced-motion: reduce) {
@@ -1335,7 +1334,7 @@ section,
   transition: all 0.3s ease;
 }
 
- a.btn-primary:hover {
+a.btn-primary:hover {
   background-color: var(--sgm-verde);
   transform: translateY(-2px);
 }
@@ -1466,8 +1465,7 @@ section,
 
 .excerpt .book-page-design .excerpt-content .dialogue {
   padding-left: 20px;
-  border-left: 2px solid
-    var(--sgm-piel);
+  border-left: 2px solid var(--sgm-piel);
   font-style: italic;
 }
 
@@ -1675,7 +1673,7 @@ section,
   flex-shrink: 0;
 }
 
-.about-author .author-info .author-awards ul li i:hover{
+.about-author .author-info .author-awards ul li i:hover {
   color: var(--sgm-piel);
 }
 
@@ -2889,7 +2887,7 @@ section,
 .related-books-slider .swiper-pagination-bullet {
   border-radius: 50%;
 }
-.related-books-slider .swiper-pagination-bullet:hover{
+.related-books-slider .swiper-pagination-bullet:hover {
   background-color: var(--sgm-piel);
 }
 /* 📌 Flechas de navegación (si las usás) */
@@ -3231,8 +3229,8 @@ section,
   padding: 16px 16px 14px;
   border-radius: 16px;
 }
-.emotion-item:hover{
-   background: rgba(188, 192, 176, 0.20);
+.emotion-item:hover {
+  background: rgba(188, 192, 176, 0.2);
 }
 .emotion-head {
   display: flex;

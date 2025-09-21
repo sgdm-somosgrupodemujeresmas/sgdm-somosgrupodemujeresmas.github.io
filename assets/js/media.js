@@ -8,7 +8,7 @@
   // =========================
   const mediaItems = [
     {
-      type: "articulo",
+      type: "article",
       title:
         "Lorena Laserre lidera la cuenta Somos Grupo de Mujeres +",
       source: "Agenhoy",
@@ -17,7 +17,7 @@
       cover: "assets/img/media/agenhoy.png"
     },
     {
-      type: "articulo",
+      type: "article",
       title: "Cobertura relacionada: Para Ti - etiqueta 'Chicos'",
       source: "Para Ti",
       url: "https://www.parati.com.ar/lifestyle/infertilidad-y-tratamientos-de-reproduccion-asistida-como-manejar-su-impacto-en-el-vinculo-de-pareja/",
@@ -46,7 +46,7 @@
   // 2) HELPERS
   // =========================
   const typeIcon = {
-    articulo: "bi-newspaper",
+    article: "bi-newspaper",
     audio: "bi-mic",
     video: "bi-play-btn"
   };

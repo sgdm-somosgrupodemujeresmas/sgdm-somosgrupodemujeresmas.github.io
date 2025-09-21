@@ -1964,9 +1964,9 @@ a.btn-primary:hover {
 
 /* Medios */
 .medios .btn-chip {
-  border: 1px solid var(--border-color, #e6e6e6);
-  background: #fff;
-  color: #333;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  color: var(--blanco-hueso);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.9rem;
@@ -1976,11 +1976,14 @@ a.btn-primary:hover {
   gap: 0.4rem;
   transition: all 0.2s ease;
 }
-.medios .btn-chip.is-active,
-.medios .btn-chip:hover {
-  background: var(--accent-color, #bcc0b0);
-  color: var(--contrast-color, #fff);
+.medios .btn-chip.is-active {
+  background: var(--sgm-verde);
+  color: var(--ink-strong);
   border-color: transparent;
+}
+.medios .btn-chip:hover {
+  background: var(--sgm-piel);
+   color: var(--ink-strong);
 }
 
 .media-grid {

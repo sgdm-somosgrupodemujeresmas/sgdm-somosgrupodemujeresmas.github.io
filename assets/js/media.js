@@ -35,7 +35,7 @@
       title: "Semana mundial de la lactancia materna",
       source: "Nosotrasonline",
       url: "https://www.nosotrasonline.com.ar/entre-nosotras/cuidado-femenino/semana-mundial-de-la-lactancia-materna-nosotras-argentina/",
-      date: "2025-05-10",
+      date: "2025-06-05",
       cover: "assets/img/media/nosotrasonline.png",
     },
     {

@@ -8,7 +8,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Acompañamiento clínico para procesar emociones, tomar decisiones y trabajar objetivos personales.",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
-    brochure: "assets/img/servicios/brochure_single.png"
+    brochure: "assets/img/servicios/brochure_single.png",
   },
   {
     titulo: "Círculo de mujeres (grupos de apoyo)",
@@ -18,9 +18,8 @@ const DATA_SERVICIOS = [
     descripcion:
       "Espacio íntimo coordinado por psicólogas: validación, pertenencia y recursos para transitar tratamientos.",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
-    brochure: "assets/img/servicios/brochure_circulo.png"
+    brochure: "assets/img/servicios/brochure_circulo.png",
   },
-
   // ——— Empresas ———
   {
     titulo: "Taller Bienestar laboral & fertilidad",
@@ -30,7 +29,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Concientización sin estigma y herramientas prácticas para líderes y equipos. Prevención de burnout y presentismo.",
     url: "#contacto",
-    brochure: null
+    brochure: null,
   },
   {
     titulo: "Programa Cultura SGM+ (empresa)",
@@ -40,7 +39,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Implementación de políticas ad-hoc, comunicación interna y tercerización del apoyo emocional (grupal e individual).",
     url: "#contacto",
-    brochure: null
+    brochure: null,
   },
   {
     titulo: "Pack comunicación sin estigma",
@@ -50,7 +49,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Campañas y comunicación interna/externa para visibilizar fertilidad sin prejuicios. Piezas, guías y activaciones.",
     url: "#contacto",
-    brochure: null
+    brochure: null,
   },
   {
     titulo: "Políticas y permisos de fertilidad",
@@ -60,9 +59,8 @@ const DATA_SERVICIOS = [
     descripcion:
       "Diseño/adaptación de políticas laborales, lineamientos para RR.HH. y líderes, y protocolo de confidencialidad.",
     url: "#contacto",
-    brochure: null
+    brochure: null,
   },
-
   // ——— Profesionales ———
   {
     titulo: "Formación en salud mental reproductiva",
@@ -72,7 +70,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Psicología perinatal, coordinación de grupos, ética del cuidado y diseño de intervenciones basadas en evidencia.",
     url: "#contacto",
-    brochure: null
+    brochure: null,
   },
   {
     titulo: "Clínica de casos (supervisión)",
@@ -82,7 +80,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Supervisión clínica con enfoque SGM+ para casos de infertilidad, duelos reproductivos y trabajo con grupos.",
     url: "#contacto",
-    brochure: null
+    brochure: null,
   },
   {
     titulo: "Kits y guías de intervención",
@@ -92,17 +90,15 @@ const DATA_SERVICIOS = [
     descripcion:
       "Guías para coordinación de grupos, hojas de trabajo, escalas y protocolos de derivación con enfoque SGM+.",
     url: "#contacto",
-    brochure: null
-  }
+    brochure: null,
+  },
 ];
 const grid = document.getElementById("servicios-grid");
 const buttons = document.querySelectorAll(".audiencia-btn");
 const ctaBtn = document.getElementById("servicios-cta-btn");
-
 /** Utilidades URL (sin provocar scroll) */
 function getAudFromURL() {
   const url = new URL(location.href);
-
   // Soporte legacy: migrar #audiencia=... a ?audiencia=...
   if (url.hash.startsWith("#audiencia=")) {
     const aud = url.hash.split("=")[1];
@@ -115,14 +111,12 @@ function getAudFromURL() {
   const q = url.searchParams.get("audiencia");
   return (q || "paciente").toLowerCase();
 }
-
 function setAudInURL(aud) {
   const url = new URL(location.href);
   url.searchParams.set("audiencia", aud);
   url.hash = ""; // garantizamos sin hash
   history.replaceState(null, "", url);
 }
-
 /** Render básico */
 function render(aud) {
   // estado visual
@@ -131,7 +125,6 @@ function render(aud) {
     b.classList.toggle("is-active", active);
     b.setAttribute("aria-selected", active ? "true" : "false");
   });
-
   // tarjetas
   grid.innerHTML = "";
   const items = DATA_SERVICIOS.filter((s) => s.audiencia.includes(aud));
@@ -158,16 +151,13 @@ function render(aud) {
     `;
     grid.appendChild(card);
   });
-
   // CTA + URL sin hash (evita scroll)
   ctaBtn.href = "#contact";
   setAudInURL(aud);
 }
-
 /** Eventos */
 buttons.forEach((b) =>
   b.addEventListener("click", () => render(b.dataset.audiencia))
 );
-
 /** Init (URL awareness) */
 render(getAudFromURL());

@@ -8,7 +8,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Acompañamiento clínico para procesar emociones, tomar decisiones y trabajar objetivos personales.",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
-    brochure: null
+    brochure: "assets/img/servicios/brochure_single.png"
   },
   {
     titulo: "Círculo de mujeres (grupos de apoyo)",
@@ -18,7 +18,7 @@ const DATA_SERVICIOS = [
     descripcion:
       "Espacio íntimo coordinado por psicólogas: validación, pertenencia y recursos para transitar tratamientos.",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
-    brochure: null
+    brochure: "assets/img/servicios/brochure_circulo.png"
   },
 
   // ——— Empresas ———

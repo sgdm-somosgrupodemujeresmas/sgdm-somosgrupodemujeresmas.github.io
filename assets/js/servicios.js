@@ -3,21 +3,21 @@ const DATA_SERVICIOS = [
   {
     titulo: "Sesión individual",
     audiencia: ["paciente"],
-    duracion: "60 min",
+    duracion: "35 min",
     formato: "Online / Presencial",
     descripcion:
       "Acompañamiento clínico para procesar emociones, tomar decisiones y trabajar objetivos personales.",
-    url: "#contacto",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
     brochure: null
   },
   {
     titulo: "Círculo de mujeres (grupos de apoyo)",
     audiencia: ["paciente"],
-    duracion: "4×90 min",
+    duracion: "2×90 min",
     formato: "Grupo",
     descripcion:
       "Espacio íntimo coordinado por psicólogas: validación, pertenencia y recursos para transitar tratamientos.",
-    url: "#contacto",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
     brochure: null
   },
 

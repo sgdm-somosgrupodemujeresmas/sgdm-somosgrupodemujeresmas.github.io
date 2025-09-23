@@ -3440,3 +3440,76 @@ a.btn-primary:hover {
 .emociones .emotion-item {
   color: #f4e2de;
 }
+/* -------- Varones (afinado SGM+) -------- */
+.varones .section-title p { opacity: .9; }
+
+.varones-card{
+  background: var(--sgm-verde);
+  color: var(--ink-strong);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--ink-strong) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink-strong) 10%, transparent);
+  /* ancho cómodo de lectura */
+  max-width: 68ch;
+}
+
+.varones-card h3{
+  font-weight: 700;
+  line-height: 1.25;
+  /* escala fluida del título */
+  font-size: clamp(1.25rem, 1rem + 2vw, 2rem);
+  margin-bottom: .85rem;
+}
+
+.varones-card p{ margin-bottom: .85rem; line-height: 1.65; }
+
+.varones-list{
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: .5rem;
+}
+.varones-list li{ display: flex; gap: .5rem; align-items: flex-start; }
+.varones-list i{ margin-top: .15rem; font-size: 1rem; color: var(--ink-strong); opacity: .9; }
+
+.varones-cta{ display: flex; gap: .6rem; margin-top: 12px; }
+
+/* Botones consistentes con SGM+ */
+.varones .btn-primary{
+  background: var(--ink-strong);
+  color: var(--blanco-hueso);
+  border: 1px solid var(--ink-strong);
+  padding: .55rem .9rem;
+  border-radius: 10px;
+}
+.varones .btn-primary:hover{ filter: brightness(1.05); }
+
+.varones .btn-secondary{
+  background: transparent;
+  color: var(--ink-strong);
+  border: 1px solid var(--ink-strong);
+  padding: .55rem .9rem;
+  border-radius: 10px;
+}
+.varones .btn-secondary:hover{
+  background: color-mix(in srgb, var(--sgm-piel) 35%, transparent);
+}
+
+/* Imagen */
+.varones-illustration img{
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Layout y espacios */
+.varones .row{ row-gap: 28px; }
+@media (max-width: 991.98px){
+  .varones .row{ row-gap: 18px; }
+  /* si querés que la imagen aparezca debajo del texto en mobile,
+     dejá esto; si la preferís arriba, poné order:-1 */
+  .varones-illustration{ order: 2; }
+  .varones-card{ order: 1; padding: 20px; }
+}

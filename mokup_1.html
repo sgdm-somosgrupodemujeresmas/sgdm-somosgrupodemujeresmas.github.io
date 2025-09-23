@@ -128,49 +128,49 @@
                 alt=""
                 class="slide-bg swiper-lazy"
               />
+              <div class="swiper-lazy-preloader"></div>
             </div>
             <div class="swiper-slide">
               <img
                 src="assets/img/slider/hero2.jpeg"
                 width="1600"
                 height="900"
-                fetchpriority="high"
                 loading="eager"
                 decoding="async"
                 alt=""
                 class="slide-bg swiper-lazy"
               />
+              <div class="swiper-lazy-preloader"></div>
             </div>
             <div class="swiper-slide">
               <img
                 src="assets/img/slider/hero3.jpeg"
                 width="1600"
                 height="900"
-                fetchpriority="high"
                 loading="eager"
                 decoding="async"
                 alt=""
                 class="slide-bg swiper-lazy"
               />
+              <div class="swiper-lazy-preloader"></div>
             </div>
             <div class="swiper-slide">
               <img
                 src="assets/img/slider/hero4.jpeg"
                 width="1600"
                 height="900"
-                fetchpriority="high"
                 loading="eager"
                 decoding="async"
                 alt=""
                 class="slide-bg swiper-lazy"
               />
+              <div class="swiper-lazy-preloader"></div>
             </div>
             <div class="swiper-slide">
               <img
                 src="assets/img/slider/hero5.jpeg"
                 width="1600"
                 height="900"
-                fetchpriority="high"
                 loading="eager"
                 decoding="async"
                 alt=""
@@ -182,12 +182,12 @@
                 src="assets/img/slider/hero6.jpeg"
                 width="1600"
                 height="900"
-                fetchpriority="high"
                 loading="eager"
                 decoding="async"
                 alt=""
                 class="slide-bg swiper-lazy"
               />
+              <div class="swiper-lazy-preloader"></div>
             </div>
           </div>
 
@@ -428,8 +428,8 @@
             <strong>altos niveles de estrés</strong> y pueden minar la calidad
             de vida de los pacientes, deteriorar las relaciones y,
             potencialmente, incluso afectar las tasas de éxito del tratamiento.
-            El <strong>acompañamiento psicológico</strong> grupal mejora el bienestar y
-            favorece la continuidad de los tratamientos.
+            El <strong>acompañamiento psicológico</strong> grupal mejora el
+            bienestar y favorece la continuidad de los tratamientos.
           </p>
         </div>
         <!-- End Section Title -->
@@ -2291,13 +2291,8 @@
           pauseOnMouseEnter: true,
         },
         preloadImages: false,
-        lazy: {
-          enabled: true,
-          loadOnTransitionStart: true,
-          loadPrevNext: true,
-        },
-        allowTouchMove: true, // podés dejarlo en true o false; no hay flechas
-        // No navigation (sin flechas)
+        lazy: { enabled: true, loadPrevNext: true, loadPrevNextAmount: 1 },
+        allowTouchMove: true,
       });
     </script>
     <script>

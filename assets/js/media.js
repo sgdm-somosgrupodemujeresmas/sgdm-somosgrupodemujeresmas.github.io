@@ -24,13 +24,21 @@
     },
     {
       type: "article",
+      title: "La importancia de los grupos de apoyo",
+      source: "Nosotrasonline",
+      url: "https://www.nosotrasonline.com.ar/magazin/nuestro-mundo/importancia-de-los-grupos-de-apoyo-nosotras-argentina/",
+      date: "2025-10-01",
+      cover: "assets/img/media/nosotrasonline.png",
+    },
+    {
+      type: "article",
       title: "Cobertura relacionada: Para Ti - etiqueta 'Chicos'",
       source: "Para Ti",
       url: "https://www.parati.com.ar/lifestyle/infertilidad-y-tratamientos-de-reproduccion-asistida-como-manejar-su-impacto-en-el-vinculo-de-pareja/",
       date: "2025-05-10",
       cover: "assets/img/media/parati.png",
     },
-      {
+    {
       type: "article",
       title: "Semana mundial de la lactancia materna",
       source: "Nosotrasonline",
@@ -53,7 +61,7 @@
       url: "https://www.youtube.com/watch?v=PeIl2mJt60A",
       date: "2023-09-01",
       cover: "assets/img/media/elinteractivo.png",
-    }
+    },
   ];
 
   // =========================

@@ -1,6 +1,12 @@
 (function () {
   "use strict";
-
+  var currentYear = new Date().getFullYear();
+  var copyrightEl = document.getElementById("copyright");
+  if (copyrightEl) {
+    copyrightEl.innerHTML =
+      currentYear +
+      " © Copyright <strong><span>SGM+</span></strong>. Todos los derechos reservados. Argentina, Buenos Aires.";
+  }
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */

@@ -11,7 +11,7 @@ const DATA_SERVICIOS = [
     brochure: "assets/img/servicios/brochure_single.png",
   },
   {
-    titulo: "Círculo de mujeres (grupos de apoyo)",
+    titulo: "Círculo de mujeres",
     audiencia: ["paciente"],
     duracion: "2×90 min",
     formato: "Grupo",

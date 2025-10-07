@@ -866,11 +866,44 @@
           <div class="row align-items-center gy-5">
             <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
               <div class="author-image">
-                <img
-                  src="assets/img/person/persona-2.jpeg"
-                  alt="Author Name"
-                  class="img-fluid"
-                />
+                <div class="swiper author-swiper">
+                  <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/img/person/persona-1.jpg"
+                        alt="Autor 1"
+                        class="swiper-lazy"
+                      />
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/img/person/persona-2.jpeg"
+                        alt="Autor 2"
+                        class="swiper-lazy"
+                      />
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/img/person/persona-3.jpg"
+                        alt="Autor 3"
+                        class="swiper-lazy"
+                      />
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                      <img
+                        src="assets/img/person/persona-4.jpg"
+                        alt="Autor 4"
+                        class="swiper-lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Firma superpuesta -->
                 <div class="author-signature">
                   <img
                     src="assets/img/misc/firma2.png"
@@ -2345,6 +2378,24 @@
         preloadImages: false,
         lazy: { enabled: true, loadPrevNext: true, loadPrevNextAmount: 1 },
         allowTouchMove: true,
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const authorswiper = new Swiper(".author-swiper", {
+          loop: true,
+          speed: 800,
+          effect: "fade",
+          fadeEffect: { crossFade: true },
+          autoplay: { delay: 2600, disableOnInteraction: false },
+          allowTouchMove: false,
+          simulateTouch: false,
+          grabCursor: false,
+          keyboard: { enabled: false },
+          mousewheel: false,
+          preloadImages: false,
+          lazy: { loadPrevNext: true },
+        });
       });
     </script>
     <script>

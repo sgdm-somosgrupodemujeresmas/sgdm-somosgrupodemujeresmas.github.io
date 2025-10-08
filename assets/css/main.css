@@ -3654,10 +3654,19 @@ a.btn-primary:hover {
   place-items: center;
 }
 
-.author-swiper img{
+.author-swiper .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* recorta sin deformar */
+  object-fit: cover;
+  display: block;
+}
+.author-swiper .swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0 */
+  background: rgba(0, 0, 0, 0.35); /* intensidad del velo */
+  transition: background 0.3s ease;
+  z-index: 1;
 }
 
 /* Firma en la esquina */

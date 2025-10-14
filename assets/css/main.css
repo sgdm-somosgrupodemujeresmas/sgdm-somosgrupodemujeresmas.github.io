@@ -581,7 +581,7 @@ section,
   padding: clamp(12px, 2vw, 18px) clamp(14px, 3vw, 22px);
   border-radius: 16px;
   /* Glass suave para microcontraste sin tapar el fondo */
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(2px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
 }

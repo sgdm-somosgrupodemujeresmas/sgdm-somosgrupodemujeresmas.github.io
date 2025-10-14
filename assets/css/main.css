@@ -3733,3 +3733,44 @@ a.btn-primary:hover {
   .hero-test .test-box{ padding: 1rem 1.25rem; border-radius: 1rem; }
   .hero-test .btn-test{ width: 100%; justify-content: center; }
 }
+/* Botón Ver más con paleta SGM */
+.btn-more{
+  margin-top: .75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .55rem 1rem;
+  line-height: 1;
+  border-radius: 9999px;
+
+  /* Colores SGM */
+  border: 2px solid var(--sgm-verde);
+ /* fondo claro del sitio */
+  color: var(--chocolate-suave, #5f4b3b);      /* texto chocolate */
+background-color: var(--ink-strong);
+color: var(--sgm-verde);
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.btn-more:hover{
+  /* leve tinte rosado al hover */
+  background: var(--rosa-tiza);
+  border-color: var(--rosa-tiza);
+  color: var(--accent-hover, #4d3d30);
+  transform: translateY(-1px);
+}
+
+.btn-more:active{ transform: translateY(0); }
+
+/* foco accesible con color de acento */
+.btn-more:focus-visible{
+  outline: 2px dashed var(--accent-secondary, #eac6c0);
+  outline-offset: 3px;
+}
+
+/* Ícono opcional */
+.btn-more i{ font-size: 1rem; line-height: 0; }

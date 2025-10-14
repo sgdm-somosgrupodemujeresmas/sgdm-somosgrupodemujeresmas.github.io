@@ -790,25 +790,90 @@
                   Fundadora de Somos Grupo de Mujeres +
                 </div>
 
-                <div class="author-bio">
-                  <p>
-                    Somos un espacio creado para que las mujeres podamos
-                    acompañarnos, escucharnos y crecer juntas. Creemos en el
-                    poder de la empatía, la contención y el respeto para
-                    transformar nuestras vidas.
-                  </p>
-                  <p>
-                    Bajo la guía de Lorena Laserre y un equipo comprometido,
-                    generamos encuentros, talleres y actividades que invitan a
-                    la reflexión, el autoconocimiento y el fortalecimiento
-                    personal.
-                  </p>
-                  <p>
-                    En SGM cada historia importa. Aquí vas a encontrar un
-                    círculo de confianza, libre de juicios, donde podés
-                    compartir tus vivencias y descubrir nuevas herramientas para
-                    tu bienestar emocional y espiritual.
-                  </p>
+                <div class="author-bio" id="author-bio">
+                  <!-- Texto corto (siempre visible) -->
+                  <div class="bio-summary">
+                    <p>
+                      Somos un espacio creado para que las mujeres podamos
+                      acompañarnos, escucharnos y crecer juntas. Creemos en el
+                      poder de la empatía, la contención y el respeto para
+                      transformar nuestras vidas.
+                    </p>
+                    <p>
+                      Bajo la guía de Lorena Laserre y un equipo comprometido,
+                      generamos encuentros, talleres y actividades que invitan a
+                      la reflexión, el autoconocimiento y el fortalecimiento
+                      personal.
+                    </p>
+                    <p>
+                      En SGM cada historia importa. Aquí vas a encontrar un
+                      círculo de confianza, libre de juicios, donde podés
+                      compartir tus vivencias y descubrir nuevas herramientas
+                      para tu bienestar emocional y espiritual.
+                    </p>
+                  </div>
+
+                  <!-- Texto extendido (oculto por defecto) -->
+                  <div class="bio-extra" id="bio-extra" hidden>
+                    <p>
+                      SGM+ nace como una necesidad personal y profesional, como
+                      un espacio dedicado a las personas que atraviesan los
+                      procesos de reproducción humana médicamente asistida.
+                    </p>
+                    <p>
+                      Siendo Licenciada en Psicología de la Universidad de
+                      Buenos Aires y madre de tres gracias a TRHA, cuenta con
+                      amplia experiencia hospitalaria, en clínica y atención
+                      primaria, individual y grupal. Posee orientación
+                      perinatal. Diplomada en Psicología y Dificultades
+                      Reproductivas por la Sociedad Argentina de Medicina
+                      Reproductiva.
+                    </p>
+                    <p>
+                      Miembro de la Sociedad Argentina de Medicina Reproductiva
+                      (SAMER) y de la Sociedad de Psicología Reproductiva
+                      (SAPRHA). Terapeuta grupal y apasionada por formar redes.
+                      Docente de la Diplomatura de Equidad de Género en Salud
+                      (UNLP). Miembro y docente de la Sociedad Argentina de
+                      Psicología de la Reproducción Humana Asistida.
+                    </p>
+                    <p>
+                      Ex Admisora del Colegio de Psicólogos Distrito XV. Ex
+                      tutora de la Universidad de Buenos Aires en distintas
+                      materias de grado. Miembro del equipo de Reproducción
+                      Asistida del Ministerio de Salud de la Provincia de Buenos
+                      Aires.
+                    </p>
+                    <p>
+                      Autora de la serie de cuentos sobre el origen de familias
+                      diversas en español, inglés, francés y chino (<em
+                        >La osa Maia es mamá</em
+                      >, <em>La pingüina Tina</em>,
+                      <em>Cómo nacen los dinos</em>, <em>Cómo nació Inti</em>,
+                      etc.). Asesora de entidades gubernamentales y no
+                      gubernamentales. Speaker e investigadora apasionada.
+                    </p>
+                    <p>
+                      <em
+                        >“Me brinda mucho placer poder orientar y guiar a los
+                        pacientes por un camino que he recorrido y que se trata
+                        de poder cumplir el mayor sueño de tantas personas: ser
+                        padres”.</em
+                      >
+                    </p>
+                  </div>
+
+                  <!-- Botón -->
+                  <button
+                    class="btn-more"
+                    id="bio-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="bio-extra"
+                  >
+                    Ver más
+                    <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                  </button>
                 </div>
 
                 <div class="author-awards">
@@ -1998,6 +2063,29 @@
         a11y: { enabled: true },
       });
       registerSwiper(aboutSwiper);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const bio = document.getElementById("author-bio");
+        const toggle = document.getElementById("bio-toggle");
+        const extra = document.getElementById("bio-extra");
+
+        // Estado inicial cerrado
+        bio.classList.remove("is-open");
+        extra.hidden = true;
+
+        toggle.addEventListener("click", function () {
+          const expanded = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!expanded));
+          extra.hidden = expanded; // mostrar/ocultar bloque extra
+          bio.classList.toggle("is-open", !expanded);
+
+          toggle.innerHTML = expanded
+            ? 'Ver más <i class="bi bi-chevron-down" aria-hidden="true"></i>'
+            : 'Ver menos <i class="bi bi-chevron-up" aria-hidden="true"></i>';
+        });
+      });
     </script>
 
     <script src="assets/js/main.js" defer></script>

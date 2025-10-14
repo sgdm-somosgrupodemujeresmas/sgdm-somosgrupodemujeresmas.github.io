@@ -3691,3 +3691,45 @@ a.btn-primary:hover {
     position: absolute; inset: 0;
   }
 }
+
+.hero-test .test-box {
+  display: inline-block;
+   background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(6px);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hero-test .test-text {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.hero-test .btn-test {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--rosa-nude, #e3b7b2);
+  color: #2b1e1d;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-test .btn-test:hover {
+  background: var(--sgm-verde);
+  color: var( var(--ink-strong));
+  transform: translateY(-2px);
+}
+
+.hero-test{ margin: 1.25rem 0 2rem; }
+@media (max-width: 576px){
+  .hero-test .test-box{ padding: 1rem 1.25rem; border-radius: 1rem; }
+  .hero-test .btn-test{ width: 100%; justify-content: center; }
+}

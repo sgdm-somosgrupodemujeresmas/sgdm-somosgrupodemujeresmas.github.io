@@ -2664,9 +2664,8 @@ a.btn-primary:hover {
 }
 
 .contact .contact-form-wrapper {
-  background-color: var(--surface-color);
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 11px 10px 25px 20px rgba(0, 0, 0, 0.05);
   padding: 35px;
   position: relative;
   overflow: hidden;

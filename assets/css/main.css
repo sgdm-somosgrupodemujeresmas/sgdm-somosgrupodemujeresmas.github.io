@@ -3534,7 +3534,11 @@ color: var(--sgm-verde);
 }
 
 /* COLORES/VARIANTES */
-.fab.ia svg path{ fill:#5f6a57; }
+.fab.ia {
+  background:var(--sgm-verde) url("../img/svg/face.svg") no-repeat center;
+  background-size: 50%;
+  color: var(--ink-strong) !important;
+}
 .fab.wapp{ background:#25d366; }
 
 /* 4) micro-ajuste óptico si ves desalineación mínima */

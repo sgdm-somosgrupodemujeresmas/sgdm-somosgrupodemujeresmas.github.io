@@ -74,7 +74,6 @@
         aria-label="Hablar con Agente de IA"
         title="Hablar con Agente de IA"
       >
-     
       </a>
 
       <!-- BOTÓN WHATSAPP -->
@@ -617,74 +616,48 @@
         </div>
       </section>
 
-      <section id="varones" class="varones section light-background">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>También para varones</h2>
+      <section class="varones varones-hero" aria-labelledby="varones-title">
+        <div class="vh-back">
+          <img
+            src="assets/img/varon.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="vh-overlay"></div>
+        </div>
+
+        <div class="container">
+          <div class="vh-content">
+            <h2 id="varones-title">
+              Fertilidad y su impacto psicológico en los varones: lo que no se
+              dice
+            </h2>
+
             <p>
-              Espacios de apoyo y recursos específicos para varones y parejas.
+              Los varones atraviesan un proceso muy difícil durante los
+              tratamientos de fertilidad que afecta a su identidad, autoestima y
+              vínculos. Poder tener tu espacio te alivia:
+              <strong>no te quedes solo</strong>.
             </p>
-          </div>
 
-          <div class="row align-items-center gy-5">
-            <div class="col-lg-6">
-              <article class="varones-card">
-                <h3 class="mb-3">
-                  Fertilidad y su impacto psicológico en los varones: lo que no
-                  se dice
-                </h3>
-                <p>
-                  Los varones atraviesan un proceso muy difícil durante los
-                  tratamientos de fertilidad que afecta a su identidad,
-                  autoestima y vínculos. Muchas veces se pone en cuestión la
-                  masculinidad como atada a la biología; esto produce vergüenza,
-                  culpa y aislamiento emocional.
-                </p>
-                <p class="mb-0">
-                  El mandato sociocultural de <em>“ser fuerte”</em> o
-                  <em>“tener que sostenerla a ella”</em> deja poco lugar para la
-                  expresión emocional. Poder tener tu espacio te va a aliviar:
-                  <strong>no te quedes solo</strong>.
-                </p>
+            <ul class="vh-list">
+              <li>
+                <i class="bi bi-emoji-smile"></i> Identidad y autoestima puestas
+                a prueba
+              </li>
+              <li>
+                <i class="bi bi-chat-dots"></i> Espacios para hablar sin juicios
+              </li>
+              <li>
+                <i class="bi bi-people"></i> Grupos y acompañamiento individual
+              </li>
+            </ul>
 
-                <ul class="varones-list mt-3">
-                  <li>
-                    <i class="bi bi-emoji-neutral"></i> Identidad y autoestima
-                    puestas a prueba
-                  </li>
-                  <li>
-                    <i class="bi bi-chat-left-dots"></i> Espacios para hablar
-                    sin juicios
-                  </li>
-                  <li>
-                    <i class="bi bi-people"></i> Grupos y acompañamiento
-                    individual
-                  </li>
-                </ul>
-
-                <div class="varones-cta">
-                  <a
-                    href="https://wa.me/5491165079540?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20el%20espacio%20para%20varones"
-                    class="btn-primary"
-                    target="_blank"
-                    rel="noopener"
-                    >Quiero mi espacio</a
-                  >
-                  <a href="#servicios" class="btn-secondary">Ver propuestas</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-6">
-              <!-- si querés, podés cambiar esta imagen por otra -->
-              <div class="varones-illustration">
-                <img
-                  src="assets/img/varon.jpg"
-                  alt="Acompañamiento para varones"
-                  class="img-fluid"
-                  loading="lazy"
-                />
-              </div>
+            <div class="vh-cta">
+              <a href="#contacto" class="btn btn-primary">Quiero mi espacio</a>
+              <a href="#propuestas" class="btn btn-secondary">Ver propuestas</a>
             </div>
           </div>
         </div>
@@ -1101,7 +1074,7 @@
         class="related-books section light-background"
       >
         <div class="container section-title" data-aos="fade-up">
-          <h2>Más actividades y talleres</h2>
+          <h2>Libros</h2>
           <p>
             Descubrí otras propuestas de Somos Grupo de Mujeres + para seguir
             aprendiendo, conectando y creciendo juntas.
@@ -1467,6 +1440,132 @@
             <div
               class="swiper-pagination related-books-pagination mb-5 mt-5"
             ></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="talleres" class="talleres-hero section">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Talleres y Cumbres Online</h2>
+          <p>
+            Participá de nuestras experiencias virtuales para el bienestar
+            emocional y reproductivo.
+          </p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper talleres-swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 700,
+                "autoplay": { "delay": 5000, "disableOnInteraction": false },
+                "slidesPerView": 1,
+                "spaceBetween": 16,
+                "pagination": {
+                  "el": ".talleres-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                }
+              }
+            </script>
+
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <article class="taller-card-xl">
+                  <div class="taller-card-xl__content">
+                    <span class="badge">Taller online</span>
+                    <h3>
+                      Entendiendo el camino que comienza.<br />Primeros Pasos en
+                      TRHA
+                    </h3>
+                    <p>
+                      Un taller para ordenar información, bajar la ansiedad y
+                      trazar un plan emocional al iniciar reproducción asistida.
+                      <strong>Duración:</strong> 2 h ·
+                      <strong>Modalidad:</strong> Online
+                    </p>
+                    <a
+                      href="https://pay.hotmart.com/K102413472A"
+                      class="btn-primary"
+                      target="_blank"
+                      rel="noopener"
+                      >Comprar</a
+                    >
+                  </div>
+
+                  <div class="taller-card-xl__media">
+                    <img
+                      src="https://static-media.hotmart.com/CP0XYqNQ4U_HCjfAB_r8Vn6LuRg=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/ecb936b0-90de-420d-bb3e-9d15953a24e5/trha.png?w=920"
+                      alt="Primeros Pasos en TRHA"
+                    />
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <article class="taller-card-xl">
+                  <div class="taller-card-xl__content">
+                    <span class="badge">Taller online</span>
+                    <h3>Taller de Alimentación Complementaria</h3>
+                    <p>
+                      Recomendaciones claras y material descargable. Espacio de
+                      preguntas en vivo.
+                      <strong>Duración:</strong> 2 h ·
+                      <strong>Modalidad:</strong> Online
+                    </p>
+                    <a
+                      href="https://pay.hotmart.com/K102413472A?bid=1761782256593"
+                      class="btn-primary"
+                      target="_blank"
+                      rel="noopener"
+                      >Comprar</a
+                    >
+                  </div>
+
+                  <div class="taller-card-xl__media">
+                    <img
+                      src="https://static-media.hotmart.com/xXxQAP9M7KucRK5kSWMBS0MBNl4=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/092473b7-b913-41b1-950f-710a3ced4fe8/talleralimentacioncomplementaria.png?w=920"
+                      alt="Taller de Alimentación Complementaria"
+                    />
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <article class="taller-card-xl">
+                  <div class="taller-card-xl__content">
+                    <span class="badge">Taller online</span>
+                    <h3>Duelos durante la búsqueda de maternidad</h3>
+                    <p>
+                      Nombrar, comprender y transitar el duelo en el contexto de
+                      la fertilidad.
+                      <strong>Duración:</strong> 2 h ·
+                      <strong>Modalidad:</strong> Online
+                    </p>
+                    <a
+                      href="https://pay.hotmart.com/F102455334U"
+                      class="btn-primary"
+                      target="_blank"
+                      rel="noopener"
+                      >Comprar</a
+                    >
+                  </div>
+
+                  <div class="taller-card-xl__media">
+                    <img
+                      src="https://static-media.hotmart.com/GlzXmBz4xNp-gj0A6c4zBJdpo6w=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/1b0cff71-a4e1-4af1-b843-459924a87db3/ChatGPTImage16oct202515_57_08.png?w=920"
+                      alt="Taller de Duelos en la búsqueda de maternidad"
+                    />
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="swiper-pagination talleres-pagination mt-4"></div>
           </div>
         </div>
       </section>

@@ -3625,3 +3625,7 @@ color: var(--sgm-verde);
     order: 1; max-width: 680px;
   }
 }
+
+#buyModalTitle{
+  color: var(--sgm-piel);
+}

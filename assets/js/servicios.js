@@ -1,24 +1,23 @@
 const DATA_SERVICIOS = [
   // ——— Pacientes ———
   {
-    titulo: "Sesión individual",
+    titulo: "Atención individual",
     audiencia: ["paciente"],
     duracion: "35 min",
     formato: "Online / Presencial",
     descripcion:
-      "Acompañamiento clínico para procesar emociones, tomar decisiones y trabajar objetivos personales.",
+      "Espacio clínico para acompañar procesos vinculados con la búsqueda de maternidad/paternidad, los deseos, los duelos, el origen, la crianza y la pareja. Trabajamos sobre el deseo, las esperas, el cansancio y la montaña rusa emocional que puede acompañar el camino de maternar.",
     url: "https://docs.google.com/forms/d/e/1FAIpQLSfsVvvuaqPRgL_TAy0IXY1ZfDlZETRir6nJiA2iwX7NNhO_2A/viewform",
     // brochure: "assets/img/servicios/brochure_single.png",
-      brochure: null,
+    brochure: null,
   },
   {
-    titulo: "Círculo de mujeres",
+    titulo: "Grupos de apoyo",
     audiencia: ["paciente"],
     duracion: "2×90 min",
     formato: "Grupo",
     descripcion:
-      "Espacio íntimo coordinado por psicólogas: validación, pertenencia y recursos para transitar tratamientos.",
-    url: "",
+      "Espacios íntimos y pequeños, coordinados por psicólogas especializadas. Confianza, pertenencia y herramientas para transitar el deseo de maternar: FIV/ICSI, ovodonación, espermodonación, monomarentalidad, dificultades reproductivas y duelos. Tu tribu para no hacerlo sola.",    url: "",
     // brochure: "assets/img/servicios/brochure_circulo.png",
     brochure: null,
   },

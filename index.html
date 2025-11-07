@@ -2170,7 +2170,6 @@
     </script>
 
     <script>
-      // Registro global de Swipers
       window.__swipers = window.__swipers || [];
       function registerSwiper(sw) {
         if (sw && !window.__swipers.includes(sw)) window.__swipers.push(sw);
@@ -2181,8 +2180,6 @@
       function resumeAllSwipers() {
         (window.__swipers || []).forEach((s) => s.autoplay?.start());
       }
-
-      // Pausar/Reanudar solo si es un modal de compra (clase .buy-modal)
       document.addEventListener("show.bs.modal", (e) => {
         if (e.target.classList.contains("buy-modal")) pauseAllSwipers();
       });

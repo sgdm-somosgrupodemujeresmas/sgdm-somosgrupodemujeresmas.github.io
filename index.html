@@ -71,10 +71,34 @@
         class="fab ia"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Hablar con Agente de IA"
-        title="Hablar con Agente de IA"
+        aria-label="Una amiga en la infertilidad"
+        title="Una amiga en la infertilidad"
+        id="btn-ia"
       >
+       <img src="assets/img/IA.png" alt="Asistente IA" class="ia-avatar" />
       </a>
+
+      <div id="ia-modal" class="ia-modal" aria-hidden="true">
+        <div class="ia-modal-backdrop"></div>
+        <div class="ia-modal-dialog" role="dialog" aria-modal="true">
+          <h3 class="ia-modal-title">Antes de seguir…</h3>
+          <p class="ia-modal-text">
+            <strong>Aviso:</strong>
+            Esta inteligencia artificial ofrece información y asistencia con
+            base en datos y patrones, pero no reemplaza el juicio humano ni el
+            asesoramiento profesional. Las respuestas deben tomarse como una
+            guía general y verificarse antes de tomar decisiones importantes.
+          </p>
+          <div class="ia-modal-actions">
+            <button type="button" id="ia-cancelar" class="ia-btn ia-btn-ghost">
+              Cancelar
+            </button>
+            <button type="button" id="ia-aceptar" class="ia-btn ia-btn-primary">
+              Aceptar y continuar
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- BOTÓN WHATSAPP -->
       <a
@@ -626,7 +650,7 @@
           </div>
 
           <div class="row align-items-center gy-5">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
               <article class="varones-card">
                 <h3 class="mb-3">
                   Fertilidad y su impacto psicológico en los varones: lo que no
@@ -674,7 +698,7 @@
               </article>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
               <!-- si querés, podés cambiar esta imagen por otra -->
               <div class="varones-illustration">
                 <img
@@ -1897,9 +1921,9 @@
           </p>
         </div>
 
-        <div class="container" data-aos="fade-up" >
+        <div class="container" data-aos="fade-up">
           <div class="row">
-            <div class="col-lg-5" data-aos="fade-right" >
+            <div class="col-lg-5" data-aos="fade-right">
               <div class="contact-info">
                 <div class="contact-card">
                   <h3>Información de contacto</h3>
@@ -2137,11 +2161,7 @@
         <div class="modal-content p-4 text-center">
           <h5 class="mb-3" id="buyModalTitle"></h5>
           <div id="buyModalLinks" class="d-grid gap-2"></div>
-          <button
-            type="button"
-            class="btn mt-3"
-            data-bs-dismiss="modal"
-          >
+          <button type="button" class="btn mt-3" data-bs-dismiss="modal">
             Cerrar
           </button>
         </div>
@@ -2166,6 +2186,48 @@
         btn.textContent = p.classList.contains("expandido")
           ? "Ver menos"
           : "Ver más";
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btnIa = document.getElementById("btn-ia");
+        const modal = document.getElementById("ia-modal");
+        const btnCancelar = document.getElementById("ia-cancelar");
+        const btnAceptar = document.getElementById("ia-aceptar");
+        const backdrop = document.querySelector(".ia-modal-backdrop");
+        let destino = null;
+
+        if (!btnIa) return;
+
+        btnIa.addEventListener("click", (e) => {
+          e.preventDefault();
+          destino = btnIa.href;
+          modal.classList.add("is-visible");
+          modal.setAttribute("aria-hidden", "false");
+        });
+
+        const cerrar = () => {
+          modal.classList.remove("is-visible");
+          modal.setAttribute("aria-hidden", "true");
+          destino = null;
+        };
+
+        btnCancelar.addEventListener("click", cerrar);
+        backdrop.addEventListener("click", cerrar);
+
+        btnAceptar.addEventListener("click", () => {
+          if (destino) {
+            window.open(destino, "_blank", "noopener");
+          }
+          cerrar();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("is-visible")) {
+            cerrar();
+          }
+        });
       });
     </script>
 

@@ -910,12 +910,18 @@ section,
 .about-col.compromiso p {
   margin: 0;
   line-height: 1.6;
+  padding-left: 32px;
 }
 
 /* “Qué vas a encontrar” */
 .about-col.encontrar .highlights {
   margin: 0;
 }
+
+ .about-col.encontrar .highlights h3 {
+    font-weight: 600;
+    padding-left: 30px;
+  }
 
 /* Título de highlights */
 .about .about-book-content .highlights h3 {
@@ -988,7 +994,6 @@ section,
 .about-lower-cta .about-book-cta:hover i {
   transform: translateX(4px);
 }
-
 
 
 .about .about-book-content .about-book-cta:focus-visible {

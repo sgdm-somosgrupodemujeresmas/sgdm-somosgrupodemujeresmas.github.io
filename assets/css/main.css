@@ -535,7 +535,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   position: relative;
 }
 
@@ -1237,6 +1237,7 @@ section,
   opacity: 0.9;
 }
 
+/* ====== BOTONES DE AUDIENCIA ====== */
 .audiencia-btn {
   font-family: var(--nav-font);
   background: color-mix(in srgb, var(--sgm-verde), transparent 80%);
@@ -1248,43 +1249,109 @@ section,
   transition: 0.2s;
   font-weight: 600;
 }
+
 .audiencia-btn:hover {
   transform: translateY(-2px);
 }
+
 .audiencia-btn.is-active {
   background: var(--sgm-verde);
   color: #3b2e23;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.servicios-grid {
+/* ====== SWITCH ====== */
+.audiencia-switch {
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
+  gap: 10px;
   justify-content: center;
+  margin: 10px 0 26px;
 }
 
+.audiencia-switch .audiencia-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.audiencia-switch .audiencia-btn i {
+  font-size: 1.1em;
+  line-height: 0;
+}
+
+@media (max-width: 576px) {
+  .audiencia-switch {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .audiencia-switch .audiencia-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ====== INTRO ====== */
+.servicios-intro {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ink-soft, var(--heading-color));
+  text-align: center;
+}
+
+/*=============================================================
+=            SLIDER (SWIPER) - SERVICIOS CARDS               =
+==============================================================*/
+
+/* Contenedor global del slider */
+.servicios-swiper {
+  padding-bottom: 50px; /* espacio para bullets */
+}
+
+/* Wrapper interno de Swiper */
+.servicios-swiper .swiper-wrapper {
+  display: flex;
+  height: auto;
+}
+
+/* Cada slide se comporta como un flex para igualar alturas */
+.servicios-swiper .swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+/* ====== CARD DE SERVICIO ====== */
 .servicio-card {
-  flex: 1 1 260px;
-  max-width: 320px;
   background: var(--surface-color);
   border: 1px solid var(--surface-divider);
   border-radius: 12px;
   padding: 18px;
   color: var(--surface-text);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: 0.25s;
-}
-.servicio-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* igualar altura para todas */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
+/* .servicio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
+} */
+
+/* ====== CONTENIDO DE LA CARD ====== */
 .servicio-card h3 {
   color: var(--chocolate-suave);
   font-size: 18px;
   margin: 0 0 6px;
 }
+
 .servicio-meta {
   display: flex;
   gap: 10px;
@@ -1292,6 +1359,7 @@ section,
   color: var(--chocolate-suave);
   margin-bottom: 8px;
 }
+
 .servicio-desc {
   font-size: 14px;
   line-height: 1.5;
@@ -1299,9 +1367,11 @@ section,
   color: var(--chocolate-suave);
 }
 
+/* Acciones siempre al fondo */
 .servicio-actions {
   display: flex;
   gap: 10px;
+  margin-top: auto; /* empuja los botones abajo */
 }
 
 .servicio-actions .btn-outline {
@@ -1311,6 +1381,7 @@ section,
   border-radius: 999px;
   font-weight: 600;
 }
+
 .servicio-actions .btn-primary {
   background: var(--sgm-piel);
   color: var(--ink-strong);
@@ -1318,13 +1389,36 @@ section,
   border-radius: 999px;
   font-weight: 500;
 }
+
+/* ====== DESKTOP ====== */
+@media (min-width: 992px) {
+  .servicios-swiper {
+    padding-bottom: 32px;
+  }
+}
+
+/* ====== BULLETS ====== */
+.servicios-swiper .swiper-pagination-bullet {
+  background: var(--sgm-verde);
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+.servicios-swiper .swiper-pagination-bullet-active {
+  background: var(--sgm-piel);
+}
+
+/*=============================================================
+=            CTA GENERAL                                     =
+==============================================================*/
 .servicios-cta {
   text-align: center;
   margin-top: 50px;
 }
 
 .servicios-cta a.btn-primary {
-  display: inline-block; /* se comporta como botón */
+  display: inline-block;
   background-color: var(--sgm-piel);
   color: var(--ink-strong);
   padding: 10px 22px;
@@ -1337,40 +1431,6 @@ section,
 a.btn-primary:hover {
   background-color: var(--sgm-verde);
   transform: translateY(-2px);
-}
-
-.audiencia-switch {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin: 10px 0 26px;
-}
-
-.audiencia-switch .audiencia-btn {
-  display: inline-flex; /* icono + texto en línea */
-  align-items: center;
-  gap: 8px; /* espacio entre icono y texto */
-  /* el resto de tus estilos… */
-}
-
-.audiencia-switch .audiencia-btn i {
-  font-size: 1.1em; /* un toque más grande */
-  line-height: 0;
-}
-
-@media (max-width: 576px) {
-  .audiencia-switch {
-    flex-direction: column; /* se apilan en columna */
-    align-items: center;
-    gap: 12px;
-  }
-
-  .audiencia-switch .audiencia-btn {
-    width: 100%;
-    max-width: 280px; /* opcional, para que no ocupen todo el ancho */
-    justify-content: center;
-    text-align: center;
-  }
 }
 /*--------------------------------------------------------------
 # Excerpt Section
@@ -3548,7 +3608,7 @@ a.btn-primary:hover {
   width: 64px;
   height: 64px;
 
-  background: var(--sgm-verde) url("../assets/img/IA.png") no-repeat center;
+  background: var(--sgm-verde) url("../img/IA.png") no-repeat center;
   background-size: 70%;
 }
 

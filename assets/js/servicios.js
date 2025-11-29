@@ -17,7 +17,8 @@ const DATA_SERVICIOS = [
     duracion: "2×90 min",
     formato: "Grupo",
     descripcion:
-      "Espacios íntimos y pequeños, coordinados por psicólogas especializadas. Confianza, pertenencia y herramientas para transitar el deseo de maternar: FIV/ICSI, ovodonación, espermodonación, monomarentalidad, dificultades reproductivas y duelos. Tu tribu para no hacerlo sola.",    url: "",
+      "Espacios íntimos y pequeños, coordinados por psicólogas especializadas. Confianza, pertenencia y herramientas para transitar el deseo de maternar: FIV/ICSI, ovodonación, espermodonación, monomarentalidad, dificultades reproductivas y duelos. Tu tribu para no hacerlo sola.",
+    url: "",
     // brochure: "assets/img/servicios/brochure_circulo.png",
     brochure: null,
   },
@@ -97,6 +98,17 @@ const DATA_SERVICIOS = [
 const grid = document.getElementById("servicios-grid");
 const buttons = document.querySelectorAll(".audiencia-btn");
 const ctaBtn = document.getElementById("servicios-cta-btn");
+const introEl = document.getElementById("servicios-intro");
+let serviciosSwiper = null; // <- instancia global
+
+const INTRO_AUDIENCIA = {
+  paciente:
+    "Te acompañamos en el deseo de maternar, los tratamientos de fertilidad, los duelos y las decisiones que aparecen en el camino. Podés elegir espacios individuales o grupales según lo que necesites hoy.",
+  empresa:
+    "Acompañamos a las organizaciones a crear entornos laborales sin estigmas, con políticas, educación y apoyo que fortalecen el bienestar, la productividad y la inclusión.",
+  profesional:
+    "Formación, supervisión y recursos para profesionales que trabajan o quieren empezar a trabajar en salud mental reproductiva, acompañando deseos, duelos y proyectos de familia.",
+};
 /** Utilidades URL (sin provocar scroll) */
 function getAudFromURL() {
   const url = new URL(location.href);
@@ -126,12 +138,15 @@ function render(aud) {
     b.classList.toggle("is-active", active);
     b.setAttribute("aria-selected", active ? "true" : "false");
   });
+  if (introEl) {
+    introEl.textContent = INTRO_AUDIENCIA[aud] || "";
+  }
   // tarjetas
   grid.innerHTML = "";
   const items = DATA_SERVICIOS.filter((s) => s.audiencia.includes(aud));
   items.forEach((s) => {
     const card = document.createElement("article");
-    card.className = "servicio-card";
+    card.className = "servicio-card swiper-slide";
     card.setAttribute("data-audiencia", s.audiencia.join(","));
     card.innerHTML = `
       <h3>${s.titulo}</h3>
@@ -155,10 +170,40 @@ function render(aud) {
   // CTA + URL sin hash (evita scroll)
   ctaBtn.href = "#contact";
   setAudInURL(aud);
+  if (serviciosSwiper) {
+    serviciosSwiper.update();
+  }
 }
 /** Eventos */
 buttons.forEach((b) =>
   b.addEventListener("click", () => render(b.dataset.audiencia))
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  const audInicial = getAudFromURL();
+  render(audInicial);
+
+  serviciosSwiper = new Swiper(".servicios-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    grabCursor: true,
+      centerInsufficientSlides: true,
+    pagination: {
+      el: ".servicios-swiper .swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 18,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 22,
+      },
+    },
+  });
+});
+
 /** Init (URL awareness) */
 render(getAudFromURL());

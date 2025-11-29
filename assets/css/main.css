@@ -2454,6 +2454,7 @@ a.btn-primary:hover {
   padding: 35px;
   position: relative;
   overflow: hidden;
+  background-color: var(--sgm-verde);
 }
 
 .contact .contact-form-wrapper:before {
@@ -2472,7 +2473,7 @@ a.btn-primary:hover {
 
 .contact .contact-form-wrapper .php-email-form .form-group label {
   font-weight: 500;
-  color: var(--marron-claro);
+  color: var(--ink-strong);
   margin-bottom: 8px;
   font-size: 14px;
   display: block;
@@ -2556,7 +2557,8 @@ a.btn-primary:hover {
 }
 
 .contact .contact-form-wrapper .php-email-form button:hover {
-  background-color: var(--sgm-verde);
+  background-color: var(--ink-strong);
+  color: var(--blanco-hueso);
   transform: translateY(-3px);
 }
 

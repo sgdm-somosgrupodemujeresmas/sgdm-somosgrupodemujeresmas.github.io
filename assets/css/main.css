@@ -369,8 +369,8 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: var(--sgm-piel);
+  color: var(--ink-strong);
   line-height: 1;
   margin: 0 4px;
   border-radius: 50%;
@@ -381,7 +381,7 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: var(--sgm-verde);
   text-decoration: none;
 }
 
@@ -2152,7 +2152,7 @@ a.btn-primary:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: color-mix(in srgb, var(--sgm-verde) 72%, transparent);
+  background: var(--sgm-verde);
   color: var(--ink-strong);
   padding: 0.16rem 0.4rem;
   border-radius: 999px;
@@ -2162,7 +2162,7 @@ a.btn-primary:hover {
   position: absolute;
   bottom: 6px;
   left: 6px;
-  background: color-mix(in srgb, var(--sgm-piel) 90%, transparent);
+  background: var(--sgm-piel);
   color: var(--ink-strong);
   padding: 0.12rem 0.4rem;
   border-radius: 6px;

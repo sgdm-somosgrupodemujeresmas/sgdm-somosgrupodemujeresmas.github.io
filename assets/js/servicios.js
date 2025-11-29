@@ -186,8 +186,21 @@ document.addEventListener("DOMContentLoaded", () => {
   serviciosSwiper = new Swiper(".servicios-swiper", {
     slidesPerView: 1,
     spaceBetween: 16,
+    speed: 400,
+    fadeEffect: { crossFade: true },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    preloadImages: false,
+    lazy: {
+      enabled: true,
+      loadOnTransitionStart: true,
+      loadPrevNext: true,
+    },
     grabCursor: true,
-      centerInsufficientSlides: true,
+    centerInsufficientSlides: true,
     pagination: {
       el: ".servicios-swiper .swiper-pagination",
       clickable: true,

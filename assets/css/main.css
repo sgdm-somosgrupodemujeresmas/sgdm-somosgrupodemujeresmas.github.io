@@ -1426,6 +1426,8 @@ section,
 
 .servicios-swiper .swiper-pagination-bullet-active {
   background: var(--sgm-piel);
+  width: 20px;
+  border-radius: 10px;
 }
 
 /*=============================================================

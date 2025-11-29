@@ -2877,7 +2877,8 @@ a.btn-primary:hover {
 
 .related-books-slider .swiper-pagination-bullet-active {
   background: var(--sgm-piel); /* marrón principal */
-  transform: scale(1.2);
+    width: 20px;
+  border-radius: 10px !important;
 }
 
 /* 📌 Opcional: darle forma redondeada */
@@ -3711,14 +3712,20 @@ a.btn-primary:hover {
   object-position: center;
   display: block;
 }
-
+.talleres-swiper{
+  padding-bottom: 50px;
+}
 /* Bullets del slider en esta sección */
 .talleres-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
   background: #fff;
   opacity: 0.5;
 }
 .talleres-pagination .swiper-pagination-bullet-active {
   background: var(--rosa-nude, #eac6c0);
+  width: 20px;
+  border-radius: 10px;
   opacity: 1;
 }
 

@@ -535,14 +535,14 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   position: relative;
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .section-title p {
@@ -1284,7 +1284,7 @@ section,
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin: 10px 0 26px;
+  margin: 10px 0 30px;
 }
 
 .audiencia-switch .audiencia-btn {

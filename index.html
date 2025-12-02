@@ -427,17 +427,6 @@
           </div>
 
           <div class="about-lower-wrapper">
-            <div class="about-col compromiso">
-              <p>
-                <strong style="color: #bcc0b0">Nuestro compromiso:</strong
-                ><br />
-                Escuchar y acompañar con respeto y empatía.<br />
-                Fomentar redes de apoyo entre mujeres.<br />
-                Brindar herramientas para el crecimiento personal.<br />
-                <strong style="color: #bcc0b0">Conectá con nosotras.</strong>
-              </p>
-            </div>
-
             <div class="about-col encontrar">
               <div class="highlights">
                 <h3>Qué vas a encontrar</h3>
@@ -460,6 +449,16 @@
                   </li>
                 </ul>
               </div>
+            </div>
+            <div class="about-col compromiso">
+              <p>
+                <strong style="color: #bcc0b0">Nuestro compromiso:</strong
+                ><br />
+                Escuchar y acompañar con respeto y empatía.<br />
+                Fomentar redes de apoyo entre mujeres.<br />
+                Brindar herramientas para el crecimiento personal.<br />
+                <strong style="color: #bcc0b0">Conectá con nosotras.</strong>
+              </p>
             </div>
           </div>
 
@@ -2271,23 +2270,21 @@
       registerSwiper(heroSwiper);
     </script>
     <script>
-     
-        const authorswiper = new Swiper(".author-swiper", {
-          loop: true,
-          speed: 800,
-          effect: "fade",
-          fadeEffect: { crossFade: true },
-          autoplay: { delay: 3000, disableOnInteraction: false },
-          allowTouchMove: false,
-          simulateTouch: false,
-          grabCursor: false,
-          keyboard: { enabled: false },
-          mousewheel: false,
-          preloadImages: false,
-          lazy: { loadPrevNext: true },
-        });
-        registerSwiper(authorswiper);
-     
+      const authorswiper = new Swiper(".author-swiper", {
+        loop: true,
+        speed: 800,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        allowTouchMove: false,
+        simulateTouch: false,
+        grabCursor: false,
+        keyboard: { enabled: false },
+        mousewheel: false,
+        preloadImages: false,
+        lazy: { loadPrevNext: true },
+      });
+      registerSwiper(authorswiper);
     </script>
     <script>
       const aboutSwiper = new Swiper(".about-swiper", {

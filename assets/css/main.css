@@ -3740,8 +3740,8 @@ a.btn-primary:hover {
 .talleres-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #fff;
-  opacity: 0.5;
+  background: var(--sgm-verde);
+  opacity: 1;
 }
 .talleres-pagination .swiper-pagination-bullet-active {
   background: var(--rosa-nude, #eac6c0);

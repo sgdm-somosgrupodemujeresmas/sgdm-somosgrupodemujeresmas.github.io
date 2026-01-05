@@ -4395,3 +4395,14 @@ a.btn-primary:hover {
     font-size: 32px;
   }
 }
+#gcal-scheduling-button {
+  display: flex;
+  justify-content: center;
+}
+
+/* Ajuste visual del botón */
+.calendar-scheduling-button {
+  border-radius: 999px !important;
+  font-family: var(--nav-font) !important;
+  font-weight: 600 !important;
+}

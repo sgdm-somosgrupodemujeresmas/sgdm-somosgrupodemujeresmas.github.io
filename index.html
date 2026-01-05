@@ -21,7 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      href="https://calendar.google.com/calendar/scheduling-button-script.css"
+      rel="stylesheet"
+    />
     <!-- Vendor CSS Files -->
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -142,7 +145,7 @@
             <li><a href="#hero" class="active">Inicio</a></li>
             <li><a href="#about">Quienes Somos?</a></li>
             <li><a href="#impacto">Por qué SGM+</a></li>
-            
+
             <li><a href="#bio-hormonal">Biografía hormonal</a></li>
             <li><a href="#menopausia">Menopausia</a></li>
 
@@ -2472,35 +2475,29 @@
             ></button>
           </div>
 
-          <div class="modal-body">
-            <div class="calendar-embed-wrap">
-              <iframe
-                id="calendarIframe"
-                title="Agenda de turnos"
-                src=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
+          <div class="modal-body text-center">
+            <p class="mb-4">
+              Elegí un día y horario disponible para tu sesión individual con
+              Lorena.
+            </p>
 
-            <p class="small text-muted mt-3">
-              Si el calendario no carga dentro del modal, usá “Abrir en Google
-              Calendar”.
+            <!-- Contenedor del botón de Google -->
+            <div id="gcal-scheduling-button"></div>
+
+            <p class="small text-muted mt-4">
+              Si el botón no se carga, podés abrir la agenda directamente.
             </p>
           </div>
 
-          <div class="modal-footer">
+          <div class="modal-footer justify-content-center">
             <a
-              id="calendarOpenExternal"
-              class="btn btn-outline-secondary"
-              href="https://calendar.app.google/MmobJfXVe1xdKyYW7"
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2QzKHgup4Sy4fAe1Y3byX246YAw0JL9OVUokD8d-ay9QoOFzmF1_WAP8NXGzlUqbrr0BNJj9ak?gv=true"
               target="_blank"
-              rel="noopener"
+              class="btn btn-outline-secondary"
             >
-              Abrir en Google Calendar
+              Abrir agenda en Google Calendar
             </a>
+
             <button
               type="button"
               class="btn btn-secondary"
@@ -2672,6 +2669,24 @@
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/servicios.js" defer></script>
     <script src="assets/js/media.js" defer></script>
+    <script
+      src="https://calendar.google.com/calendar/scheduling-button-script.js"
+      async
+    ></script>
+    <script>
+      window.addEventListener("load", function () {
+        const target = document.getElementById("gcal-scheduling-button");
+
+        if (!target) return;
+
+        calendar.schedulingButton.load({
+          url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2QzKHgup4Sy4fAe1Y3byX246YAw0JL9OVUokD8d-ay9QoOFzmF1_WAP8NXGzlUqbrr0BNJj9ak?gv=true",
+          color: "#E67C73",
+          label: "Programar una sesión",
+          target: target,
+        });
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const modalTitle = document.getElementById("buyModalTitle");

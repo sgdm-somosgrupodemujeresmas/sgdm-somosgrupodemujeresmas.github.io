@@ -3875,3 +3875,523 @@ a.btn-primary:hover {
     text-align: center;
   }
 }
+/* Agenda / Sesiones */
+.agenda {
+  background: var(--sgm-marron, var(--sgm-marron)); /* mismo fondo que la captura */
+}
+
+/* Card principal */
+.agenda-card {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 22px;
+  padding: 32px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+  color: #5f4b3b; /* TEXTO BASE */
+}
+
+@media (max-width: 992px) {
+  .agenda-card {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+
+/* Textos */
+.agenda-card h3 {
+  color: #5f4b3b;
+  font-weight: 700;
+}
+
+.agenda-card p {
+  color: #6f5a4a;
+}
+
+/* Acciones */
+.agenda-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Nota */
+.agenda-note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #8a7667;
+}
+
+/* Mini cards (derecha) */
+.agenda-card__mini {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.agenda-mini {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f6f2ef; /* visible pero suave */
+}
+
+.agenda-mini i {
+  font-size: 18px;
+  color: var(--rosa-nude, #a98274);
+  margin-top: 2px;
+}
+
+.agenda-mini span {
+  font-weight: 600;
+  color: #5f4b3b;
+}
+
+.agenda-mini p {
+  margin: 0;
+  font-size: 14px;
+  color: #7a6657;
+}
+
+/* =========================
+   Botones (forzados)
+   ========================= */
+
+/* Botón primario */
+.agenda-card .btn-primary {
+  background: var(--rosa-nude, #a98274);
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 18px;
+}
+
+.agenda-card .btn-primary:hover {
+  background: #947063;
+}
+
+/* Botón secundario */
+.agenda-card .btn-secondary {
+  background: transparent;
+  color: #5f4b3b;
+  border: 1px solid #d6c7bd;
+  border-radius: 999px;
+  padding: 10px 18px;
+}
+
+.agenda-card .btn-secondary:hover {
+  background: #f3ede9;
+}
+
+/* =========================
+   Calendar embed
+   ========================= */
+
+.calendar-embed-wrap {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+#calendarIframe {
+  width: 100%;
+  height: 70vh;
+  border: 0;
+}
+
+/* =========================
+   Calendar Modal (SGM)
+   ========================= */
+
+/* Fondo oscuro detrás del modal */
+#calendarModal .modal-backdrop,
+.modal-backdrop.show {
+  background-color: rgba(60, 40, 32, 0.75);
+}
+
+/* Contenedor principal */
+#calendarModal .modal-content {
+  border-radius: 24px;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  background: #ffffff;
+}
+
+/* Header */
+#calendarModal .modal-header {
+  padding: 20px 28px;
+  border-bottom: 1px solid #e6ddd7;
+  background: #faf7f5;
+}
+
+#calendarModal .modal-title {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #5f4b3b;
+}
+
+/* Botón cerrar */
+#calendarModal .btn-close {
+  filter: opacity(0.6);
+}
+
+#calendarModal .btn-close:hover {
+  filter: opacity(1);
+}
+
+/* Body */
+#calendarModal .modal-body {
+  padding: 24px 28px;
+  background: #ffffff;
+}
+
+/* Contenedor del iframe */
+.calendar-embed-wrap {
+  width: 100%;
+  height: 65vh;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f6f2ef;
+  border: 1px solid #e6ddd7;
+}
+
+/* Iframe */
+#calendarIframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #ffffff;
+}
+
+/* Texto de ayuda */
+#calendarModal .modal-body p {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #8a7667;
+}
+
+/* Footer */
+#calendarModal .modal-footer {
+  padding: 18px 28px;
+  border-top: 1px solid #e6ddd7;
+  background: #faf7f5;
+  display: flex;
+  gap: 12px;
+}
+
+/* Botón Google Calendar */
+#calendarModal .btn-outline-secondary {
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-color: #d6c7bd;
+  color: #5f4b3b;
+}
+
+#calendarModal .btn-outline-secondary:hover {
+  background: #f3ede9;
+  color: #5f4b3b;
+}
+
+/* Botón cerrar */
+#calendarModal .btn-secondary {
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  background: var(--rosa-nude, #a98274);
+  border: none;
+  color: #fff;
+}
+
+#calendarModal .btn-secondary:hover {
+  background: #947063;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #calendarModal .modal-dialog {
+    margin: 12px;
+  }
+
+  .calendar-embed-wrap {
+    height: 70vh;
+  }
+}
+
+/* =========================
+   Biografía hormonal femenina
+   ========================= */
+
+.bio-hormonal {
+  background: var(--ink-strong); /* marrón SGM */
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Título + bajada */
+.bio-hormonal .section-title {
+  margin-bottom: 34px;
+}
+
+.bio-hormonal .section-title h2 {
+  color: #ffffff;
+  font-family: "Lora", serif;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+/* subrayado editorial */
+.bio-hormonal .section-title h2::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.35);
+}
+
+.bio-hormonal .section-title p {
+  color: rgba(255,255,255,.85);
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* === Cards: ahora sí “anclan” el layout === */
+.bioh-card {
+  height: 100%;
+  padding: 22px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 12px 32px rgba(0,0,0,.10);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.bioh-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.16);
+}
+
+/* Icono en “pill” */
+.bioh-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.14);
+  margin-bottom: 14px;
+}
+
+.bioh-icon i {
+  font-size: 20px;
+  color: #ffffff;
+  opacity: .95;
+}
+
+.bioh-card h3 {
+  color: #ffffff;
+  font-family: "Lora", serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.bioh-card p {
+  color: rgba(255,255,255,.78);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* CTA inferior: mejor jerarquía y alineación */
+.bioh-cta {
+  margin-top: 44px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255,255,255,.14);
+  max-width: 980px;
+}
+
+.bioh-cta p {
+  color: rgba(255,255,255,.85);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.bioh-cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.12);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,.30);
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+
+.bioh-cta .btn-primary:hover {
+  background: rgba(255,255,255,.20);
+  border-color: rgba(255,255,255,.40);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.bioh-cta .btn-primary i {
+  font-size: 16px;
+  opacity: .95;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .bio-hormonal {
+    padding: 70px 0;
+  }
+
+  .bio-hormonal .section-title h2 {
+    font-size: 32px;
+  }
+
+  .bioh-card {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bio-hormonal .section-title p {
+    font-size: 15px;
+  }
+
+  .bioh-card h3 {
+    font-size: 20px;
+  }
+}
+/* =========================
+   Menopausia / Perimenopausia
+   ========================= */
+
+.menopausia {
+  background: #f6f2ef; /* nude claro SGM */
+  padding: 90px 0;
+}
+
+.menopausia .section-title h2 {
+  font-family: "Lora", serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #5f4b3b;
+  margin-bottom: 14px;
+}
+
+.menopausia .section-title p {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6f5a4a;
+}
+
+/* Texto */
+.menopausia-content h3 {
+  font-family: "Lora", serif;
+  font-size: 26px;
+  color: #5f4b3b;
+  margin-bottom: 14px;
+}
+
+.menopausia-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6f5a4a;
+  margin-bottom: 14px;
+}
+
+/* Lista */
+.menopausia-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 22px;
+}
+
+.menopausia-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14.5px;
+  color: #5f4b3b;
+  margin-bottom: 8px;
+}
+
+.menopausia-list i {
+  color: var(--rosa-nude, #a98274);
+  margin-top: 2px;
+}
+
+/* CTA */
+.menopausia-content .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+
+/* Destacado */
+.menopausia-highlight {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 34px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+}
+
+.menopausia-highlight blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.menopausia-highlight p {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #5f4b3b;
+}
+
+.menopausia-note {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #7a6657;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .menopausia {
+    padding: 70px 0;
+  }
+
+  .menopausia-highlight {
+    margin-top: 24px;
+  }
+
+  .menopausia .section-title h2 {
+    font-size: 32px;
+  }
+}

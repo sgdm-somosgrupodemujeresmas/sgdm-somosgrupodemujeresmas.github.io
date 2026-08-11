@@ -80,10 +80,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://calendar.google.com/calendar/scheduling-button-script.css"
-      rel="stylesheet"
-    />
+
     <!-- Vendor CSS Files -->
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -121,7 +118,6 @@
       //  gtag('config', 'AW-769337806');
     </script>
   </head>
-
   <body class="index-page">
     <!-- CONTENEDOR DE BOTONES FLOTANTES -->
     <div class="fab-container">
@@ -178,6 +174,48 @@
       </a>
     </div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btnIa = document.getElementById("btn-ia");
+        const modal = document.getElementById("ia-modal");
+        const btnCancelar = document.getElementById("ia-cancelar");
+        const btnAceptar = document.getElementById("ia-aceptar");
+        const backdrop = document.querySelector(".ia-modal-backdrop");
+        let destino = null;
+
+        if (!btnIa) return;
+
+        btnIa.addEventListener("click", (e) => {
+          e.preventDefault();
+          destino = btnIa.href;
+          modal.classList.add("is-visible");
+          modal.setAttribute("aria-hidden", "false");
+        });
+
+        const cerrar = () => {
+          modal.classList.remove("is-visible");
+          modal.setAttribute("aria-hidden", "true");
+          destino = null;
+        };
+
+        btnCancelar.addEventListener("click", cerrar);
+        backdrop.addEventListener("click", cerrar);
+
+        btnAceptar.addEventListener("click", () => {
+          if (destino) {
+            window.open(destino, "_blank", "noopener");
+          }
+          cerrar();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && modal.classList.contains("is-visible")) {
+            cerrar();
+          }
+        });
+      });
+    </script>
+
     <header
       id="header"
       class="header d-flex align-items-center position-relative"
@@ -197,26 +235,40 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Inicio</a></li>
-            <li><a href="#about">Quienes Somos?</a></li>
-            <li><a href="#impacto">Por qué SGM+</a></li>
+            <li><a href="index.html#hero">Inicio</a></li>
+            <li><a href="index.html#about">Quienes Somos?</a></li>
 
-            <li><a href="#bio-hormonal">Biografía hormonal</a></li>
-            <li><a href="#menopausia">Menopausia</a></li>
+            <li class="dropdown">
+              <a href="index.html#impacto">
+                <span>Por qué SGM+</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+                <li><a href="index.html#bio-hormonal">Biografía hormonal</a></li>
+                <li><a href="index.html#menopausia">Menopausia</a></li>
+                <li><a href="index.html#varones">Varones</a></li>
+              </ul>
+            </li>
 
-            <li><a href="#varones">Varones</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#about-author">Nosotras</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#related-books">Libros</a></li>
-            <li><a href="#talleres">Talleres</a></li>
-            <li><a href="#medios">En los medios</a></li>
-            <li><a href="#faq">Preguntas</a></li>
-            <li><a href="#call-to-action">Próximo taller</a></li>
-            <li><a href="#agenda">Sesiones</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="talleres.html">Talleres</a></li>
+            <li><a href="index.html#testimonios">Testimonios</a></li>
 
-            <li><a href="test.html">Test</a></li>
+            <li class="dropdown">
+              <a href="#">
+                <span>Recursos</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i>
+              </a>
+              <ul>
+                <li><a href="index.html#related-books">Libros</a></li>
+                <li><a href="index.html#medios">En los medios</a></li>
+                <li><a href="test.html">Test gratuito</a></li>
+              </ul>
+            </li>
+
+            <li><a href="index.html#faq">Preguntas</a></li>
+            <li><a href="sesiones.html">Sesiones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -224,7 +276,6 @@
     </header>
 
     <main class="main">
-      <!-- Hero Section -->
       <section id="hero" class="hero hero--full section">
         <!-- Slider de fondo -->
         <div class="hero-swiper swiper">
@@ -310,7 +361,7 @@
 
         <!-- Contenido -->
         <div class="container">
-          <div class="hero-test" data-aos="fade-up" data-aos-delay="300">
+          <div class="hero-test" data-aos="fade-up">
             <div class="test-box">
               <p class="test-text">
                 <strong>Tu bienestar comienza por conocerte</strong><br />
@@ -343,7 +394,7 @@
               aria-label="Selector de audiencia"
             >
               <a
-                href="#servicios"
+                href="servicios.html"
                 class="audiencia-btn"
                 data-audiencia="paciente"
                 role="tab"
@@ -353,7 +404,7 @@
                 <span>Quiero acompañamiento</span>
               </a>
               <a
-                href="#servicios"
+                href="servicios.html"
                 class="audiencia-btn"
                 data-audiencia="empresa"
                 role="tab"
@@ -363,7 +414,7 @@
                 <span>Programa para empresas</span>
               </a>
               <a
-                href="#servicios"
+                href="servicios.html"
                 class="audiencia-btn is-active"
                 data-audiencia="profesional"
                 role="tab"
@@ -376,14 +427,11 @@
           </div>
         </div>
       </section>
-
-      <!-- About Section -->
       <section id="about" class="about section light-background">
         <div class="container text-center">
           <div
             class="about-book-content"
             data-aos="fade-up"
-            data-aos-delay="100"
           >
             <h2>Sobre Nosotras</h2>
 
@@ -422,7 +470,7 @@
             </p>
           </div>
 
-          <div class="about-media" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-media" data-aos="fade-up">
             <div class="about-book-img">
               <div class="swiper about-swiper">
                 <div class="swiper-wrapper">
@@ -528,483 +576,23 @@
 
           <!-- CTA centrado -->
           <div class="about-lower-cta">
-            <a href="#servicios" class="about-book-cta">
+            <a href="servicios.html" class="about-book-cta">
               Ver servicios <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
       </section>
-
-      <!-- impacto Section -->
-      <section
-        id="impacto"
-        class="features section"
-        aria-labelledby="features-title"
-      >
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2 id="features-title">Impacto emocional y por qué importa</h2>
-          <p>
-            Los tratamientos de reproducción asistida suelen implicar
-            <strong>altos niveles de estrés</strong> y pueden minar la calidad
-            de vida de los pacientes, deteriorar las relaciones y,
-            potencialmente, incluso afectar las tasas de éxito del tratamiento.
-            El <strong>acompañamiento psicológico</strong> grupal mejora el
-            bienestar y favorece la continuidad de los tratamientos.
-          </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <!-- Cards -->
-          <div class="row gy-4" role="list">
-            <div class="col-md-6 col-lg-4" role="listitem">
-              <article
-                class="feature-card"
-                data-aos="fade-up"
-                data-aos-delay="100"
-                tabindex="0"
-              >
-                <div class="feature-icon" aria-hidden="true">
-                  <i class="bi bi-lightbulb"></i>
-                </div>
-                <h3>Prevalencia</h3>
-                <p>
-                  En Argentina, <strong>1 de cada 6</strong> personas (≈15%)
-                  atraviesa desafíos reproductivos. Globalmente, la OMS estima
-                  <strong>~17,5%</strong> de la población adulta.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4" role="listitem">
-              <article
-                class="feature-card"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                tabindex="0"
-              >
-                <div class="feature-icon" aria-hidden="true">
-                  <i class="bi bi-chat-left-quote"></i>
-                </div>
-                <h3>Continuidad del tratamiento</h3>
-                <p>
-                  En nuestro estudio (2025), <strong>73,8%</strong> reportó
-                  haber continuado con los tratamientos gracias al sostén del
-                  grupo. El <strong>89,3%</strong> refirió alivio emocional tras
-                  asistir.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4" role="listitem">
-              <article
-                class="feature-card"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                tabindex="0"
-              >
-                <div class="feature-icon" aria-hidden="true">
-                  <i class="bi bi-bar-chart"></i>
-                </div>
-                <h3>Pertenencia y validación</h3>
-                <p>
-                  Compartir con pares reduce <em>soledad</em> y
-                  <em>estigma</em>, y crea espacios de validación que fortalecen
-                  recursos emocionales.
-                </p>
-              </article>
-            </div>
-          </div>
-
-          <!-- Steps/Chapters -->
-          <div class="row mt-5">
-            <div
-              class="col-12 text-center"
-              data-aos="fade-up"
-              data-aos-delay="700"
-            >
-              <div class="feature-chapters emociones">
-                <h3>Emociones frecuentes durante los tratamientos</h3>
-                <p class="mb-4" style="opacity: 0.9">
-                  Los porcentajes muestran <em>rangos reportados</em> en
-                  estudios y experiencia clínica. Cada proceso es único.
-                </p>
-
-                <div class="emociones-grid2">
-                  <div class="emotion-item" style="--start: 65; --end: 75">
-                    <div class="emotion-head">
-                      <!-- <span class="emotion-index">01</span> -->
-                      <h4>Ansiedad</h4>
-                      <span class="emotion-range">65–75%</span>
-                    </div>
-                    <div class="emotion-bar">
-                      <span class="emotion-fill"></span>
-                    </div>
-                  </div>
-                  <div class="emotion-item" style="--start: 55; --end: 65">
-                    <div class="emotion-head">
-                      <!-- <span class="emotion-index">02</span> -->
-                      <h4>Angustia - Miedo</h4>
-                      <span class="emotion-range">55–65%</span>
-                    </div>
-                    <div class="emotion-bar">
-                      <span class="emotion-fill"></span>
-                    </div>
-                  </div>
-                  <div class="emotion-item" style="--start: 50; --end: 60">
-                    <div class="emotion-head">
-                      <!-- <span class="emotion-index">03</span> -->
-                      <h4>Tristeza - Frustración</h4>
-                      <span class="emotion-range">50–60%</span>
-                    </div>
-                    <div class="emotion-bar">
-                      <span class="emotion-fill"></span>
-                    </div>
-                  </div>
-                  <div class="emotion-item" style="--start: 40; --end: 50">
-                    <div class="emotion-head">
-                      <!-- <span class="emotion-index">04</span> -->
-                      <h4>Soledad - Aislamiento</h4>
-                      <span class="emotion-range">40–50%</span>
-                    </div>
-                    <div class="emotion-bar">
-                      <span class="emotion-fill"></span>
-                    </div>
-                  </div>
-                  <div class="emotion-item" style="--start: 35; --end: 45">
-                    <div class="emotion-head">
-                      <!-- <span class="emotion-index">05</span> -->
-                      <h4>Culpa</h4>
-                      <span class="emotion-range">35–45%</span>
-                    </div>
-                    <div class="emotion-bar">
-                      <span class="emotion-fill"></span>
-                    </div>
-                  </div>
-                  <div class="emotion-item" style="--start: 30; --end: 40">
-                    <div class="emotion-head">
-                      <!-- <span class="emotion-index">06</span> -->
-                      <h4>Enojo - Impotencia</h4>
-                      <span class="emotion-range">30–40%</span>
-                    </div>
-                    <div class="emotion-bar">
-                      <span class="emotion-fill"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <p class="small text-muted mt-3">
-                  Fuente: compilación SGM+ (Literatura 2011–2025 y evidencia
-                  interna). Estos datos orientan, no diagnostican.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /Steps -->
-        </div>
-      </section>
-
-      <!-- Biografía Hormonal Femenina Section -->
-      <section id="bio-hormonal" class="bio-hormonal section">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Biografía hormonal femenina</h2>
-            <p>
-              Acompañamos los distintos momentos del recorrido hormonal:
-              fertilidad, búsqueda, embarazo y postparto, y también
-              <strong>perimenopausia/menopausia</strong>. Cada etapa trae
-              cambios físicos y emocionales: entenderlos baja la ansiedad y
-              ayuda a tomar decisiones con más calma.
-            </p>
-          </div>
-
-          <div class="row gy-4" role="list">
-            <div class="col-md-6 col-lg-3" role="listitem">
-              <article class="bioh-card">
-                <div class="bioh-icon">
-                  <i class="bi bi-calendar-heart"></i>
-                </div>
-                <h3>Ciclo y salud hormonal</h3>
-                <p>
-                  Registro de síntomas, emociones y señales del cuerpo para
-                  detectar patrones y mejorar el autocuidado.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-lg-3" role="listitem">
-              <article class="bioh-card">
-                <div class="bioh-icon"><i class="bi bi-heart-pulse"></i></div>
-                <h3>Búsqueda y fertilidad</h3>
-                <p>
-                  Psicoeducación, herramientas para la ansiedad y sostén en TRHA
-                  (individual y grupal).
-                </p>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-lg-3" role="listitem">
-              <article class="bioh-card">
-                <div class="bioh-icon"><i class="bi bi-emoji-smile"></i></div>
-                <h3>Embarazo y postparto</h3>
-                <p>
-                  Acompañamiento emocional, vínculos, expectativas,
-                  ambivalencias y construcción de red.
-                </p>
-              </article>
-            </div>
-
-            <div class="col-md-6 col-lg-3" role="listitem">
-              <article class="bioh-card">
-                <div class="bioh-icon">
-                  <i class="bi bi-brightness-high"></i>
-                </div>
-                <h3>Perimenopausia y menopausia</h3>
-                <p>
-                  Cambios en el ánimo, sueño, deseo, autoestima y cuerpo. Un
-                  espacio para transitar esta etapa con información y
-                  contención.
-                </p>
-              </article>
-            </div>
-          </div>
-
-          <div class="bioh-cta" data-aos="fade-up" data-aos-delay="150">
-            <p class="mb-3">
-              <strong>Te acompañamos</strong> a entender tu momento vital y a
-              elegir el dispositivo adecuado: grupos, sesiones individuales o
-              talleres temáticos.
-            </p>
-            <a href="#agenda" class="btn-primary">
-              Quiero reservar una sesión
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="menopausia" class="menopausia section">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Perimenopausia y menopausia</h2>
-            <p>
-              Una etapa de profundos cambios físicos, emocionales y vinculares.
-              No es una enfermedad: es una transición vital que merece
-              información, escucha y acompañamiento.
-            </p>
-          </div>
-
-          <div class="row gy-4 align-items-center">
-            <!-- Texto -->
-            <div class="col-lg-6">
-              <div class="menopausia-content" data-aos="fade-right">
-                <h3>Cuando el cuerpo cambia, también cambian las preguntas</h3>
-
-                <p>
-                  Alteraciones en el sueño, el ánimo, el deseo, la energía o la
-                  percepción del propio cuerpo pueden aparecer de forma gradual
-                  o abrupta. Muchas mujeres atraviesan esta etapa en soledad,
-                  sin espacios donde poner en palabras lo que les pasa.
-                </p>
-
-                <p>
-                  En SGM+ ofrecemos un espacio cuidado para comprender estos
-                  cambios, resignificar la identidad y construir nuevas formas
-                  de habitar esta etapa.
-                </p>
-
-                <ul class="menopausia-list">
-                  <li>
-                    <i class="bi bi-check-circle"></i> Cambios emocionales y de
-                    humor
-                  </li>
-                  <li>
-                    <i class="bi bi-check-circle"></i> Sueño, cansancio y
-                    ansiedad
-                  </li>
-                  <li>
-                    <i class="bi bi-check-circle"></i> Deseo, autoestima y
-                    vínculos
-                  </li>
-                  <li>
-                    <i class="bi bi-check-circle"></i> Duelo por lo que cambia,
-                    apertura a lo nuevo
-                  </li>
-                </ul>
-
-                <a href="#agenda" class="btn-primary">
-                  Quiero reservar una sesión
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Destacado lateral -->
-            <div class="col-lg-6">
-              <div class="menopausia-highlight" data-aos="fade-left">
-                <blockquote>
-                  <p>
-                    “La menopausia no marca un final, sino una transformación.
-                    Poder transitarla acompañada cambia completamente la
-                    experiencia.”
-                  </p>
-                </blockquote>
-
-                <div class="menopausia-note">
-                  Espacios disponibles:
-                  <strong>sesiones individuales</strong>,
-                  <strong>grupos</strong> y <strong>talleres temáticos</strong>.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- varones Section -->
-      <section id="varones" class="varones section light-background">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>También para varones</h2>
-            <p>
-              Espacios de apoyo y recursos específicos para varones y parejas.
-            </p>
-          </div>
-
-          <div class="row align-items-center gy-5">
-            <div class="col-lg-6">
-              <article class="varones-card">
-                <h3 class="mb-3">
-                  Fertilidad y su impacto psicológico en los varones: lo que no
-                  se dice
-                </h3>
-                <p>
-                  Los varones atraviesan un proceso muy difícil durante los
-                  tratamientos de fertilidad que afecta a su identidad,
-                  autoestima y vínculos. Muchas veces se pone en cuestión la
-                  masculinidad como atada a la biología; esto produce vergüenza,
-                  culpa y aislamiento emocional.
-                </p>
-                <p class="mb-0">
-                  El mandato sociocultural de <em>“ser fuerte”</em> o
-                  <em>“tener que sostenerla a ella”</em> deja poco lugar para la
-                  expresión emocional. Poder tener tu espacio te va a aliviar:
-                  <strong>no te quedes solo</strong>.
-                </p>
-
-                <ul class="varones-list mt-3">
-                  <li>
-                    <i class="bi bi-emoji-neutral"></i> Identidad y autoestima
-                    puestas a prueba
-                  </li>
-                  <li>
-                    <i class="bi bi-chat-left-dots"></i> Espacios para hablar
-                    sin juicios
-                  </li>
-                  <li>
-                    <i class="bi bi-people"></i> Grupos y acompañamiento
-                    individual
-                  </li>
-                </ul>
-
-                <div class="varones-cta">
-                  <a
-                    href="https://wa.me/5491165079540?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20el%20espacio%20para%20varones"
-                    class="btn-primary"
-                    target="_blank"
-                    rel="noopener"
-                    >Quiero mi espacio</a
-                  >
-                  <a href="#servicios" class="btn-secondary">Ver propuestas</a>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-lg-6">
-              <!-- si querés, podés cambiar esta imagen por otra -->
-              <div class="varones-illustration">
-                <img
-                  src="assets/img/varon.jpg"
-                  alt="Acompañamiento para varones"
-                  class="img-fluid"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- servicios Section -->
-      <section id="servicios" class="section servicios">
-        <div class="container">
-          <div class="section-title">
-            <h2>Servicios</h2>
-            <p>Elegí tu perfil y mirá las propuestas diseñadas para vos.</p>
-          </div>
-
-          <div
-            class="audiencia-switch"
-            role="tablist"
-            aria-label="Selector de audiencia"
-          >
-            <button
-              class="audiencia-btn is-active"
-              data-audiencia="paciente"
-              role="tab"
-              aria-selected="true"
-            >
-              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
-              <span>Pacientes</span>
-            </button>
-
-            <button
-              class="audiencia-btn"
-              data-audiencia="empresa"
-              role="tab"
-              aria-selected="false"
-            >
-              <i class="bi bi-building" aria-hidden="true"></i>
-              <span>Empresas</span>
-            </button>
-
-            <button
-              class="audiencia-btn"
-              data-audiencia="profesional"
-              role="tab"
-              aria-selected="false"
-            >
-              <i class="bi bi-mortarboard" aria-hidden="true"></i>
-              <span>Profesionales</span>
-            </button>
-          </div>
-          <p id="servicios-intro" class="servicios-intro"></p>
-          <div class="swiper servicios-swiper">
-            <div id="servicios-grid" class="swiper-wrapper"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="servicios-cta">
-            <a id="servicios-cta-btn" href="#contact" class="btn-primary"
-              >Consultar</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- about Section -->
       <section id="about-author" class="about-author section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up">
           <div class="row align-items-center gy-5">
-            <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+            <div class="col-lg-5" data-aos="fade-right">
               <div class="author-image">
                 <div class="swiper author-swiper">
                   <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
                       <img
-                        src="assets/img/person/todas.png"
+                        src="assets/img/person/todas.jpg"
                         alt="Autor 1"
                         class="swiper-lazy"
                       />
@@ -1055,7 +643,7 @@
               </div>
             </div>
 
-            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+            <div class="col-lg-7" data-aos="fade-left">
               <div class="author-info">
                 <!-- <h2>Sobre Nosotras</h2> -->
                 <h3>Lorena Laserre</h3>
@@ -1209,8 +797,442 @@
           </div>
         </div>
       </section>
+      <!-- impacto Section -->
+      <section
+        id="impacto"
+        class="features section"
+        aria-labelledby="features-title"
+      >
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2 id="features-title">Impacto emocional y por qué importa</h2>
+          <p>
+            Los tratamientos de reproducción asistida suelen implicar
+            <strong>altos niveles de estrés</strong> y pueden minar la calidad
+            de vida de los pacientes, deteriorar las relaciones y,
+            potencialmente, incluso afectar las tasas de éxito del tratamiento.
+            El <strong>acompañamiento psicológico</strong> grupal mejora el
+            bienestar y favorece la continuidad de los tratamientos.
+          </p>
+        </div>
+        <!-- End Section Title -->
 
-      <!-- testimonios Section -->
+        <div class="container" data-aos="fade-up">
+          <!-- Cards -->
+          <div class="row gy-4" role="list">
+            <div class="col-md-6 col-lg-4" role="listitem">
+              <article
+                class="feature-card"
+                data-aos="fade-up"
+                tabindex="0"
+              >
+                <div class="feature-icon" aria-hidden="true">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+                <h3>Prevalencia</h3>
+                <p>
+                  En Argentina, <strong>1 de cada 6</strong> personas (≈15%)
+                  atraviesa desafíos reproductivos. Globalmente, la OMS estima
+                  <strong>~17,5%</strong> de la población adulta.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4" role="listitem">
+              <article
+                class="feature-card"
+                data-aos="fade-up"
+                tabindex="0"
+              >
+                <div class="feature-icon" aria-hidden="true">
+                  <i class="bi bi-chat-left-quote"></i>
+                </div>
+                <h3>Continuidad del tratamiento</h3>
+                <p>
+                  En nuestro estudio (2025), <strong>73,8%</strong> reportó
+                  haber continuado con los tratamientos gracias al sostén del
+                  grupo. El <strong>89,3%</strong> refirió alivio emocional tras
+                  asistir.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4" role="listitem">
+              <article
+                class="feature-card"
+                data-aos="fade-up"
+                tabindex="0"
+              >
+                <div class="feature-icon" aria-hidden="true">
+                  <i class="bi bi-bar-chart"></i>
+                </div>
+                <h3>Pertenencia y validación</h3>
+                <p>
+                  Compartir con pares reduce <em>soledad</em> y
+                  <em>estigma</em>, y crea espacios de validación que fortalecen
+                  recursos emocionales.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Steps/Chapters -->
+          <div class="row mt-5">
+            <div
+              class="col-12 text-center"
+              data-aos="fade-up"
+            >
+              <div class="feature-chapters emociones">
+                <h3>Emociones frecuentes durante los tratamientos</h3>
+                <p class="mb-4" style="opacity: 0.9">
+                  Los porcentajes muestran <em>rangos reportados</em> en
+                  estudios y experiencia clínica. Cada proceso es único.
+                </p>
+
+                <div class="emociones-grid2">
+                  <div class="emotion-item" style="--start: 65; --end: 75">
+                    <div class="emotion-head">
+                      <!-- <span class="emotion-index">01</span> -->
+                      <h4>Ansiedad</h4>
+                      <span class="emotion-range">65–75%</span>
+                    </div>
+                    <div class="emotion-bar">
+                      <span class="emotion-fill"></span>
+                    </div>
+                  </div>
+                  <div class="emotion-item" style="--start: 55; --end: 65">
+                    <div class="emotion-head">
+                      <!-- <span class="emotion-index">02</span> -->
+                      <h4>Angustia - Miedo</h4>
+                      <span class="emotion-range">55–65%</span>
+                    </div>
+                    <div class="emotion-bar">
+                      <span class="emotion-fill"></span>
+                    </div>
+                  </div>
+                  <div class="emotion-item" style="--start: 50; --end: 60">
+                    <div class="emotion-head">
+                      <!-- <span class="emotion-index">03</span> -->
+                      <h4>Tristeza - Frustración</h4>
+                      <span class="emotion-range">50–60%</span>
+                    </div>
+                    <div class="emotion-bar">
+                      <span class="emotion-fill"></span>
+                    </div>
+                  </div>
+                  <div class="emotion-item" style="--start: 40; --end: 50">
+                    <div class="emotion-head">
+                      <!-- <span class="emotion-index">04</span> -->
+                      <h4>Soledad - Aislamiento</h4>
+                      <span class="emotion-range">40–50%</span>
+                    </div>
+                    <div class="emotion-bar">
+                      <span class="emotion-fill"></span>
+                    </div>
+                  </div>
+                  <div class="emotion-item" style="--start: 35; --end: 45">
+                    <div class="emotion-head">
+                      <!-- <span class="emotion-index">05</span> -->
+                      <h4>Culpa</h4>
+                      <span class="emotion-range">35–45%</span>
+                    </div>
+                    <div class="emotion-bar">
+                      <span class="emotion-fill"></span>
+                    </div>
+                  </div>
+                  <div class="emotion-item" style="--start: 30; --end: 40">
+                    <div class="emotion-head">
+                      <!-- <span class="emotion-index">06</span> -->
+                      <h4>Enojo - Impotencia</h4>
+                      <span class="emotion-range">30–40%</span>
+                    </div>
+                    <div class="emotion-bar">
+                      <span class="emotion-fill"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="small text-muted mt-3">
+                  Fuente: compilación SGM+ (Literatura 2011–2025 y evidencia
+                  interna). Estos datos orientan, no diagnostican.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /Steps -->
+        </div>
+      </section>
+      <section id="bio-hormonal" class="bio-hormonal section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Biografía hormonal femenina</h2>
+            <p>
+              Acompañamos los distintos momentos del recorrido hormonal:
+              fertilidad, búsqueda, embarazo y postparto, y también
+              <strong>perimenopausia/menopausia</strong>. Cada etapa trae
+              cambios físicos y emocionales: entenderlos baja la ansiedad y
+              ayuda a tomar decisiones con más calma.
+            </p>
+          </div>
+
+          <div class="row gy-4" role="list">
+            <div class="col-md-6 col-lg-3" role="listitem">
+              <article class="bioh-card">
+                <div class="bioh-icon">
+                  <i class="bi bi-calendar-heart"></i>
+                </div>
+                <h3>Ciclo y salud hormonal</h3>
+                <p>
+                  Registro de síntomas, emociones y señales del cuerpo para
+                  detectar patrones y mejorar el autocuidado.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-3" role="listitem">
+              <article class="bioh-card">
+                <div class="bioh-icon"><i class="bi bi-heart-pulse"></i></div>
+                <h3>Búsqueda y fertilidad</h3>
+                <p>
+                  Psicoeducación, herramientas para la ansiedad y sostén en TRHA
+                  (individual y grupal).
+                </p>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-3" role="listitem">
+              <article class="bioh-card">
+                <div class="bioh-icon"><i class="bi bi-emoji-smile"></i></div>
+                <h3>Embarazo y postparto</h3>
+                <p>
+                  Acompañamiento emocional, vínculos, expectativas,
+                  ambivalencias y construcción de red.
+                </p>
+              </article>
+            </div>
+
+            <div class="col-md-6 col-lg-3" role="listitem">
+              <article class="bioh-card">
+                <div class="bioh-icon">
+                  <i class="bi bi-brightness-high"></i>
+                </div>
+                <h3>Perimenopausia y menopausia</h3>
+                <p>
+                  Cambios en el ánimo, sueño, deseo, autoestima y cuerpo. Un
+                  espacio para transitar esta etapa con información y
+                  contención.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="bioh-cta" data-aos="fade-up">
+            <p class="mb-3">
+              <strong>Te acompañamos</strong> a entender tu momento vital y a
+              elegir el dispositivo adecuado: grupos, sesiones individuales o
+              talleres temáticos.
+            </p>
+            <a href="sesiones.html" class="btn-primary">
+              Quiero reservar una sesión
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="menopausia" class="menopausia section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Perimenopausia y menopausia</h2>
+            <p>
+              Una etapa de profundos cambios físicos, emocionales y vinculares.
+              No es una enfermedad: es una transición vital que merece
+              información, escucha y acompañamiento.
+            </p>
+          </div>
+
+          <div class="row gy-4 align-items-center">
+            <!-- Texto -->
+            <div class="col-lg-6">
+              <div class="menopausia-content" data-aos="fade-right">
+                <h3>Cuando el cuerpo cambia, también cambian las preguntas</h3>
+
+                <p>
+                  Alteraciones en el sueño, el ánimo, el deseo, la energía o la
+                  percepción del propio cuerpo pueden aparecer de forma gradual
+                  o abrupta. Muchas mujeres atraviesan esta etapa en soledad,
+                  sin espacios donde poner en palabras lo que les pasa.
+                </p>
+
+                <p>
+                  En SGM+ ofrecemos un espacio cuidado para comprender estos
+                  cambios, resignificar la identidad y construir nuevas formas
+                  de habitar esta etapa.
+                </p>
+
+                <ul class="menopausia-list">
+                  <li>
+                    <i class="bi bi-check-circle"></i> Cambios emocionales y de
+                    humor
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle"></i> Sueño, cansancio y
+                    ansiedad
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle"></i> Deseo, autoestima y
+                    vínculos
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle"></i> Duelo por lo que cambia,
+                    apertura a lo nuevo
+                  </li>
+                </ul>
+
+                <a href="sesiones.html" class="btn-primary">
+                  Quiero reservar una sesión
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Destacado lateral -->
+            <div class="col-lg-6">
+              <div class="menopausia-highlight" data-aos="fade-left">
+                <blockquote>
+                  <p>
+                    “La menopausia no marca un final, sino una transformación.
+                    Poder transitarla acompañada cambia completamente la
+                    experiencia.”
+                  </p>
+                </blockquote>
+
+                <div class="menopausia-note">
+                  Espacios disponibles:
+                  <strong>sesiones individuales</strong>,
+                  <strong>grupos</strong> y <strong>talleres temáticos</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="varones" class="varones section light-background">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>También para varones</h2>
+            <p>
+              Espacios de apoyo y recursos específicos para varones y parejas.
+            </p>
+          </div>
+
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+              <article class="varones-card">
+                <h3 class="mb-3">
+                  Fertilidad y su impacto psicológico en los varones: lo que no
+                  se dice
+                </h3>
+                <p>
+                  Los varones atraviesan un proceso muy difícil durante los
+                  tratamientos de fertilidad que afecta a su identidad,
+                  autoestima y vínculos. Muchas veces se pone en cuestión la
+                  masculinidad como atada a la biología; esto produce vergüenza,
+                  culpa y aislamiento emocional.
+                </p>
+                <p class="mb-0">
+                  El mandato sociocultural de <em>“ser fuerte”</em> o
+                  <em>“tener que sostenerla a ella”</em> deja poco lugar para la
+                  expresión emocional. Poder tener tu espacio te va a aliviar:
+                  <strong>no te quedes solo</strong>.
+                </p>
+
+                <ul class="varones-list mt-3">
+                  <li>
+                    <i class="bi bi-emoji-neutral"></i> Identidad y autoestima
+                    puestas a prueba
+                  </li>
+                  <li>
+                    <i class="bi bi-chat-left-dots"></i> Espacios para hablar
+                    sin juicios
+                  </li>
+                  <li>
+                    <i class="bi bi-people"></i> Grupos y acompañamiento
+                    individual
+                  </li>
+                </ul>
+
+                <div class="varones-cta">
+                  <a
+                    href="https://wa.me/5491165079540?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20el%20espacio%20para%20varones"
+                    class="btn-primary"
+                    target="_blank"
+                    rel="noopener"
+                    >Quiero mi espacio</a
+                  >
+                  <a href="servicios.html" class="btn-secondary">Ver propuestas</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-6">
+              <!-- si querés, podés cambiar esta imagen por otra -->
+              <div class="varones-illustration">
+                <img
+                  src="assets/img/varon.jpg"
+                  alt="Acompañamiento para varones"
+                  class="img-fluid"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Servicios Section (resumen) -->
+      <section id="servicios" class="section servicios">
+        <div class="container text-center" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Servicios</h2>
+            <p>Elegí tu perfil y mirá las propuestas diseñadas para vos.</p>
+          </div>
+
+          <p class="servicios-intro">
+            Atención individual, grupos de apoyo y talleres para pacientes;
+            programas de bienestar y capacitación para empresas y
+            profesionales de la salud.
+          </p>
+
+          <div class="teaser-highlights" data-aos="fade-up">
+            <div class="agenda-mini">
+              <i class="bi bi-heart-pulse"></i>
+              <div>
+                <span>Pacientes</span>
+                <p>Atención individual y grupos de apoyo</p>
+              </div>
+            </div>
+            <div class="agenda-mini">
+              <i class="bi bi-building"></i>
+              <div>
+                <span>Empresas</span>
+                <p>Programas de bienestar y capacitación</p>
+              </div>
+            </div>
+            <div class="agenda-mini">
+              <i class="bi bi-mortarboard"></i>
+              <div>
+                <span>Profesionales</span>
+                <p>Formación y recursos clínicos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="servicios-cta">
+            <a href="servicios.html" class="btn-primary">
+              Ver todos los servicios
+            </a>
+          </div>
+        </div>
+      </section>
       <section id="testimonios" class="testimonials section">
         <div class="container section-title" data-aos="fade-up">
           <h2>Testimonios</h2>
@@ -1220,14 +1242,13 @@
           </p>
         </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up">
           <div class="row">
             <div class="col-12">
               <div class="testimonials-container">
                 <div
                   class="swiper testimonials-slider init-swiper"
                   data-aos="fade-up"
-                  data-aos-delay="400"
                 >
                   <script type="application/json" class="swiper-config">
                     {
@@ -1259,7 +1280,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio1.png"
+                            src="assets/img/testimonios/testimonio1.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1271,7 +1292,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio2.png"
+                            src="assets/img/testimonios/testimonio2.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1283,7 +1304,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio3.png"
+                            src="assets/img/testimonios/testimonio3.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1295,7 +1316,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio4.png"
+                            src="assets/img/testimonios/testimonio4.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1307,7 +1328,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio5.png"
+                            src="assets/img/testimonios/testimonio5.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1319,7 +1340,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio6.png"
+                            src="assets/img/testimonios/testimonio6.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1331,7 +1352,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio7.png"
+                            src="assets/img/testimonios/testimonio7.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1342,7 +1363,7 @@
                       <div class="testimonial-item">
                         <div class="testimonial-image">
                           <img
-                            src="assets/img/testimonios/testimonio8.png"
+                            src="assets/img/testimonios/testimonio8.jpg"
                             alt="Testimonio Virgi Fer"
                             class="img-fluid"
                           />
@@ -1357,8 +1378,6 @@
           </div>
         </div>
       </section>
-
-      <!-- libros Section -->
       <section
         id="related-books"
         class="related-books section light-background"
@@ -1375,7 +1394,6 @@
           <div
             class="swiper related-books-slider init-swiper"
             data-aos="fade-up"
-            data-aos-delay="100"
           >
             <script type="application/json" class="swiper-config">
               {
@@ -1458,7 +1476,7 @@
                 <div class="related-book-card">
                   <div class="book-image">
                     <img
-                      src="assets/img/book/laosamaia.png"
+                      src="assets/img/book/laosamaia.webp"
                       alt="Book Cover"
                       class="img-fluid"
                     />
@@ -1513,7 +1531,7 @@
                 <div class="related-book-card">
                   <div class="book-image">
                     <img
-                      src="assets/img/book/penguin.png"
+                      src="assets/img/book/penguin.webp"
                       alt="Book Cover"
                       class="img-fluid"
                     />
@@ -1734,165 +1752,50 @@
           </div>
         </div>
       </section>
-
-      <!-- talleres Section -->
+      <!-- Talleres Section (resumen) -->
       <section id="talleres" class="talleres-hero section">
         <div class="container section-title" data-aos="fade-up">
           <h2>Talleres y Cumbres Online</h2>
           <p>
             Participá de nuestras experiencias virtuales para el bienestar
-            emocional y reproductivo.
+            emocional y reproductivo: TRHA, alimentación, duelos y
+            ovodonación.
           </p>
         </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper talleres-swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 700,
-                "autoplay": { "delay": 5000, "disableOnInteraction": false },
-                "slidesPerView": 1,
-                "spaceBetween": 16,
-                "pagination": {
-                  "el": ".talleres-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                }
-              }
-            </script>
-
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
-                <article class="taller-card-xl">
-                  <div class="taller-card-xl__content">
-                    <span class="badge">Taller online</span>
-                    <h3>Primeros Pasos en TRHA</h3>
-                    <p>
-                      Un taller para ordenar información, bajar la ansiedad y
-                      trazar un plan emocional al iniciar reproducción asistida.
-                      <strong>Duración:</strong> 2 h ·
-                      <strong>Modalidad:</strong> Online
-                    </p>
-                    <a
-                      href="https://go.hotmart.com/K102413472A?dp=1"
-                      class="btn-primary"
-                      target="_blank"
-                      rel="noopener"
-                      >Comprar</a
-                    >
-                  </div>
-
-                  <div class="taller-card-xl__media">
-                    <img
-                      src="https://static-media.hotmart.com/CP0XYqNQ4U_HCjfAB_r8Vn6LuRg=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/ecb936b0-90de-420d-bb3e-9d15953a24e5/trha.png?w=920"
-                      alt="Primeros Pasos en TRHA"
-                    />
-                  </div>
-                </article>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="swiper-slide">
-                <article class="taller-card-xl">
-                  <div class="taller-card-xl__content">
-                    <span class="badge">Taller online</span>
-                    <h3>Taller de Alimentación Complementaria</h3>
-                    <p>
-                      Recomendaciones claras y material descargable. Espacio de
-                      preguntas en vivo.
-                      <strong>Duración:</strong> 2 h ·
-                      <strong>Modalidad:</strong> Online
-                    </p>
-                    <a
-                      href="https://go.hotmart.com/D102452601L?dp=1"
-                      class="btn-primary"
-                      target="_blank"
-                      rel="noopener"
-                      >Comprar</a
-                    >
-                  </div>
-
-                  <div class="taller-card-xl__media">
-                    <img
-                      src="https://static-media.hotmart.com/xXxQAP9M7KucRK5kSWMBS0MBNl4=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/092473b7-b913-41b1-950f-710a3ced4fe8/talleralimentacioncomplementaria.png?w=920"
-                      alt="Taller de Alimentación Complementaria"
-                    />
-                  </div>
-                </article>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="swiper-slide">
-                <article class="taller-card-xl">
-                  <div class="taller-card-xl__content">
-                    <span class="badge">Taller online</span>
-                    <h3>Duelos durante la búsqueda de maternidad</h3>
-                    <p>
-                      Nombrar, comprender y transitar el duelo en el contexto de
-                      la fertilidad.
-                      <strong>Duración:</strong> 2 h ·
-                      <strong>Modalidad:</strong> Online
-                    </p>
-                    <a
-                      href="https://go.hotmart.com/F102455334U?dp=1"
-                      class="btn-primary"
-                      target="_blank"
-                      rel="noopener"
-                      >Comprar</a
-                    >
-                  </div>
-
-                  <div class="taller-card-xl__media">
-                    <img
-                      src="https://static-media.hotmart.com/GlzXmBz4xNp-gj0A6c4zBJdpo6w=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/1b0cff71-a4e1-4af1-b843-459924a87db3/ChatGPTImage16oct202515_57_08.png?w=920"
-                      alt="Taller de Duelos en la búsqueda de maternidad"
-                    />
-                  </div>
-                </article>
-              </div>
-              <!-- Slide 4 -->
-              <div class="swiper-slide">
-                <article class="taller-card-xl">
-                  <div class="taller-card-xl__content">
-                    <span class="badge">Taller online</span>
-                    <h3>Ovodonación (Ovo): emociones, duelos y decisiones</h3>
-                    <p>
-                      Un espacio para comprender el proceso, hablar de lo no
-                      dicho y transitar las emociones con herramientas claras.
-                      <strong>Duración:</strong> 2 h ·
-                      <strong>Modalidad:</strong> Online
-                    </p>
-
-                    <a
-                      href="https://go.hotmart.com/K103691052F?dp=1"
-                      class="btn-primary"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Comprar
-                    </a>
-                  </div>
-
-                  <div class="taller-card-xl__media">
-                    <!-- Si todavía no tenés imagen, dejá esta. Ideal: crear una en assets/img/talleres/ovo.jpg -->
-                    <img
-                      src="https://static-media.hotmart.com/QLlo-f8RYTkFaJjcLage_hlPUUM=/295x165/smart/filters:quality(100)/hotmart/product_pictures/d5dac59e-c67e-4521-876e-f95a715e377d/ChatGPTImage6ene202609_03_17pm.png"
-                      alt="Taller Ovodonación"
-                      loading="lazy"
-                    />
-                  </div>
-                </article>
+        <div
+          class="container text-center"
+          data-aos="fade-up"
+        >
+          <div class="teaser-highlights">
+            <div class="agenda-mini">
+              <i class="bi bi-clipboard2-pulse"></i>
+              <div>
+                <span>TRHA</span>
+                <p>Primeros pasos y contención emocional</p>
               </div>
             </div>
-
-            <div class="swiper-pagination talleres-pagination mt-4"></div>
+            <div class="agenda-mini">
+              <i class="bi bi-emoji-frown"></i>
+              <div>
+                <span>Duelos</span>
+                <p>Transitar la búsqueda de maternidad</p>
+              </div>
+            </div>
+            <div class="agenda-mini">
+              <i class="bi bi-flower1"></i>
+              <div>
+                <span>Ovodonación</span>
+                <p>Emociones, duelos y decisiones</p>
+              </div>
+            </div>
           </div>
+
+          <a href="talleres.html" class="btn-primary teaser-cta"
+            >Ver talleres disponibles</a
+          >
         </div>
       </section>
-
-      <!-- Media / Press Section -->
       <section id="medios" class="medios section light-background mb-5">
         <div class="container section-title" data-aos="fade-up">
           <h2>En los medios</h2>
@@ -1901,7 +1804,7 @@
           </p>
         </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up">
           <!-- Filtro simple (opcional) -->
           <div
             class="media-filters d-flex gap-2 flex-wrap mb-4 text-center justify-content-center"
@@ -1946,8 +1849,6 @@
           <div id="media-grid" class="media-grid"></div>
         </div>
       </section>
-
-      <!-- Faq Section -->
       <section class="faq-9 faq section mt-5" id="faq">
         <div class="container">
           <div class="row">
@@ -1959,7 +1860,6 @@
               <div
                 class="faq-arrow d-none d-lg-block"
                 data-aos="fade-up"
-                data-aos-delay="200"
               >
                 <svg
                   class="faq-arrow"
@@ -1977,7 +1877,7 @@
               </div>
             </div>
 
-            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-7" data-aos="fade-up">
               <div class="faq-container">
                 <div class="faq-item faq-active">
                   <h3>¿Cómo funcionan los grupos?</h3>
@@ -2085,13 +1985,11 @@
           </div>
         </div>
       </section>
-
-      <!-- NUEVO TALLER Section -->
       <section id="call-to-action" class="call-to-action section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up">
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <div class="cta-wrapper" data-aos="zoom-in" data-aos-delay="200">
+              <div class="cta-wrapper" data-aos="zoom-in">
                 <div class="row align-items-center">
                   <div class="col-md-4">
                     <div class="cta-book-image">
@@ -2132,7 +2030,7 @@
                         <p>Inscripciones abiertas hasta:</p>
                         <div
                           class="countdown d-flex justify-content-center"
-                          data-count="2026/03/13"
+                          data-count="2026/12/13"
                         >
                           <!--data-count="3 de diciembre de 2025" -->
                           <!-- ajustar a nueva fecha -->
@@ -2156,10 +2054,10 @@
                       </div>
 
                       <div class="cta-buttons">
-                        <a href="test.html" class="btn-primary"
+                        <a href="talleres.html" class="btn-primary"
                           >Quiero inscribirme</a
                         >
-                        <a href="#excerpt" class="btn-secondary"
+                        <a href="talleres.html" class="btn-secondary"
                           >Ver programa</a
                         >
                       </div>
@@ -2171,263 +2069,45 @@
           </div>
         </div>
       </section>
-
-      <!-- Agenda / Sesiones Section -->
+      <!-- Agenda / Sesiones Section (resumen) -->
       <section id="agenda" class="agenda section light-background">
-        <div class="container" data-aos="fade-up">
+        <div class="container text-center" data-aos="fade-up">
           <div class="section-title">
             <h2>Sesiones individuales</h2>
             <p>
-              Si querés coordinar una sesión 1:1 con Lorena, podés elegir un día
-              y horario disponible.
+              Si querés coordinar una sesión 1:1 con Lorena, podés elegir un
+              día y horario disponible.
             </p>
           </div>
 
-          <div class="agenda-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="agenda-card__text">
-              <h3>Reservá tu turno online</h3>
-              <p>
-                Elegí un horario en el calendario y completá tus datos. Si
-                preferís, también podés escribirnos por WhatsApp y te ayudamos.
-              </p>
-
-              <div class="agenda-actions">
-                <!-- Opción 1: Abrir modal embebido -->
-                <button
-                  type="button"
-                  class="btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#calendarModal"
-                  data-calendar-url="https://calendar.app.google/MmobJfXVe1xdKyYW7"
-                >
-                  Ver agenda y reservar
-                  <i class="bi bi-calendar3"></i>
-                </button>
-
-                <!-- Opción 2: Link directo -->
-                <a
-                  class="btn-secondary"
-                  href="https://calendar.app.google/MmobJfXVe1xdKyYW7"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Abrir en Google Calendar
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </a>
-
-                <a
-                  class="btn-secondary"
-                  href="https://wa.me/5491165079540?text=Hola%20Lore%2C%20quiero%20coordinar%20una%20sesi%C3%B3n%201%3A1%20%C2%BFMe%20ayud%C3%A1s%20con%20un%20turno%3F"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Pedir ayuda por WhatsApp
-                  <i class="bi bi-whatsapp"></i>
-                </a>
+          <div class="teaser-highlights">
+            <div class="agenda-mini">
+              <i class="bi bi-clock-history"></i>
+              <div>
+                <span>Respuesta rápida</span>
+                <p>Coordinación simple y clara</p>
               </div>
-
-              <p class="agenda-note">
-                <strong>Nota:</strong> la disponibilidad puede cambiar en tiempo
-                real.
-              </p>
             </div>
-
-            <div class="agenda-card__mini">
-              <div class="agenda-mini">
-                <i class="bi bi-clock-history"></i>
-                <div>
-                  <span>Respuesta rápida</span>
-                  <p>Coordinación simple y clara</p>
-                </div>
+            <div class="agenda-mini">
+              <i class="bi bi-shield-check"></i>
+              <div>
+                <span>Espacio cuidado</span>
+                <p>Confidencial y sin juicios</p>
               </div>
-              <div class="agenda-mini">
-                <i class="bi bi-shield-check"></i>
-                <div>
-                  <span>Espacio cuidado</span>
-                  <p>Confidencial y sin juicios</p>
-                </div>
-              </div>
-              <div class="agenda-mini">
-                <i class="bi bi-globe2"></i>
-                <div>
-                  <span>Modalidad</span>
-                  <p>Online / Presencial (según agenda)</p>
-                </div>
+            </div>
+            <div class="agenda-mini">
+              <i class="bi bi-globe2"></i>
+              <div>
+                <span>Modalidad</span>
+                <p>Online / Presencial (según agenda)</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- contacto Section -->
-      <section id="contact" class="contact section">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Contacto</h2>
-          <p>
-            Contanos en qué te podemos acompañar. Te respondemos a la brevedad.
-          </p>
-        </div>
-
-        <div class="container" data-aos="fade-up">
-          <div class="row">
-            <div class="col-lg-5" data-aos="fade-right">
-              <div class="contact-info">
-                <div class="contact-card">
-                  <h3>Información de contacto</h3>
-                  <p>
-                    Estamos para escucharte y responder cualquier consulta sobre
-                    talleres, charlas, eventos o alianzas.
-                  </p>
-
-                  <div class="contact-details">
-                    <div class="contact-item">
-                      <i class="bi bi-envelope"></i>
-                      <div>
-                        <h4>Email:</h4>
-                        <p>lorenalaserre@gmail.com</p>
-                      </div>
-                    </div>
-
-                    <div class="contact-item">
-                      <i class="bi bi-telephone"></i>
-                      <div>
-                        <h4>Teléfono / WhatsApp:</h4>
-                        <p>+54 9 11 6507-9540</p>
-                      </div>
-                    </div>
-
-                    <div class="contact-item">
-                      <i class="bi bi-geo-alt"></i>
-                      <div>
-                        <h4>Ubicación:</h4>
-                        <p>Encuentros presenciales en CABA</p>
-                        <p>Actividades online para todo el país</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="social-links">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a
-                      href="https://www.instagram.com/stories/somosgrupodemujeresmas/"
-                      target="_blank"
-                      rel="noopener"
-                      ><i class="bi bi-instagram"></i
-                    ></a>
-                    <a
-                      href="https://linktr.ee/somosgrupodemujeresmas"
-                      title="Linktree"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <i class="bi bi-link-45deg"></i
-                    ></a>
-                    <a
-                      href="https://www.youtube.com/channel/UCQiXLkonR0gxLOaJwVhbUIg"
-                      title="Youtube"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <i class="bi bi-youtube"></i
-                    ></a>
-                    <a
-                      href="https://open.spotify.com/show/4x1xHnq6ZLR8YZR32OeKti"
-                      title="Spotify"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <i class="bi bi-spotify"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-              <div class="contact-form-wrapper">
-                <form
-                  action="https://formspree.io/f/mkgvdwar"
-                  method="POST"
-                  class="php-email-form"
-                >
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <label for="name">Nombre completo *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        class="form-control"
-                        id="name"
-                        placeholder="Ej: Ana Rodríguez"
-                        required
-                      />
-                    </div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <label for="email">Correo electrónico *</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        name="email"
-                        id="email"
-                        placeholder="ejemplo@mail.com"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="row mt-3">
-                    <div class="col-md-6 form-group">
-                      <label for="phone">Teléfono (opcional)</label>
-                      <input
-                        type="tel"
-                        class="form-control"
-                        name="phone"
-                        id="phone"
-                        placeholder="+54 11 1234 5678"
-                      />
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <label for="subject">Motivo de tu consulta *</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="subject"
-                        id="subject"
-                        placeholder="Ej: Quiero sumarme a un grupo"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group mt-3">
-                    <label for="message">Tu mensaje *</label>
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      id="message"
-                      rows="6"
-                      placeholder="Contanos en qué etapa estás y cómo te gustaría que te acompañemos"
-                      required
-                    ></textarea>
-                  </div>
-                  <div class="my-3">
-                    <div class="loading" style="display: none">
-                      Enviando tu mensaje...
-                    </div>
-                    <div
-                      class="error-message"
-                      role="alert"
-                      style="display: none"
-                    ></div>
-                    <div class="sent-message" style="display: none">
-                      ¡Gracias por escribirnos! Te responderemos a la brevedad.
-                    </div>
-                  </div>
-                  <div class="text-center mt-3">
-                    <button type="submit">Enviar mensaje</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+          <a href="sesiones.html" class="btn-primary teaser-cta">
+            Reservá tu turno online
+            <i class="bi bi-calendar3"></i>
+          </a>
         </div>
       </section>
     </main>
@@ -2435,6 +2115,12 @@
     <footer id="footer" class="footer">
       <div class="container">
         <h3 class="sitename">Somos Grupo de Mujeres +</h3>
+
+        <div class="footer-contact">
+          <a href="mailto:lorenalaserre@gmail.com"><i class="bi bi-envelope"></i> lorenalaserre@gmail.com</a>
+          <a href="https://wa.me/5491165079540?text=Hola%20quiero%20más%20información" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> +54 9 11 6507-9540</a>
+          <a href="contacto.html"><i class="bi bi-chat-dots"></i> Más formas de contacto</a>
+        </div>
         <div class="social-links d-flex justify-content-center">
           <a href="" target="_blank" rel="noopener"
             ><i class="bi bi-facebook" title="Facebook"></i
@@ -2518,63 +2204,14 @@
         </div>
       </div>
     </div>
-
-    <!-- Calendar Modal -->
-    <div class="modal fade" id="calendarModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Reservar sesión</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Cerrar"
-            ></button>
-          </div>
-
-          <div class="modal-body text-center">
-            <p class="mb-4">
-              Elegí un día y horario disponible para tu sesión individual con
-              Lorena.
-            </p>
-            <!-- Contenedor del botón de Google -->
-            <div id="gcal-scheduling-button"></div>
-            <p class="small text-muted mt-4">
-              Si el botón no se carga, podés abrir la agenda directamente.
-            </p>
-          </div>
-
-          <div class="modal-footer justify-content-center">
-            <a
-              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2QzKHgup4Sy4fAe1Y3byX246YAw0JL9OVUokD8d-ay9QoOFzmF1_WAP8NXGzlUqbrr0BNJj9ak?gv=true"
-              target="_blank"
-              class="btn btn-outline-secondary"
-            >
-              Abrir agenda en Google Calendar
-            </a>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script
       src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
       defer
     ></script>
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/servicios.js" defer></script>
-    <script src="assets/js/media.js" defer></script>
     <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/media.js" defer></script>
     <script>
       document.addEventListener("click", function (e) {
         const btn = e.target.closest(".js-toggle-desc");
@@ -2585,47 +2222,6 @@
         btn.textContent = p.classList.contains("expandido")
           ? "Ver menos"
           : "Ver más";
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btnIa = document.getElementById("btn-ia");
-        const modal = document.getElementById("ia-modal");
-        const btnCancelar = document.getElementById("ia-cancelar");
-        const btnAceptar = document.getElementById("ia-aceptar");
-        const backdrop = document.querySelector(".ia-modal-backdrop");
-        let destino = null;
-
-        if (!btnIa) return;
-
-        btnIa.addEventListener("click", (e) => {
-          e.preventDefault();
-          destino = btnIa.href;
-          modal.classList.add("is-visible");
-          modal.setAttribute("aria-hidden", "false");
-        });
-
-        const cerrar = () => {
-          modal.classList.remove("is-visible");
-          modal.setAttribute("aria-hidden", "true");
-          destino = null;
-        };
-
-        btnCancelar.addEventListener("click", cerrar);
-        backdrop.addEventListener("click", cerrar);
-
-        btnAceptar.addEventListener("click", () => {
-          if (destino) {
-            window.open(destino, "_blank", "noopener");
-          }
-          cerrar();
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && modal.classList.contains("is-visible")) {
-            cerrar();
-          }
-        });
       });
     </script>
     <script>
@@ -2727,25 +2323,6 @@
           toggle.innerHTML = expanded
             ? 'Ver más <i class="bi bi-chevron-down" aria-hidden="true"></i>'
             : 'Ver menos <i class="bi bi-chevron-up" aria-hidden="true"></i>';
-        });
-      });
-    </script>
-
-    <script
-      src="https://calendar.google.com/calendar/scheduling-button-script.js"
-      async
-    ></script>
-    <script>
-      window.addEventListener("load", function () {
-        const target = document.getElementById("gcal-scheduling-button");
-
-        if (!target) return;
-
-        calendar.schedulingButton.load({
-          url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2QzKHgup4Sy4fAe1Y3byX246YAw0JL9OVUokD8d-ay9QoOFzmF1_WAP8NXGzlUqbrr0BNJj9ak?gv=true",
-          color: "#E67C73",
-          label: "Programar una sesión",
-          target: target,
         });
       });
     </script>

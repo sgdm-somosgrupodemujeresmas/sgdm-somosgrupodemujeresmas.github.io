@@ -30,7 +30,7 @@ const DATA_SERVICIOS = [
     formato: "In-company / Online",
     descripcion:
       "Concientización sin estigma y herramientas prácticas para líderes y equipos. Prevención de burnout y presentismo.",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
   {
@@ -40,7 +40,7 @@ const DATA_SERVICIOS = [
     formato: "Programa",
     descripcion:
       "Implementación de políticas ad-hoc, comunicación interna y tercerización del apoyo emocional (grupal e individual).",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
   {
@@ -50,7 +50,7 @@ const DATA_SERVICIOS = [
     formato: "In-company / Remoto",
     descripcion:
       "Campañas y comunicación interna/externa para visibilizar fertilidad sin prejuicios. Piezas, guías y activaciones.",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
   {
@@ -60,7 +60,7 @@ const DATA_SERVICIOS = [
     formato: "Consultoría",
     descripcion:
       "Diseño/adaptación de políticas laborales, lineamientos para RR.HH. y líderes, y protocolo de confidencialidad.",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
   // ——— Profesionales ———
@@ -71,7 +71,7 @@ const DATA_SERVICIOS = [
     formato: "Online",
     descripcion:
       "Psicología perinatal, coordinación de grupos, ética del cuidado y diseño de intervenciones basadas en evidencia.",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
   {
@@ -81,7 +81,7 @@ const DATA_SERVICIOS = [
     formato: "Grupal / Individual",
     descripcion:
       "Supervisión clínica con enfoque SGM+ para casos de infertilidad, duelos reproductivos y trabajo con grupos.",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
   {
@@ -91,7 +91,7 @@ const DATA_SERVICIOS = [
     formato: "Descargables",
     descripcion:
       "Guías para coordinación de grupos, hojas de trabajo, escalas y protocolos de derivación con enfoque SGM+.",
-    url: "#contacto",
+    url: "contacto.html",
     brochure: null,
   },
 ];
@@ -168,7 +168,7 @@ function render(aud) {
     grid.appendChild(card);
   });
   // CTA + URL sin hash (evita scroll)
-  ctaBtn.href = "#contact";
+  ctaBtn.href = "contacto.html";
   setAudInURL(aud);
   if (serviciosSwiper) {
     serviciosSwiper.update();

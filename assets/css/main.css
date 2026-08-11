@@ -385,6 +385,33 @@ h6 {
   text-decoration: none;
 }
 
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 26px;
+  margin: 0 0 24px 0;
+}
+
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--default-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-contact a i {
+  color: var(--sgm-piel);
+  font-size: 16px;
+}
+
+.footer-contact a:hover {
+  color: var(--sgm-piel);
+}
+
 .footer .copyright {
   padding-top: 25px;
   border-top: 1px solid
@@ -3954,6 +3981,41 @@ a.btn-primary:hover {
   margin: 0;
   font-size: 14px;
   color: #7a6657;
+}
+
+/* Mini-destacados reutilizables para las secciones resumen del home
+   (Servicios, Talleres, Sesiones, Contacto) */
+.teaser-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: 28px auto;
+  text-align: left;
+}
+
+/* CTA de las secciones-resumen del home (Talleres, Sesiones, Contacto):
+   necesitan su propio contraste porque no heredan ningún estilo de
+   .btn-primary con fondo claro y quedan casi invisibles sobre el
+   fondo marrón oscuro de esas secciones. */
+.teaser-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--sgm-piel, #dfb2a3);
+  color: var(--ink-strong, #5a3f37);
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.teaser-cta:hover {
+  background-color: var(--sgm-verde, #bcc0b0);
+  color: var(--ink-strong, #5a3f37);
+  transform: translateY(-2px);
 }
 
 /* =========================

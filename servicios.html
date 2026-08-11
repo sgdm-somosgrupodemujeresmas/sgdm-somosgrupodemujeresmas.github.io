@@ -1,14 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SGM+ — Test de Síntomas Gratis</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Servicios | SGM+ — Acompañamiento psicológico para mujeres</title>
+    <meta
+      name="description"
+      content="Atención individual, grupos de apoyo, talleres y programas para empresas y profesionales de la salud. Elegí tu perfil y conocé los servicios de SGM+."
+    />
+    <meta
+      name="keywords"
+      content="grupo de mujeres, acompañamiento psicológico mujeres, salud emocional femenina, grupos terapéuticos para mujeres, sesiones psicológicas para mujeres, talleres para mujeres, fertilidad y salud emocional, búsqueda de embarazo, embarazo y postparto acompañamiento, perimenopausia, menopausia, salud hormonal femenina, ovodonación, TRHA, bienestar emocional mujeres, psicología femenina, acompañamiento terapéutico"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <!-- Favicons -->
     <link href="assets/img/favicon_io/favicon.ico" rel="icon" />
     <link
       href="assets/img/favicon_io/apple-touch-icon.png"
       rel="apple-touch-icon"
     />
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      href="https://somosgrupodemujeresmas.ar/servicios.html"
+    />
+
+    <!-- Open Graph (Facebook/Instagram/WhatsApp/LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="SGM+ - Somos Grupo de Mujeres Más" />
+    <meta property="og:title" content="Servicios | SGM+" />
+    <meta
+      property="og:description"
+      content="Atención individual, grupos de apoyo, talleres y programas para empresas y profesionales de la salud. Elegí tu perfil y conocé los servicios de SGM+."
+    />
+    <meta
+      property="og:url"
+      content="https://somosgrupodemujeresmas.ar/servicios.html"
+    />
+    <meta
+      property="og:image"
+      content="https://somosgrupodemujeresmas.ar/assets/img/logo.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://somosgrupodemujeresmas.ar/assets/img/logo.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="SGM+ - Acompañamiento psicológico, grupos y talleres para mujeres"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Servicios | SGM+" />
+    <meta
+      name="twitter:description"
+      content="Atención individual, grupos de apoyo, talleres y programas para empresas y profesionales de la salud."
+    />
+    <meta
+      name="twitter:image"
+      content="https://somosgrupodemujeresmas.ar/assets/img/logo.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="SGM+ - Acompañamiento psicológico para mujeres"
+    />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,46 +88,33 @@
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="assets/css/main.css" rel="stylesheet" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-    <style>
-      /* que el iframe ocupe la altura disponible entre header y footer */
-      html,
-      body {
-        height: 100%;
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Somos Grupo de Mujeres Más",
+        "url": "https://somosgrupodemujeresmas.ar",
+        "logo": "https://somosgrupodemujeresmas.ar/img/logo.png",
+        "description": "Espacio de acompañamiento psicológico para mujeres en fertilidad, TRHA, embarazo, postparto y menopausia.",
+        "sameAs": ["https://www.instagram.com/somosgrupodemujeresmas"]
       }
-      #survey-container {
-        min-height: 100vh;
-        padding: 0;
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-      #survey-frame {
-        width: 100%;
-        height: calc(100vh - var(--header-h, 72px));
-        border: 0;
-        display: block;
-      }
-      /* ajustá este valor a la altura real del header en tu tema */
-      @media (min-width: 992px) {
-        :root {
-          --header-h: 84px;
-        }
-      }
-      @media (max-width: 991.98px) {
-        :root {
-          --header-h: 64px;
-        }
-      }
-      .xpWfed {
-        background: transparent !important;
-      }
-    </style>
+      gtag("js", new Date());
+      // GA4
+      gtag("config", "G-C29E3E050P");
+      // Google Ads
+      //  gtag('config', 'AW-769337806');
+    </script>
   </head>
   <body class="subpage">
     <!-- CONTENEDOR DE BOTONES FLOTANTES -->
@@ -215,14 +273,62 @@
       </div>
     </header>
 
-    <main id="survey-container" class="container-fluid">
-      <iframe
-        id="survey-frame"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfRzmQ4Ymy2LCROrXYFs97lfIZWlO_liJ2xsJTk3-p740kzcA/viewform?embedded=true"
-        allowfullscreen
-        loading="lazy"
-      >
-      </iframe>
+    <main class="main">
+      <section id="servicios" class="section servicios">
+        <div class="container">
+          <div class="section-title">
+            <h2>Servicios</h2>
+            <p>Elegí tu perfil y mirá las propuestas diseñadas para vos.</p>
+          </div>
+
+          <div
+            class="audiencia-switch"
+            role="tablist"
+            aria-label="Selector de audiencia"
+          >
+            <button
+              class="audiencia-btn is-active"
+              data-audiencia="paciente"
+              role="tab"
+              aria-selected="true"
+            >
+              <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+              <span>Pacientes</span>
+            </button>
+
+            <button
+              class="audiencia-btn"
+              data-audiencia="empresa"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="bi bi-building" aria-hidden="true"></i>
+              <span>Empresas</span>
+            </button>
+
+            <button
+              class="audiencia-btn"
+              data-audiencia="profesional"
+              role="tab"
+              aria-selected="false"
+            >
+              <i class="bi bi-mortarboard" aria-hidden="true"></i>
+              <span>Profesionales</span>
+            </button>
+          </div>
+          <p id="servicios-intro" class="servicios-intro"></p>
+          <div class="swiper servicios-swiper">
+            <div id="servicios-grid" class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="servicios-cta">
+            <a id="servicios-cta-btn" href="contacto.html" class="btn-primary"
+              >Consultar</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer id="footer" class="footer">
@@ -300,14 +406,13 @@
 
     <div id="preloader"></div>
 
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
     <script
       src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
       defer
     ></script>
     <script src="assets/vendor/aos/aos.js" defer></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-
-    <!-- Main JS File -->
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/servicios.js" defer></script>
   </body>
 </html>

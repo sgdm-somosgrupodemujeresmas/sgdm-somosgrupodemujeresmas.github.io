@@ -108,7 +108,7 @@
       mirror: false,
     });
   }
-  window.addEventListener("load", aosInit);
+  aosInit();
 
   /**
    * Init swiper sliders
